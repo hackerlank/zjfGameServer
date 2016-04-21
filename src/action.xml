@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+    http://www.springframework.org/schema/tx http://www.springframewor k.org/schema/tx/spring-tx-3.1.xsd 
+    http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd 
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<bean id="navigation" class="byCodeGame.game.navigation.Navigation"
+		p:loginAction-ref="loginAction" p:creatRoleAction-ref="creatRoleAction"
+		p:getRoleDataAction-ref="getRoleDataAction" 
+		
+		p:chatAction-ref="chatAction"
+		p:chatPrivateAction-ref="chatPrivateAction" 
+		p:chatLegionAction-ref="chatLegionAction"
+		p:chatCountryAction-ref="chatCountryAction"
+		
+		
+		p:getNeedGoldAction-ref="getNeedGoldAction" p:levyAction-ref="levyAction"
+		p:upBuildAction-ref="upBuildAction" p:getIncomeDataAction-ref="getIncomeDataAction"
+		p:openBuildAction-ref="openBuildAction" p:getBuildDataAction-ref="getBuildDataAction"
+		p:getBuildQueueDataAction-ref="getBuildQueueDataAction"
+		p:clearBuildQueueTimeAction-ref="clearBuildQueueTimeAction"
+		p:openNewBuildQueueAction-ref="openNewBuildQueueAction"
+		p:fillPopulationAction-ref="fillPopulationAction"
+		p:attachHeroAction-ref="attachHeroAction" p:cancelAttachAction-ref="cancelAttachAction"
+		p:getInfoAttach-ref="getInfoAttach" p:getSimpleBuildDataAction-ref="getSimpleBuildDataAction"
+		p:buildTypeLvUpAction-ref="buildTypeLvUpAction"
+		p:getNumResourceAction-ref="getNumResourceAction"
+		p:getFightInfoAction-ref="getFightInfoAction"
+		p:inComeShowSpeedUpLevyAction-ref="inComeShowSpeedUpLevyAction"
+		p:inComeSpeedUpLevyAction-ref="inComeSpeedUpLevyAction"
+		p:inComeGetPrestigeAction-ref="inComeGetPrestigeAction"
+		p:inComeShowRankInfoAction-ref="inComeShowRankInfoAction"
+		p:getBuildInfoAction-ref="getBuildInfoAction"
+		p:inComeShowLevyInfoAction-ref="inComeShowLevyInfoAction"
+		
+
+		p:getOnLineRoleDataAction-ref="getOnLineRoleDataAction"
+		p:gmListAction-ref="gmListAction" p:stopAppAction-ref="stopAppAction"
+		p:useKeyAction-ref="useKeyAction"
+	
+		p:getDoingTaskAction-ref="getDoingTaskAction"
+		p:completeTaskAction-ref="completeTaskAction"
+		p:getDailyTaskAwardAction-ref="getDailyTaskAwardAction"
+		p:quickCompleteDailyTaskAction-ref="quickCompleteDailyTaskAction"
+		p:getDailyTaskAction-ref="getDailyTaskAction" 
+		
+		p:nationAction-ref="nationAction" p:getNumnationAction-ref="getNumnationAction"
+		
+		
+		p:creatLegionAction-ref="creatLegionAction" p:getLegionDataAction-ref="getLegionDataAction"
+		p:getLegionListAction-ref="getLegionListAction"
+		p:applyJoinLegionAction-ref="applyJoinLegionAction"
+		p:deputyLegionAction-ref="deputyLegionAction"
+		p:changeFaceIdAction-ref="changeFaceIdAction" p:changNoticeAction-ref="changNoticeAction"
+		p:getApplyListAction-ref="getApplyListAction"
+		p:agreeJoinLegionAction-ref="agreeJoinLegionAction"
+		p:getAllMemberAction-ref="getAllMemberAction" p:quiteLegionAction-ref="quiteLegionAction"
+		p:searchLegionAction-ref="searchLegionAction"
+		p:upgradeScienceAction-ref="upgradeScienceAction"
+		p:setAppointScienceAction-ref="setAppointScienceAction"
+		p:autoAgreeJoinAction-ref="autoAgreeJoinAction"
+		p:exchangeLegionAction-ref="exchangeLegionAction"
+		p:rejectJoinAction-ref="rejectJoinAction" p:cancelApplyAction-ref="cancelApplyAction"
+		p:addMaxPeopleNumAction-ref="addMaxPeopleNumAction"
+		p:getInfoExchangeAction-ref="getInfoExchangeAction" 
+		p:setCityAction-ref="setCityAction" p:changeShortNameAction-ref="changeShortNameAction"
+
+		p:mailAction-ref="mailAction"
+		p:getAllMailAction-ref="getAllMailAction" p:takeItemMailAction-ref="takeItemMailAction"
+		p:deleteMailAction-ref="deleteMailAction" p:setMailCheckedAction-ref="setMailCheckedAction"
+		p:usePropAction-ref="usePropAction" p:equipPropAction-ref="equipPropAction"
+		p:getPropListAction-ref="getPropListAction" p:addMaxBagNumAction-ref="addMaxBagNumAction"
+		p:quickDressAction-ref="quickDressAction" p:strengthenEquipAction-ref="strengthenEquipAction"
+		p:recoveryEquipAction-ref="recoveryEquipAction"
+		p:refineEquipAction-ref="refineEquipAction" p:changePrefixAction-ref="changePrefixAction"
+		p:uninstallEquipAction-ref="uninstallEquipAction"
+		
+		p:marketSellAction-ref="marketSellAction" 
+		p:marketBuyAction-ref="marketBuyAction"
+		p:marketFreshAction-ref="marketFreshAction" 
+		p:marketGetInfo-ref="marketGetInfo"
+		p:getGoldMarketInfoAction-ref="getGoldMarketInfoAction"
+		p:buyGoldMarketAction-ref="buyGoldMarketAction"
+		p:showAuctionInfoAction-ref="showAuctionInfoAction" 
+		p:sellAuctionAction-ref="sellAuctionAction"
+		p:buyAuctionAction-ref="buyAuctionAction" 
+		p:cancelAuctionAction-ref="cancelAuctionAction"
+		p:marketVisitSaleAction-ref="marketVisitSaleAction"
+		p:marketBargainItemsAction-ref="marketBargainItemsAction"
+		p:marketShowBargainItemsAction-ref="marketShowBargainItemsAction"
+		p:showAuctionSelfAction-ref="showAuctionSelfAction"
+		p:marketShowWorldMarketItemsAction-ref="marketShowWorldMarketItemsAction"
+		p:marketBuyWorldMarketItemsAction-ref="marketBuyWorldMarketItemsAction"
+		p:marketRefreshPrestigeWorldMarketItemAction-ref="marketRefreshPrestigeWorldMarketItemAction"
+		p:marketUnlockPrestigeMarketLimitAction-ref="marketUnlockPrestigeMarketLimitAction"
+		
+		
+		p:propMakeIronAction-ref="propMakeIronAction"
+		p:propShowMakeIronAction-ref="propShowMakeIronAction"
+		p:propGetIronAction-ref="propGetIronAction"
+		p:propGetVisitTreasureAction-ref="propGetVisitTreasureAction"
+		p:propVisitTreasureAction-ref="propVisitTreasureAction"
+		p:propShowStrengthenAction-ref="propShowStrengthenAction"
+		p:propShowEquipAction-ref="propShowEquipAction"
+		p:propShowAddIronStrengthenAction-ref="propShowAddIronStrengthenAction"
+
+		p:getHeroListAction-ref="getHeroListAction" p:singleDressAction-ref="singleDressAction"
+		p:quickTrainHeroAction-ref="quickTrainHeroAction"
+		p:getHeroArmyInfoAction-ref="getHeroArmyInfoAction"
+		p:getRebLvInfoAction-ref="getRebLvInfoAction"
+		p:heroUpdateSkillLvAction-ref="heroUpdateSkillLvAction"
+		p:getAllHeroArmsInfoAction-ref="getAllHeroArmsInfoAction"
+		p:heroRetrainArmyAction-ref="heroRetrainArmyAction"
+		p:heroUpDutyLvAction-ref="heroUpDutyLvAction"
+		p:heroUpRankLvAction-ref="heroUpRankLvAction"
+		p:heroInsteadArmyAction-ref="heroInsteadArmyAction"
+		p:heroShowDutyAction-ref="heroShowDutyAction"
+		p:heroShowRankAction-ref="heroShowRankAction"
+		p:heroShowHeroDetailAction-ref="heroShowHeroDetailAction"
+		p:heroShowRetrainAction-ref="heroShowRetrainAction"
+		p:heroCompoundHeroAction-ref="heroCompoundHeroAction"
+		p:heroShowBuyManualAction-ref="heroShowBuyManualAction"
+		p:heroBuyManualAction-ref="heroBuyManualAction"
+
+
+		p:saveFormationAction-ref="saveFormationAction"
+		p:getFormationDataAction-ref="getFormationDataAction"
+		p:getFormationDataAllAction-ref="getFormationDataAllAction"
+		p:updateUseFormationIDAction-ref="updateUseFormationIDAction"
+		p:upHeroRebirthAction-ref="upHeroRebirthAction" p:pubTalkAction-ref="pubTalkAction"
+		p:pubVisitAction-ref="pubVisitAction" p:getVisitAwardAction-ref="getVisitAwardAction"
+		p:getMapInfoAction-ref="getMapInfoAction" p:pubHeroDequeueAction-ref="pubHeroDequeueAction"
+		p:pubGetInfoAction-ref="pubGetInfoAction" p:pubMultipleTalkAction-ref="pubMultipleTalkAction"
+		p:pubEnterAction-ref="pubEnterAction" p:pubMileConvertHeroAction-ref="pubMileConvertHeroAction"
+		p:pubGetMileHerosAction-ref="pubGetMileHerosAction"
+		p:pubShowWineDeskAction-ref="pubShowWineDeskAction"
+		p:pubChangeDeskHeroAction-ref="pubChangeDeskHeroAction"
+		p:pubShowMakeWineAction-ref="pubShowMakeWineAction"
+		p:pubDrinkWineAction-ref="pubDrinkWineAction" p:pubMakeWineAction-ref="pubMakeWineAction"
+		p:pubGetWineAction-ref="pubGetWineAction"
+		p:pubUnlockWineDeskAction-ref="pubUnlockWineDeskAction"
+		p:pubSpeedUpAction-ref="pubSpeedUpAction" 
+		
+		p:buildBarrackAction-ref="buildBarrackAction"
+		p:upBarrackAction-ref="upBarrackAction" 
+		p:sellBarrackAction-ref="sellBarrackAction"
+		p:recruitArmsAction-ref="recruitArmsAction"
+		p:changeBarrackAction-ref="changeBarrackAction"
+		p:getBarrackDataAction-ref="getBarrackDataAction"
+		p:getTroopsDataAction-ref="getTroopsDataAction" 
+		p:barrackShowMakeExploitAction-ref="barrackShowMakeExploitAction"
+		p:barrackGetExploitAction-ref="barrackGetExploitAction"
+		p:barrackUpArmySkillAction-ref="barrackUpArmySkillAction"
+		p:barrackVisitOffensiveAction-ref="barrackVisitOffensiveAction"
+		p:barrackShowArmySkillAction-ref="barrackShowArmySkillAction"
+		p:barrackShowVisitOffensiveAction-ref="barrackShowVisitOffensiveAction"
+		p:barrackGetOffensiveRankAction-ref="barrackGetOffensiveRankAction"
+		
+		
+		p:getRoleScienceInfoAction-ref="getRoleScienceInfoAction"
+		p:upgradRoleScienceAction-ref="upgradRoleScienceAction"
+		p:getRoleScienceQueueAction-ref="getRoleScienceQueueAction"
+		p:clearRoleScienceQueueTimeAction-ref="clearRoleScienceQueueTimeAction"
+		p:scienceOfferScienceInfoAction-ref="scienceOfferScienceInfoAction"
+		p:scienceGetOfferScienceAwardAction-ref="scienceGetOfferScienceAwardAction"
+		
+
+		
+		p:heartAction-ref="heartAction"
+		p:buyArmyTokenAction-ref="buyArmyTokenAction" 
+		p:deployArmsAction-ref="deployArmsAction"
+		p:addArmsNumAction-ref="addArmsNumAction" 
+		
+		p:rechargeAction-ref="rechargeAction"
+		p:getVipInfoAction-ref="getVipInfoAction"
+		p:getVipRawardInfoAction-ref="getVipRawardInfoAction"
+		p:getVipRawardAction-ref="getVipRawardAction"
+		
+		
+		p:requestAttackChapterAction-ref="requestAttackChapterAction"
+		p:getReportAction-ref="getReportAction"
+		
+
+		p:getChapterDataAction-ref="getChapterDataAction"
+		p:getAllChapterDataAction-ref="getAllChapterDataAction"
+		p:raidsChapterAction-ref="raidsChapterAction"
+		p:refreshChapterTimesAction-ref="refreshChapterTimesAction"
+		p:getChapterStarsAwardAction-ref="getChapterStarsAwardAction"
+		p:getChapterAwardDataAction-ref="getChapterAwardDataAction"
+		p:getPartChapterDataAction-ref="getPartChapterDataAction"
+
+		p:getAllStarAction-ref="getAllStarAction" p:getFriendInfoAction-ref="getFriendInfoAction"
+		p:modifyFriendListAction-ref="modifyFriendListAction"
+		p:modifyBlackListAction-ref="modifyBlackListAction"
+		p:setRoleNameAction-ref="setRoleNameAction" p:setRoleFaceIdAction-ref="setRoleFaceIdAction"
+		p:roleLvUpAction-ref="roleLvUpAction" p:getSignInfoAciton-ref="getSignInfoAciton"
+		p:signTodayAction-ref="signTodayAction" p:signRetroactiveAction-ref="signRetroactiveAction"
+		p:getSignAwardAction-ref="getSignAwardAction" p:getSignHeroAction-ref="getSignHeroAction"
+
+		p:roleGetLvDataAction-ref="roleGetLvDataAction"
+		p:setRoleLeadAction-ref="setRoleLeadAction"
+		p:finishNewBuildAction-ref="finishNewBuildAction" p:friendTipAction-ref="friendTipAction"
+
+		p:getAnimalInfoAction-ref="getAnimalInfoAction" p:eatAnimalAction-ref="eatAnimalAction"
+		p:dareTargetAction-ref="dareTargetAction" p:getArenaDataAction-ref="getArenaDataAction"
+
+		p:getArenaTargetAction-ref="getArenaTargetAction"
+		p:setFightHeroAction-ref="setFightHeroAction"
+		p:testArenaFightAction-ref="testArenaFightAction"
+		p:getFightLoadAction-ref="getFightLoadAction" p:getLadderAction-ref="getLadderAction"
+		p:getNowLadderAction-ref="getNowLadderAction"
+
+		p:getLobbyInfoAction-ref="getLobbyInfoAction"
+		p:createNewRoomAction-ref="createNewRoomAction" p:joinRoomAction-ref="joinRoomAction"
+		p:getRoomInfoAction-ref="getRoomInfoAction" p:quitRoomAction-ref="quitRoomAction"
+		p:kickRoleAction-ref="kickRoleAction"
+		p:saveRoomRoleFormationAction-ref="saveRoomRoleFormationAction"
+		p:setRoleStatusAction-ref="setRoleStatusAction"
+		p:startBattleAction-ref="startBattleAction"
+		p:setLoadingProgressAction-ref="setLoadingProgressAction"
+		p:updateLoadingAction-ref="updateLoadingAction"
+
+		p:getCityInfoAction-ref="getCityInfoAction" p:goToCityAction-ref="goToCityAction"
+		p:joinCityAction-ref="joinCityAction" p:worldInfoAction-ref="worldInfoAction"
+		p:getFiefInfoAction-ref="getFiefInfoAction"
+		p:getCityMineFarmAction-ref="getCityMineFarmAction"
+		p:getCityMineFarmInfoAction-ref="getCityMineFarmInfoAction"
+		p:occupyCityMineOrFarmAction-ref="occupyCityMineOrFarmAction"
+		p:canUseArmyMineAction-ref="canUseArmyMineAction"
+		p:crazyCityMineFarmAction-ref="crazyCityMineFarmAction"
+		p:dropCityMineOrFarmAction-ref="dropCityMineOrFarmAction"
+		p:dropVassalAction-ref="dropVassalAction" p:conquerAction-ref="conquerAction"
+		p:startWorldFormationAction-ref="startWorldFormationAction"
+		p:getAllWorldFormationAction-ref="getAllWorldFormationAction" p:saveWorldFormationAction-ref="saveWorldFormationAction"
+		p:getHeroLocationAction-ref="getHeroLocationAction" p:getWroldFormationAction-ref="getWroldFormationAction"
+		p:changeWorldArmyFormationAction-ref="changeWorldArmyFormationAction"
+		p:cityShowWorldCityWallInfoAction-ref="cityShowWorldCityWallInfoAction"
+		p:cityMarchWorldArmyAction-ref="cityMarchWorldArmyAction"
+		p:cityShowSpeedUpWorldMarchAction-ref="cityShowSpeedUpWorldMarchAction"
+		p:citySpeedUpWorldMarchAction-ref="citySpeedUpWorldMarchAction"
+		p:cityShowStayWorldArmyCityAction-ref="cityShowStayWorldArmyCityAction"
+		p:changeDefInfoAction-ref="changeDefInfoAction" p:changeCoreInfoAction-ref="changeCoreInfoAction"
+		p:joinCoreAction-ref="joinCoreAction" p:leaveCoreAction-ref="leaveCoreAction"
+		p:cityShowWorldMarchInfoAction-ref="cityShowWorldMarchInfoAction"
+		p:cityShowWorldCityInfoAction-ref="cityShowWorldCityInfoAction"
+		p:cityGetContributeRankAction-ref="cityGetContributeRankAction"
+		p:cityMarchWorldArmyFromCityAction-ref="cityMarchWorldArmyFromCityAction"
+		p:cityShowWorldMarchRoleInfoAction-ref="cityShowWorldMarchRoleInfoAction"
+		p:cityShowOneWorldMarchAction-ref="cityShowOneWorldMarchAction"
+		p:cityRetreateWorldMarchAction-ref="cityRetreateWorldMarchAction"
+		p:cityShowStrongHoldAction-ref="cityShowStrongHoldAction"
+		p:citySetStrongHoldAction-ref="citySetStrongHoldAction"
+		p:cityDismissArmyAction-ref="cityDismissArmyAction"
+		p:getAllArmyCityAction-ref="getAllArmyCityAction"
+		p:cityLeaveDefAction-ref="cityLeaveDefAction"
+		p:citySpeedUpWorldArmyAliveAction-ref="citySpeedUpWorldArmyAliveAction"
+		p:cityShowSpeedUpWorldArmyAliveAction-ref="cityShowSpeedUpWorldArmyAliveAction"
+		p:cityGetMyLordInfoAction-ref="cityGetMyLordInfoAction"
+		p:cityClearPumHistoryAction-ref="cityClearPumHistoryAction"
+		p:cityGoToVillageAction-ref="cityGoToVillageAction"
+		p:cityShowLegionCityAction-ref="cityShowLegionCityAction"
+		
+
+		p:upGradeRankAction-ref="upGradeRankAction" p:pvpFightAction-ref="pvpFightAction"
+		p:getRankInfoAction-ref="getRankInfoAction" p:getVassalInfoAction-ref="getVassalInfoAction"
+		p:getRankAwardAction-ref="getRankAwardAction"
+
+		p:armsChangeHeroSoldierAction-ref="armsChangeHeroSoldierAction"
+		p:armsUpdateHeroSoldierLvAction-ref="armsUpdateHeroSoldierLvAction"
+		p:armsUpdateHeroSoldierQualityAction-ref="armsUpdateHeroSoldierQualityAction"
+		p:armsUpdateHeroSoldierSkillAction-ref="armsUpdateHeroSoldierSkillAction"
+
+
+		p:getBabelInfoAction-ref="getBabelInfoAction" p:fightBabelAction-ref="fightBabelAction"
+		p:choiceBabelNpcAction-ref="choiceBabelNpcAction" p:changeTroopDataAction-ref="changeTroopDataAction"
+		p:resetTowerAction-ref="resetTowerAction" p:reviveHeroAction-ref="reviveHeroAction"
+		p:getHeroInfoAction-ref="getHeroInfoAction"
+
+		p:getTargetInfoAction-ref="getTargetInfoAction" p:getAwardTargetAction-ref="getAwardTargetAction"
+		p:getActiveAwardAction-ref="getActiveAwardAction" 
+		
+		p:activityShowActivityAction-ref="activityShowActivityAction"
+
+		p:testFightAction-ref="testFightAction" />
+
+	<bean id="loginAction" class="byCodeGame.game.moudle.login.action.LoginAction"
+		p:loginService-ref="loginService" />
+	<bean id="creatRoleAction" class="byCodeGame.game.moudle.login.action.CreatRoleAction"
+		p:loginService-ref="loginService" />
+	<bean id="getRoleDataAction" class="byCodeGame.game.moudle.login.action.GetRoleDataAction"
+		p:loginService-ref="loginService" />
+
+	<bean id="chatAction" class="byCodeGame.game.moudle.chat.action.ChatAction"
+		p:chatService-ref="chatService" />
+	<bean id="chatPrivateAction" class="byCodeGame.game.moudle.chat.action.ChatPrivateAction"
+		p:chatService-ref="chatService" />
+	<bean id="chatLegionAction" class="byCodeGame.game.moudle.chat.action.ChatLegionAction"
+		p:chatService-ref="chatService" />
+	<bean id="chatCountryAction" class="byCodeGame.game.moudle.chat.action.ChatCountryAction"
+		p:chatService-ref="chatService" />
+	<bean id="getNeedGoldAction" class="byCodeGame.game.moudle.inCome.action.GetNeedGoldAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="levyAction" class="byCodeGame.game.moudle.inCome.action.LevyAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="upBuildAction" class="byCodeGame.game.moudle.inCome.action.UpBuildAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="getIncomeDataAction"
+		class="byCodeGame.game.moudle.inCome.action.GetIncomeDataAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="openBuildAction" class="byCodeGame.game.moudle.inCome.action.OpenBuildAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="getBuildDataAction" class="byCodeGame.game.moudle.inCome.action.GetBuildDataAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="getBuildQueueDataAction"
+		class="byCodeGame.game.moudle.inCome.action.GetBuildQueueDataAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="clearBuildQueueTimeAction"
+		class="byCodeGame.game.moudle.inCome.action.ClearBuildQueueTimeAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="openNewBuildQueueAction"
+		class="byCodeGame.game.moudle.inCome.action.OpenNewBuildQueueAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="fillPopulationAction"
+		class="byCodeGame.game.moudle.inCome.action.FillPopulationAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="attachHeroAction" class="byCodeGame.game.moudle.inCome.action.AttachHeroAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="cancelAttachAction" class="byCodeGame.game.moudle.inCome.action.CancelAttachAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="getInfoAttach" class="byCodeGame.game.moudle.inCome.action.GetInfoAttach"
+		p:inComeService-ref="inComeService" />
+	<bean id="getSimpleBuildDataAction"
+		class="byCodeGame.game.moudle.inCome.action.GetSimpleBuildDataAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="buildTypeLvUpAction"
+		class="byCodeGame.game.moudle.inCome.action.BuildTypeLvUpAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="getNumResourceAction"
+		class="byCodeGame.game.moudle.inCome.action.GetNumResourceAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="getFightInfoAction" class="byCodeGame.game.moudle.inCome.action.GetFightInfoAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="inComeShowSpeedUpLevyAction"
+		class="byCodeGame.game.moudle.inCome.action.InComeShowSpeedUpLevyAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="inComeSpeedUpLevyAction"
+		class="byCodeGame.game.moudle.inCome.action.InComeSpeedUpLevyAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="inComeGetPrestigeAction"
+		class="byCodeGame.game.moudle.inCome.action.InComeGetPrestigeAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="inComeShowRankInfoAction"
+		class="byCodeGame.game.moudle.inCome.action.InComeShowRankInfoAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="getBuildInfoAction"
+		class="byCodeGame.game.moudle.inCome.action.GetBuildInfoAction"
+		p:inComeService-ref="inComeService" />
+	<bean id="inComeShowLevyInfoAction"
+		class="byCodeGame.game.moudle.inCome.action.InComeShowLevyInfoAction"
+		p:inComeService-ref="inComeService" />
+
+
+	<bean id="getOnLineRoleDataAction"
+		class="byCodeGame.game.moudle.gm.action.GetOnLineRoleDataAction"
+		p:gmService-ref="gmService" />
+	<bean id="gmListAction" class="byCodeGame.game.moudle.gm.action.GMListAction"
+		p:gmService-ref="gmService" />
+	<bean id="stopAppAction" class="byCodeGame.game.moudle.gm.action.StopAppAction"
+		p:gmService-ref="gmService" />
+	<bean id="useKeyAction" class="byCodeGame.game.moudle.gm.action.UseKeyAction"
+		p:gmService-ref="gmService" />
+
+	<bean id="getDoingTaskAction" class="byCodeGame.game.moudle.task.action.GetDoingTaskAction"
+		p:taskService-ref="taskService" />
+	<bean id="completeTaskAction" class="byCodeGame.game.moudle.task.action.CompleteTaskAction"
+		p:taskService-ref="taskService" />
+	<bean id="getDailyTaskAwardAction"
+		class="byCodeGame.game.moudle.task.action.GetDailyTaskAwardAction"
+		p:taskService-ref="taskService" />
+	<bean id="quickCompleteDailyTaskAction"
+		class="byCodeGame.game.moudle.task.action.QuickCompleteDailyTaskAction"
+		p:taskService-ref="taskService" />
+	<bean id="getDailyTaskAction" class="byCodeGame.game.moudle.task.action.GetDailyTaskAction"
+		p:taskService-ref="taskService" />
+
+	<bean id="nationAction" class="byCodeGame.game.moudle.nation.action.NationAction"
+		p:nationService-ref="nationService" />
+	<bean id="getNumnationAction" class="byCodeGame.game.moudle.nation.action.GetNumnationAction"
+		p:nationService-ref="nationService" />
+
+	<bean id="mailAction" class="byCodeGame.game.moudle.mail.action.MailAction"
+		p:mailService-ref="mailService" />
+	<bean id="getAllMailAction" class="byCodeGame.game.moudle.mail.action.GetAllMailAction"
+		p:mailService-ref="mailService" />
+	<bean id="takeItemMailAction" class="byCodeGame.game.moudle.mail.action.TakeItemMailAction"
+		p:mailService-ref="mailService" />
+	<bean id="deleteMailAction" class="byCodeGame.game.moudle.mail.action.DeleteMailAction"
+		p:mailService-ref="mailService" />
+	<bean id="setMailCheckedAction" class="byCodeGame.game.moudle.mail.action.SetMailCheckedAction"
+		p:mailService-ref="mailService" />
+
+	<bean id="creatLegionAction" class="byCodeGame.game.moudle.legion.action.CreatLegionAction"
+		p:legionService-ref="legionService" />
+	<bean id="getLegionDataAction"
+		class="byCodeGame.game.moudle.legion.action.GetLegionDataAction"
+		p:legionService-ref="legionService" />
+	<bean id="getLegionListAction"
+		class="byCodeGame.game.moudle.legion.action.GetLegionListAction"
+		p:legionService-ref="legionService" />
+	<bean id="applyJoinLegionAction"
+		class="byCodeGame.game.moudle.legion.action.ApplyJoinLegionAction"
+		p:legionService-ref="legionService" />
+	<bean id="getApplyListAction" class="byCodeGame.game.moudle.legion.action.GetApplyListAction"
+		p:legionService-ref="legionService" />
+	<bean id="agreeJoinLegionAction"
+		class="byCodeGame.game.moudle.legion.action.AgreeJoinLegionAction"
+		p:legionService-ref="legionService" />
+	<bean id="deputyLegionAction" class="byCodeGame.game.moudle.legion.action.DeputyLegionAction"
+		p:legionService-ref="legionService" />
+	<bean id="changeFaceIdAction" class="byCodeGame.game.moudle.legion.action.ChangeFaceIdAction"
+		p:legionService-ref="legionService" />
+	<bean id="changNoticeAction" class="byCodeGame.game.moudle.legion.action.ChangNoticeAction"
+		p:legionService-ref="legionService" />
+	<bean id="getAllMemberAction" class="byCodeGame.game.moudle.legion.action.GetAllMemberAction"
+		p:legionService-ref="legionService" />
+	<bean id="quiteLegionAction" class="byCodeGame.game.moudle.legion.action.QuiteLegionAction"
+		p:legionService-ref="legionService" />
+	<bean id="searchLegionAction" class="byCodeGame.game.moudle.legion.action.SearchLegionAction"
+		p:legionService-ref="legionService" />
+	<bean id="upgradeScienceAction"
+		class="byCodeGame.game.moudle.legion.action.UpgradeScienceAction"
+		p:legionService-ref="legionService" />
+	<bean id="setAppointScienceAction"
+		class="byCodeGame.game.moudle.legion.action.SetAppointScienceAction"
+		p:legionService-ref="legionService" />
+	<bean id="autoAgreeJoinAction"
+		class="byCodeGame.game.moudle.legion.action.AutoAgreeJoinAction"
+		p:legionService-ref="legionService" />
+	<bean id="exchangeLegionAction"
+		class="byCodeGame.game.moudle.legion.action.ExchangeLegionAction"
+		p:legionService-ref="legionService" />
+	<bean id="rejectJoinAction" class="byCodeGame.game.moudle.legion.action.RejectJoinAction"
+		p:legionService-ref="legionService" />
+	<bean id="cancelApplyAction" class="byCodeGame.game.moudle.legion.action.CancelApplyAction"
+		p:legionService-ref="legionService" />
+	<bean id="addMaxPeopleNumAction"
+		class="byCodeGame.game.moudle.legion.action.AddMaxPeopleNumAction"
+		p:legionService-ref="legionService" />
+	<bean id="getInfoExchangeAction"
+		class="byCodeGame.game.moudle.legion.action.GetInfoExchangeAction"
+		p:legionService-ref="legionService" />
+	<bean id="setCityAction"
+		class="byCodeGame.game.moudle.legion.action.SetCityAction"
+		p:legionService-ref="legionService" />
+	<bean id="changeShortNameAction"
+		class="byCodeGame.game.moudle.legion.action.ChangeShortNameAction"
+		p:legionService-ref="legionService" />
+
+	<bean id="getPropListAction" class="byCodeGame.game.moudle.prop.action.GetPropListAction"
+		p:propService-ref="propService" />
+	<bean id="usePropAction" class="byCodeGame.game.moudle.prop.action.UsePropAction"
+		p:propService-ref="propService" />
+	<bean id="equipPropAction" class="byCodeGame.game.moudle.prop.action.EquipPropAction"
+		p:propService-ref="propService" />
+	<bean id="uninstallEquipAction" class="byCodeGame.game.moudle.prop.action.UninstallEquipAction"
+		p:propService-ref="propService" />
+	<bean id="quickDressAction" class="byCodeGame.game.moudle.prop.action.QuickDressAction"
+		p:propService-ref="propService" />
+	<bean id="singleDressAction" class="byCodeGame.game.moudle.prop.action.SingleDressAction"
+		p:propService-ref="propService" />
+
+	<bean id="strengthenEquipAction"
+		class="byCodeGame.game.moudle.prop.action.StrengthenEquipAction"
+		p:propService-ref="propService" />
+
+
+
+	<bean id="recoveryEquipAction" class="byCodeGame.game.moudle.prop.action.RecoveryEquipAction"
+		p:propService-ref="propService" />
+
+
+
+
+	<bean id="refineEquipAction" class="byCodeGame.game.moudle.prop.action.RefineEquipAction"
+		p:propService-ref="propService" />
+
+	<bean id="changePrefixAction" class="byCodeGame.game.moudle.prop.action.ChangePrefixAction"
+		p:propService-ref="propService" />
+	<bean id="addMaxBagNumAction" class="byCodeGame.game.moudle.prop.action.AddMaxBagNumAction"
+		p:propService-ref="propService" />
+	<bean id="propMakeIronAction" class="byCodeGame.game.moudle.prop.action.PropMakeIronAction"
+		p:propService-ref="propService" />
+	<bean id="propShowMakeIronAction"
+		class="byCodeGame.game.moudle.prop.action.PropShowMakeIronAction"
+		p:propService-ref="propService" />
+	<bean id="propGetIronAction" class="byCodeGame.game.moudle.prop.action.PropGetIronAction"
+		p:propService-ref="propService" />
+	<bean id="propGetVisitTreasureAction"
+		class="byCodeGame.game.moudle.prop.action.PropGetVisitTreasureAction"
+		p:propService-ref="propService" />
+	<bean id="propVisitTreasureAction"
+		class="byCodeGame.game.moudle.prop.action.PropVisitTreasureAction"
+		p:propService-ref="propService" />
+	<bean id="propShowStrengthenAction"
+		class="byCodeGame.game.moudle.prop.action.PropShowStrengthenAction"
+		p:propService-ref="propService" />
+	<bean id="propShowEquipAction" class="byCodeGame.game.moudle.prop.action.PropShowEquipAction"
+		p:propService-ref="propService" />
+	<bean id="propShowAddIronStrengthenAction" class="byCodeGame.game.moudle.prop.action.PropShowAddIronStrengthenAction"
+		p:propService-ref="propService" />
+
+	<bean id="marketSellAction" class="byCodeGame.game.moudle.market.action.MarketSellAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketBuyAction" class="byCodeGame.game.moudle.market.action.MarketBuyAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketGetInfo" class="byCodeGame.game.moudle.market.action.MarketGetInfo"
+		p:marketService-ref="marketService" />
+	<bean id="marketFreshAction" class="byCodeGame.game.moudle.market.action.MarketFreshAction"
+		p:marketService-ref="marketService" />
+	<bean id="getGoldMarketInfoAction"
+		class="byCodeGame.game.moudle.market.action.GetGoldMarketInfoAction"
+		p:marketService-ref="marketService" />
+	<bean id="buyGoldMarketAction"
+		class="byCodeGame.game.moudle.market.action.BuyGoldMarketAction"
+		p:marketService-ref="marketService" />
+	<bean id="showAuctionInfoAction"
+		class="byCodeGame.game.moudle.market.action.ShowAuctionInfoAction"
+		p:marketService-ref="marketService" />
+	<bean id="sellAuctionAction"
+		class="byCodeGame.game.moudle.market.action.SellAuctionAction"
+		p:marketService-ref="marketService" />
+	<bean id="buyAuctionAction"
+		class="byCodeGame.game.moudle.market.action.BuyAuctionAction"
+		p:marketService-ref="marketService" />
+	<bean id="cancelAuctionAction"
+		class="byCodeGame.game.moudle.market.action.CancelAuctionAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketVisitSaleAction"
+		class="byCodeGame.game.moudle.market.action.MarketVisitSaleAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketBargainItemsAction" 
+	    class="byCodeGame.game.moudle.market.action.MarketBargainItemsAction" 
+	    p:marketService-ref="marketService"/>
+	<bean id="marketShowBargainItemsAction" 
+	    class="byCodeGame.game.moudle.market.action.MarketShowBargainItemsAction" 
+	    p:marketService-ref="marketService"/>
+	<bean id="showAuctionSelfAction"
+		class="byCodeGame.game.moudle.market.action.ShowAuctionSelfAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketShowWorldMarketItemsAction"
+		class="byCodeGame.game.moudle.market.action.MarketShowWorldMarketItemsAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketBuyWorldMarketItemsAction"
+		class="byCodeGame.game.moudle.market.action.MarketBuyWorldMarketItemsAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketRefreshPrestigeWorldMarketItemAction"
+		class="byCodeGame.game.moudle.market.action.MarketRefreshPrestigeWorldMarketItemAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketUnlockPrestigeMarketLimitAction"
+		class="byCodeGame.game.moudle.market.action.MarketUnlockPrestigeMarketLimitAction"
+		p:marketService-ref="marketService" />
+
+	<bean id="getHeroListAction" class="byCodeGame.game.moudle.hero.action.GetHeroListAction"
+		p:heroService-ref="heroService" />
+	<bean id="quickTrainHeroAction" class="byCodeGame.game.moudle.hero.action.QuickTrainHeroAction"
+		p:heroService-ref="heroService" />
+	<bean id="getHeroArmyInfoAction"
+		class="byCodeGame.game.moudle.hero.action.GetHeroArmyInfoAction"
+		p:heroService-ref="heroService" />
+	<bean id="getRebLvInfoAction" class="byCodeGame.game.moudle.hero.action.GetRebLvInfoAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroUpdateSkillLvAction"
+		class="byCodeGame.game.moudle.hero.action.HeroUpdateSkillLvAction"
+		p:heroService-ref="heroService" />
+	<bean id="getAllHeroArmsInfoAction"
+		class="byCodeGame.game.moudle.hero.action.GetAllHeroArmsInfoAction"
+		p:heroService-ref="heroService" />
+
+	<bean id="saveFormationAction" class="byCodeGame.game.moudle.hero.action.SaveFormationAction"
+		p:heroService-ref="heroService" />
+	<bean id="getFormationDataAction"
+		class="byCodeGame.game.moudle.hero.action.GetFormationDataAction"
+		p:heroService-ref="heroService" />
+	<bean id="getFormationDataAllAction"
+		class="byCodeGame.game.moudle.hero.action.GetFormationDataAllAction"
+		p:heroService-ref="heroService" />
+	<bean id="updateUseFormationIDAction"
+		class="byCodeGame.game.moudle.hero.action.UpdateUseFormationIDAction"
+		p:heroService-ref="heroService" />
+	<bean id="upHeroRebirthAction" class="byCodeGame.game.moudle.hero.action.UpHeroRebirthAction"
+		p:heroService-ref="heroService" />
+	<bean id="deployArmsAction" class="byCodeGame.game.moudle.hero.action.DeployArmsAction"
+		p:heroService-ref="heroService" />
+	<bean id="addArmsNumAction" class="byCodeGame.game.moudle.hero.action.AddArmsNumAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroRetrainArmyAction"
+		class="byCodeGame.game.moudle.hero.action.HeroRetrainArmyAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroUpDutyLvAction" class="byCodeGame.game.moudle.hero.action.HeroUpDutyLvAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroUpRankLvAction" class="byCodeGame.game.moudle.hero.action.HeroUpRankLvAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroShowHeroDetailAction"
+		class="byCodeGame.game.moudle.hero.action.HeroShowHeroDetailAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroInsteadArmyAction"
+		class="byCodeGame.game.moudle.hero.action.HeroInsteadArmyAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroShowDutyAction" class="byCodeGame.game.moudle.hero.action.HeroShowDutyAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroShowRankAction" class="byCodeGame.game.moudle.hero.action.HeroShowRankAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroShowRetrainAction"
+		class="byCodeGame.game.moudle.hero.action.HeroShowRetrainAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroCompoundHeroAction"
+		class="byCodeGame.game.moudle.hero.action.HeroCompoundHeroAction"
+		p:heroService-ref="heroService" />
+	<bean id="heroShowBuyManualAction" 
+	    class="byCodeGame.game.moudle.hero.action.HeroShowBuyManualAction" 
+	    p:heroService-ref="heroService"/>
+	<bean id="heroBuyManualAction" 
+	    class="byCodeGame.game.moudle.hero.action.HeroBuyManualAction" 
+	    p:heroService-ref="heroService"/>
+
+	<bean id="pubTalkAction" class="byCodeGame.game.moudle.pub.action.PubTalkAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubVisitAction" class="byCodeGame.game.moudle.pub.action.PubVisitAction"
+		p:pubService-ref="pubService" />
+	<bean id="getVisitAwardAction" class="byCodeGame.game.moudle.pub.action.GetVisitAwardAction"
+		p:pubService-ref="pubService" />
+	<bean id="getMapInfoAction" class="byCodeGame.game.moudle.pub.action.GetMapInfoAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubHeroDequeueAction" class="byCodeGame.game.moudle.pub.action.PubHeroDequeueAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubGetInfoAction" class="byCodeGame.game.moudle.pub.action.PubGetInfoAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubMultipleTalkAction" class="byCodeGame.game.moudle.pub.action.PubMultipleTalkAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubMileConvertHeroAction"
+		class="byCodeGame.game.moudle.pub.action.PubMileConvertHeroAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubGetMileHerosAction" class="byCodeGame.game.moudle.pub.action.PubGetMileHerosAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubEnterAction" class="byCodeGame.game.moudle.pub.action.PubEnterAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubShowWineDeskAction" class="byCodeGame.game.moudle.pub.action.PubShowWineDeskAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubChangeDeskHeroAction"
+		class="byCodeGame.game.moudle.pub.action.PubChangeDeskHeroAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubShowMakeWineAction" class="byCodeGame.game.moudle.pub.action.PubShowMakeWineAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubDrinkWineAction" class="byCodeGame.game.moudle.pub.action.PubDrinkWineAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubMakeWineAction" class="byCodeGame.game.moudle.pub.action.PubMakeWineAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubGetWineAction" class="byCodeGame.game.moudle.pub.action.PubGetWineAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubUnlockWineDeskAction"
+		class="byCodeGame.game.moudle.pub.action.PubUnlockWineDeskAction"
+		p:pubService-ref="pubService" />
+	<bean id="pubSpeedUpAction" class="byCodeGame.game.moudle.pub.action.PubSpeedUpAction"
+		p:pubService-ref="pubService" />
+
+	<bean id="buildBarrackAction"
+		class="byCodeGame.game.moudle.barrack.action.BuildBarrackAction"
+		p:barrackService-ref="barrackService" />
+	<bean id="upBarrackAction" class="byCodeGame.game.moudle.barrack.action.UpBarrackAction"
+		p:barrackService-ref="barrackService" />
+	<bean id="sellBarrackAction" class="byCodeGame.game.moudle.barrack.action.SellBarrackAction"
+		p:barrackService-ref="barrackService" />
+	<bean id="changeBarrackAction"
+		class="byCodeGame.game.moudle.barrack.action.ChangeBarrackAction"
+		p:barrackService-ref="barrackService" />
+	<bean id="getTroopsDataAction"
+		class="byCodeGame.game.moudle.barrack.action.GetTroopsDataAction"
+		p:barrackService-ref="barrackService" />
+	<bean id="recruitArmsAction" class="byCodeGame.game.moudle.barrack.action.RecruitArmsAction"
+		p:barrackService-ref="barrackService" />
+	<bean id="getBarrackDataAction"
+		class="byCodeGame.game.moudle.barrack.action.GetBarrackDataAction"
+		p:barrackService-ref="barrackService" />
+	<bean id="barrackShowMakeExploitAction" class="byCodeGame.game.moudle.barrack.action.BarrackShowMakeExploitAction"
+	    p:barrackService-ref="barrackService"/>
+	<bean id="barrackGetExploitAction" class="byCodeGame.game.moudle.barrack.action.BarrackGetExploitAction" 
+	    p:barrackService-ref="barrackService"/>
+	<bean id="barrackUpArmySkillAction" class="byCodeGame.game.moudle.barrack.action.BarrackUpArmySkillAction"
+	    p:barrackService-ref="barrackService"/>
+	<bean id="barrackVisitOffensiveAction" class="byCodeGame.game.moudle.barrack.action.BarrackVisitOffensiveAction"
+	    p:barrackService-ref="barrackService"/>
+	<bean id="barrackShowArmySkillAction" class="byCodeGame.game.moudle.barrack.action.BarrackShowArmySkillAction"
+	    p:barrackService-ref="barrackService"/>
+	<bean id="barrackShowVisitOffensiveAction" class="byCodeGame.game.moudle.barrack.action.BarrackShowVisitOffensiveAction"
+	    p:barrackService-ref="barrackService"/>
+	<bean id="barrackGetOffensiveRankAction" class="byCodeGame.game.moudle.barrack.action.BarrackGetOffensiveRankAction" 
+	    p:barrackService-ref="barrackService"/>
+
+	<bean id="getRoleScienceInfoAction"
+		class="byCodeGame.game.moudle.science.action.GetRoleScienceInfoAction"
+		p:scienceService-ref="scienceService" />
+	<bean id="upgradRoleScienceAction"
+		class="byCodeGame.game.moudle.science.action.UpgradRoleScienceAction"
+		p:scienceService-ref="scienceService" />
+	<bean id="getRoleScienceQueueAction"
+		class="byCodeGame.game.moudle.science.action.GetRoleScienceQueueAction"
+		p:scienceService-ref="scienceService" />
+	<bean id="clearRoleScienceQueueTimeAction"
+		class="byCodeGame.game.moudle.science.action.ClearRoleScienceQueueTimeAction"
+		p:scienceService-ref="scienceService" />
+	<bean id="scienceOfferScienceInfoAction"
+		class="byCodeGame.game.moudle.science.action.ScienceOfferScienceInfoAction"
+		p:scienceService-ref="scienceService" />
+	<bean id="scienceGetOfferScienceAwardAction"
+		class="byCodeGame.game.moudle.science.action.ScienceGetOfferScienceAwardAction"
+		p:scienceService-ref="scienceService" />
+
+	<bean id="heartAction" class="byCodeGame.game.moudle.heart.action.HeartAction"
+		p:heartService-ref="heartService" />
+	<bean id="buyArmyTokenAction" class="byCodeGame.game.moudle.heart.action.BuyArmyTokenAction"
+		p:heartService-ref="heartService" />
+
+	<bean id="rechargeAction" class="byCodeGame.game.moudle.vip.action.RechargeAction"
+		p:vipService-ref="vipService" />
+	<bean id="getVipInfoAction" class="byCodeGame.game.moudle.vip.action.GetVipInfoAction"
+		p:vipService-ref="vipService" />
+	<bean id="getVipRawardInfoAction"
+		class="byCodeGame.game.moudle.vip.action.GetVipRawardInfoAction"
+		p:vipService-ref="vipService" />
+	<bean id="getVipRawardAction" class="byCodeGame.game.moudle.vip.action.GetVipRawardAction"
+		p:vipService-ref="vipService" />
+
+	<bean id="getChapterDataAction"
+		class="byCodeGame.game.moudle.chapter.action.GetChapterDataAction"
+		p:chapterService-ref="chapterService" />
+	<bean id="getAllChapterDataAction"
+		class="byCodeGame.game.moudle.chapter.action.GetAllChapterDataAction"
+		p:chapterService-ref="chapterService" />
+	<bean id="raidsChapterAction"
+		class="byCodeGame.game.moudle.chapter.action.RaidsChapterAction"
+		p:chapterService-ref="chapterService" />
+	<bean id="refreshChapterTimesAction"
+		class="byCodeGame.game.moudle.chapter.action.RefreshChapterTimesAction"
+		p:chapterService-ref="chapterService" />
+	<bean id="getChapterStarsAwardAction"
+		class="byCodeGame.game.moudle.chapter.action.GetChapterStarsAwardAction"
+		p:chapterService-ref="chapterService" />
+	<bean id="getAllStarAction" class="byCodeGame.game.moudle.chapter.action.GetAllStarAction"
+		p:chapterService-ref="chapterService" />
+	<bean id="getChapterAwardDataAction"
+		class="byCodeGame.game.moudle.chapter.action.GetChapterAwardDataAction"
+		p:chapterService-ref="chapterService" />
+	<bean id="getPartChapterDataAction"
+		class="byCodeGame.game.moudle.chapter.action.GetPartChapterDataAction"
+		p:chapterService-ref="chapterService" />
+
+	<bean id="requestAttackChapterAction"
+		class="byCodeGame.game.moudle.fight.action.RequestAttackChapterAction"
+		p:fightService-ref="fightService" />
+	<bean id="getReportAction"
+		class="byCodeGame.game.moudle.fight.action.GetReportAction"
+		p:fightService-ref="fightService" />
+
+	<bean id="getFriendInfoAction"
+		class="byCodeGame.game.moudle.friend.action.GetFriendInfoAction"
+		p:friendService-ref="friendService" />
+	<bean id="modifyFriendListAction"
+		class="byCodeGame.game.moudle.friend.action.ModifyFriendListAction"
+		p:friendService-ref="friendService" />
+	<bean id="modifyBlackListAction"
+		class="byCodeGame.game.moudle.friend.action.ModifyBlackListAction"
+		p:friendService-ref="friendService" />
+
+	<bean id="setRoleNameAction" class="byCodeGame.game.moudle.role.action.SetRoleNameAction"
+		p:roleService-ref="roleService" />
+	<bean id="setRoleFaceIdAction" class="byCodeGame.game.moudle.role.action.SetRoleFaceIdAction"
+		p:roleService-ref="roleService" />
+	<bean id="roleLvUpAction" class="byCodeGame.game.moudle.role.action.RoleLvUpAction"
+		p:roleService-ref="roleService" />
+	<bean id="roleGetLvDataAction" class="byCodeGame.game.moudle.role.action.RoleGetLvDataAction"
+		p:roleService-ref="roleService" />
+	<bean id="setRoleLeadAction" class="byCodeGame.game.moudle.role.action.SetRoleLeadAction"
+		p:roleService-ref="roleService" />
+	<bean id="finishNewBuildAction" class="byCodeGame.game.moudle.role.action.FinishNewBuildAction"
+		p:roleService-ref="roleService" />
+	<bean id="friendTipAction" class="byCodeGame.game.moudle.role.action.FriendTipAction"
+		p:roleService-ref="roleService" />		
+
+	<bean id="getSignInfoAciton" class="byCodeGame.game.moudle.sign.action.GetSignInfoAciton"
+		p:signService-ref="signService" />
+	<bean id="signTodayAction" class="byCodeGame.game.moudle.sign.action.SignTodayAction"
+		p:signService-ref="signService" />
+	<bean id="signRetroactiveAction"
+		class="byCodeGame.game.moudle.sign.action.SignRetroactiveAction"
+		p:signService-ref="signService" />
+	<bean id="getSignAwardAction" class="byCodeGame.game.moudle.sign.action.GetSignAwardAction"
+		p:signService-ref="signService" />
+	<bean id="getSignHeroAction" class="byCodeGame.game.moudle.sign.action.GetSignHeroAction"
+		p:signService-ref="signService" />
+
+	<bean id="getAnimalInfoAction"
+		class="byCodeGame.game.moudle.animal.action.GetAnimalInfoAction"
+		p:animalService-ref="animalService" />
+	<bean id="eatAnimalAction" class="byCodeGame.game.moudle.animal.action.EatAnimalAction"
+		p:animalService-ref="animalService" />
+
+	<bean id="dareTargetAction" class="byCodeGame.game.moudle.arena.action.DareTargetAction"
+		p:arenaService-ref="arenaService" />
+	<bean id="getArenaDataAction" class="byCodeGame.game.moudle.arena.action.GetArenaDataAction"
+		p:arenaService-ref="arenaService" />
+	<bean id="getArenaTargetAction"
+		class="byCodeGame.game.moudle.arena.action.GetArenaTargetAction"
+		p:arenaService-ref="arenaService" />
+	<bean id="setFightHeroAction" class="byCodeGame.game.moudle.arena.action.SetFightHeroAction"
+		p:arenaService-ref="arenaService" />
+	<bean id="testArenaFightAction"
+		class="byCodeGame.game.moudle.arena.action.TestArenaFightAction"
+		p:arenaService-ref="arenaService" />
+	<bean id="getFightLoadAction" class="byCodeGame.game.moudle.arena.action.GetFightLoadAction"
+		p:arenaService-ref="arenaService" />
+	<bean id="getLadderAction" class="byCodeGame.game.moudle.arena.action.GetLadderAction"
+		p:arenaService-ref="arenaService" />
+	<bean id="getNowLadderAction" class="byCodeGame.game.moudle.arena.action.GetNowLadderAction"
+		p:arenaService-ref="arenaService" />
+
+	<bean id="getLobbyInfoAction" class="byCodeGame.game.moudle.raid.action.GetLobbyInfoAction"
+		p:raidService-ref="raidService" />
+	<bean id="createNewRoomAction" class="byCodeGame.game.moudle.raid.action.CreateNewRoomAction"
+		p:raidService-ref="raidService" />
+	<bean id="joinRoomAction" class="byCodeGame.game.moudle.raid.action.JoinRoomAction"
+		p:raidService-ref="raidService" />
+	<bean id="getRoomInfoAction" class="byCodeGame.game.moudle.raid.action.GetRoomInfoAction"
+		p:raidService-ref="raidService" />
+	<bean id="quitRoomAction" class="byCodeGame.game.moudle.raid.action.QuitRoomAction"
+		p:raidService-ref="raidService" />
+	<bean id="kickRoleAction" class="byCodeGame.game.moudle.raid.action.KickRoleAction"
+		p:raidService-ref="raidService" />
+	<bean id="saveRoomRoleFormationAction"
+		class="byCodeGame.game.moudle.raid.action.SaveRoomRoleFormationAction"
+		p:raidService-ref="raidService" />
+	<bean id="setRoleStatusAction" class="byCodeGame.game.moudle.raid.action.SetRoleStatusAction"
+		p:raidService-ref="raidService" />
+	<bean id="startBattleAction" class="byCodeGame.game.moudle.raid.action.StartBattleAction"
+		p:raidService-ref="raidService" />
+	<bean id="setLoadingProgressAction"
+		class="byCodeGame.game.moudle.raid.action.SetLoadingProgressAction"
+		p:raidService-ref="raidService" />
+	<bean id="updateLoadingAction" class="byCodeGame.game.moudle.raid.action.UpdateLoadingAction"
+		p:raidService-ref="raidService" />
+
+	<bean id="getCityInfoAction" class="byCodeGame.game.moudle.city.action.GetCityInfoAction"
+		p:cityService-ref="cityService" />
+	<bean id="goToCityAction" class="byCodeGame.game.moudle.city.action.GoToCityAction"
+		p:cityService-ref="cityService" />
+	<bean id="joinCityAction" class="byCodeGame.game.moudle.city.action.JoinCityAction"
+		p:cityService-ref="cityService" />
+	<bean id="worldInfoAction" class="byCodeGame.game.moudle.city.action.WorldInfoAction"
+		p:cityService-ref="cityService" />
+	<bean id="getFiefInfoAction" class="byCodeGame.game.moudle.city.action.GetFiefInfoAction"
+		p:cityService-ref="cityService" />
+	<bean id="getCityMineFarmAction"
+		class="byCodeGame.game.moudle.city.action.GetCityMineFarmAction"
+		p:cityService-ref="cityService" />
+	<bean id="getCityMineFarmInfoAction"
+		class="byCodeGame.game.moudle.city.action.GetCityMineFarmInfoAction"
+		p:cityService-ref="cityService" />
+	<bean id="occupyCityMineOrFarmAction"
+		class="byCodeGame.game.moudle.city.action.OccupyCityMineOrFarmAction"
+		p:cityService-ref="cityService" />
+	<bean id="canUseArmyMineAction"
+		class="byCodeGame.game.moudle.city.action.CanUseArmyMineAction"
+		p:cityService-ref="cityService" />
+	<bean id="crazyCityMineFarmAction"
+		class="byCodeGame.game.moudle.city.action.CrazyCityMineFarmAction"
+		p:cityService-ref="cityService" />
+	<bean id="dropCityMineOrFarmAction"
+		class="byCodeGame.game.moudle.city.action.DropCityMineOrFarmAction"
+		p:cityService-ref="cityService" />
+	<bean id="conquerAction" class="byCodeGame.game.moudle.city.action.ConquerAction"
+		p:cityService-ref="cityService" />
+	<bean id="dropVassalAction" class="byCodeGame.game.moudle.city.action.DropVassalAction"
+		p:cityService-ref="cityService" />
+	<bean id="upGradeRankAction" class="byCodeGame.game.moudle.city.action.UpGradeRankAction"
+		p:cityService-ref="cityService" />
+	<bean id="pvpFightAction" class="byCodeGame.game.moudle.city.action.PvpFightAction"
+		p:cityService-ref="cityService" />
+	<bean id="getRankInfoAction" class="byCodeGame.game.moudle.city.action.GetRankInfoAction"
+		p:cityService-ref="cityService" />
+	<bean id="getRankAwardAction" class="byCodeGame.game.moudle.city.action.GetRankAwardAction"
+		p:cityService-ref="cityService" />
+	<bean id="getVassalInfoAction" class="byCodeGame.game.moudle.city.action.GetVassalInfoAction"
+		p:cityService-ref="cityService" />
+	<bean id="startWorldFormationAction" class="byCodeGame.game.moudle.city.action.StartWorldFormationAction"
+		p:cityService-ref="cityService" />
+	<bean id="getAllWorldFormationAction" class="byCodeGame.game.moudle.city.action.GetAllWorldFormationAction"
+		p:cityService-ref="cityService" />
+	<bean id="saveWorldFormationAction" class="byCodeGame.game.moudle.city.action.SaveWorldFormationAction"
+		p:cityService-ref="cityService" />
+	<bean id="getHeroLocationAction" class="byCodeGame.game.moudle.city.action.GetHeroLocationAction"
+		p:cityService-ref="cityService" />
+	<bean id="getWroldFormationAction" class="byCodeGame.game.moudle.city.action.GetWroldFormationAction"
+		p:cityService-ref="cityService" />
+	<bean id="changeWorldArmyFormationAction" class="byCodeGame.game.moudle.city.action.ChangeWorldArmyFormationAction"
+		p:cityService-ref="cityService" />
+	<bean id="cityShowWorldCityWallInfoAction" class="byCodeGame.game.moudle.city.action.CityShowWorldCityWallInfoAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityMarchWorldArmyAction" class="byCodeGame.game.moudle.city.action.CityMarchWorldArmyAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowSpeedUpWorldMarchAction" class="byCodeGame.game.moudle.city.action.CityShowSpeedUpWorldMarchAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="citySpeedUpWorldMarchAction" class="byCodeGame.game.moudle.city.action.CitySpeedUpWorldMarchAction" 
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowStayWorldArmyCityAction" class="byCodeGame.game.moudle.city.action.CityShowStayWorldArmyCityAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="changeDefInfoAction" class="byCodeGame.game.moudle.city.action.ChangeDefInfoAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="changeCoreInfoAction" class="byCodeGame.game.moudle.city.action.ChangeCoreInfoAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="joinCoreAction" class="byCodeGame.game.moudle.city.action.JoinCoreAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="leaveCoreAction" class="byCodeGame.game.moudle.city.action.LeaveCoreAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowWorldMarchInfoAction" class="byCodeGame.game.moudle.city.action.CityShowWorldMarchInfoAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowWorldCityInfoAction" class="byCodeGame.game.moudle.city.action.CityShowWorldCityInfoAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityGetContributeRankAction" class="byCodeGame.game.moudle.city.action.CityGetContributeRankAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityMarchWorldArmyFromCityAction" class="byCodeGame.game.moudle.city.action.CityMarchWorldArmyFromCityAction" 
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowWorldMarchRoleInfoAction" class="byCodeGame.game.moudle.city.action.CityShowWorldMarchRoleInfoAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowOneWorldMarchAction" class="byCodeGame.game.moudle.city.action.CityShowOneWorldMarchAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityRetreateWorldMarchAction" class="byCodeGame.game.moudle.city.action.CityRetreateWorldMarchAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowStrongHoldAction" class="byCodeGame.game.moudle.city.action.CityShowStrongHoldAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="citySetStrongHoldAction" class="byCodeGame.game.moudle.city.action.CitySetStrongHoldAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityDismissArmyAction" class="byCodeGame.game.moudle.city.action.CityDismissArmyAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="getAllArmyCityAction" class="byCodeGame.game.moudle.city.action.GetAllArmyCityAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityLeaveDefAction" class="byCodeGame.game.moudle.city.action.CityLeaveDefAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="citySpeedUpWorldArmyAliveAction" class="byCodeGame.game.moudle.city.action.CitySpeedUpWorldArmyAliveAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowSpeedUpWorldArmyAliveAction" class="byCodeGame.game.moudle.city.action.CityShowSpeedUpWorldArmyAliveAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityGetMyLordInfoAction" class="byCodeGame.game.moudle.city.action.CityGetMyLordInfoAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityClearPumHistoryAction" class="byCodeGame.game.moudle.city.action.CityClearPumHistoryAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityGoToVillageAction" class="byCodeGame.game.moudle.city.action.CityGoToVillageAction"
+	    p:cityService-ref="cityService"/>
+	<bean id="cityShowLegionCityAction" class="byCodeGame.game.moudle.city.action.CityShowLegionCityAction"
+	    p:cityService-ref="cityService"/>
+	
+
+	<bean id="armsChangeHeroSoldierAction"
+		class="byCodeGame.game.moudle.arms.action.ArmsChangeHeroSoldierAction"
+		p:armsService-ref="armsService" />
+
+	<bean id="armsUpdateHeroSoldierLvAction"
+		class="byCodeGame.game.moudle.arms.action.ArmsUpdateHeroSoldierLvAction"
+		p:armsService-ref="armsService" />
+	<bean id="armsUpdateHeroSoldierQualityAction"
+		class="byCodeGame.game.moudle.arms.action.ArmsUpdateHeroSoldierQualityAction"
+		p:armsService-ref="armsService" />
+	<bean id="armsUpdateHeroSoldierSkillAction"
+		class="byCodeGame.game.moudle.arms.action.ArmsUpdateHeroSoldierSkillAction"
+		p:armsService-ref="armsService" />
+
+
+
+
+
+
+	<bean id="getBabelInfoAction" class="byCodeGame.game.moudle.babel.action.GetBabelInfoAction"
+		p:babelService-ref="babelService" />
+	<bean id="fightBabelAction" class="byCodeGame.game.moudle.babel.action.FightBabelAction"
+		p:babelService-ref="babelService" />
+	<bean id="choiceBabelNpcAction" class="byCodeGame.game.moudle.babel.action.ChoiceBabelNpcAction"
+		p:babelService-ref="babelService" />
+	<bean id="changeTroopDataAction" class="byCodeGame.game.moudle.babel.action.ChangeTroopDataAction"
+		p:babelService-ref="babelService" />
+	<bean id="resetTowerAction" class="byCodeGame.game.moudle.babel.action.ResetTowerAction"
+		p:babelService-ref="babelService" />
+	<bean id="reviveHeroAction" class="byCodeGame.game.moudle.babel.action.ReviveHeroAction"
+		p:babelService-ref="babelService" />
+	<bean id="getHeroInfoAction" class="byCodeGame.game.moudle.babel.action.GetHeroInfoAction"
+		p:babelService-ref="babelService" />
+
+	<bean id="getTargetInfoAction" class="byCodeGame.game.moudle.target.action.GetTargetInfoAction"
+		p:targetService-ref="targetService" />
+	<bean id="getAwardTargetAction" class="byCodeGame.game.moudle.target.action.GetAwardTargetAction"
+		p:targetService-ref="targetService" />
+	<bean id="getActiveAwardAction" class="byCodeGame.game.moudle.target.action.GetActiveAwardAction"
+		p:targetService-ref="targetService" />
+	
+	<bean id="activityShowActivityAction" class="byCodeGame.game.moudle.activity.action.ActivityShowActivityAction"
+		p:activityService-ref="activityService" />
+
+	<bean id="testFightAction" class="byCodeGame.game.moudle.test.action.TestFightAction"
+		p:testService-ref="testService" />
+</beans>
