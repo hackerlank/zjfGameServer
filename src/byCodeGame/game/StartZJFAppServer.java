@@ -13,7 +13,7 @@ import byCodeGame.game.util.SpringContext;
 import byCodeGame.game.util.SysManager;
 import byCodeGame.game.util.Utils;
 
-public class StartAppServer {
+public class StartZJFAppServer {
 
 	private static final String START_CONFIG_FILE = "ApplicationContext.xml";
 
@@ -23,7 +23,7 @@ public class StartAppServer {
 //		 ExcelReader.readExcel2Cache(null);
 
 		// 启动安全沙箱
-		SafeBoxServer.start();
+//		SafeBoxServer.start();
 
 		// 加载spring配置
 		SpringContext.inizSpringCtx(START_CONFIG_FILE);
@@ -33,7 +33,7 @@ public class StartAppServer {
 		// 初始化导配置
 		Navigation.init();		
 
-		StartAppServer startAppServer = new StartAppServer();
+		StartZJFAppServer startAppServer = new StartZJFAppServer();
 
 		// java服务启动初始化数据
 		startAppServer.ServiceStartInit();
