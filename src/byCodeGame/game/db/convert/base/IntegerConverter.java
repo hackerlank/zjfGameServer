@@ -1,4 +1,4 @@
-package byCodeGame.game.db.convert;
+package byCodeGame.game.db.convert.base;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

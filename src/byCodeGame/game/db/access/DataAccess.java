@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import byCodeGame.game.db.convert.ResultConverter;
+import byCodeGame.game.db.convert.base.ResultConverter;
 
 
 

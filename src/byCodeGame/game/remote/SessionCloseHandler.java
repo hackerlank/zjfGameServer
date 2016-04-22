@@ -8,7 +8,7 @@ import byCodeGame.game.entity.bo.Role;
  * session关闭角色数据处理
  * 
  */
-public class SessionCloseHanlder {
+public class SessionCloseHandler {
 
 	/**
 	 * 移除session缓存

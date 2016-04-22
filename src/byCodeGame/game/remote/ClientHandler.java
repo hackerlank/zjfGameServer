@@ -36,7 +36,7 @@ public class ClientHandler extends IoHandlerProxy {
 			}
 			if (role != null) {
 				System.out.println("玩家正常断开数据处理，用户ID：" + role.getId());
-				SessionCloseHanlder.manipulate(role);
+				SessionCloseHandler.manipulate(role);
 			}
 			session.close(true);
 		}

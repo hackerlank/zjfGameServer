@@ -7,6 +7,7 @@ package byCodeGame.game.entity.bo;
  */
 public class Role {
 	private int id;
+	private String name;
 
 	public void setId(int id) {
 		this.id = id;
@@ -14,5 +15,13 @@ public class Role {
 
 	public int getId() {
 		return id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
 	}
 }
