@@ -11,21 +11,10 @@
 	<!-- 定义受环境影响易变的变量 -->
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<!--
-			<property name="systemPropertiesModeName"
-			value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
-		-->
-		<!-- <property name="ignoreResourceNotFound" value="true" /> -->
 		<property name="locations">
 			<list>
 				<!-- 标准配置 -->
 				<value>classpath*:/application.properties</value>
-				<!-- 集群中节点配置 -->
-				<!-- <value>classpath*:/application.cluster.properties</value> -->
-				<!-- 本地开发环境配置 -->
-				<!-- <value>classpath*:/application.local.properties</value> -->
-				<!-- 服务器生产环境配置 -->
-				<!-- <value>file:/var/mini-web/application.server.properties</value> -->
 			</list>
 		</property>
 	</bean>
@@ -47,22 +36,7 @@
 		<property name="acquireRetryAttempts" value="100" />
 		<property name="lazyInit" value="false" />
 	</bean>
-	<bean id="dataSource2" class="com.jolbox.bonecp.BoneCPDataSource"
-		destroy-method="close">
-		<property name="driverClass" value="${jdbc.driver2}" />
-		<property name="jdbcUrl" value="${jdbc.url2}" />
-		<property name="username" value="${jdbc.username2}" />
-		<property name="password" value="${jdbc.password2}" />
-		<property name="maxConnectionsPerPartition" value="20" />
-		<property name="minConnectionsPerPartition" value="10" />
-		<property name="poolAvailabilityThreshold" value="10" />
-		<property name="partitionCount" value="3" />
-		<property name="acquireIncrement" value="2" />
-		<property name="statementsCacheSize" value="100" />
-		<property name="releaseHelperThreads" value="3" />
-		<property name="acquireRetryAttempts" value="100" />
-		<property name="lazyInit" value="false" />
-	</bean>
+	
 
 	<import resource="communal.xml" />
 	<import resource="dao.xml" />

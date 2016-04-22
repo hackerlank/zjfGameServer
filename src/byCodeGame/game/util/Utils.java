@@ -8,23 +8,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 import java.util.UUID;
-
-import byCodeGame.game.cache.file.ArmsResearchConfigCache;
-import byCodeGame.game.cache.file.GeneralNumConstantCache;
-import byCodeGame.game.entity.bo.Auction;
-import byCodeGame.game.entity.bo.City;
-import byCodeGame.game.entity.file.ArmsResearchConfig;
-import byCodeGame.game.entity.po.ChapterReward;
-import byCodeGame.game.moudle.mail.MailConstant;
-import byCodeGame.game.moudle.nation.NationConstant;
-import byCodeGame.game.moudle.server.ServerConstant;
 
 
 
@@ -66,29 +54,7 @@ public class Utils {
 		return sdf.format(calendar.getTime());
 	}
 	
-	/**
-	 * 将拍卖物品转化为奖励字符串(失败)
-	 * @author xjd
-	 */
-	public static final String changeAuctionToStr(Auction auction)
-	{
-		StringBuilder sb = new StringBuilder();
-		sb.append(auction.getType()).append(",").append(auction.getItemId())
-			.append(",").append(auction.getNum()).append(";");
-		sb.append(0).append(",").append(MailConstant.TYPE_4)
-			.append(",").append(GeneralNumConstantCache.getValue("AUCTION_"+auction.getPassTime())).append(";");
-		return sb.toString();
-	}
 	
-	/**
-	 * 未使用
-	 * @param time
-	 * @return
-	 */
-	public static int getServerYear(int time)
-	{
-		return  ServerConstant.START_YEAR + ((Utils.getNowTime() - time)/86400/4);
-	}
 	
 	/**
 	 * 未使用
@@ -99,32 +65,7 @@ public class Utils {
 	{
 		return (byte)(((Utils.getNowTime() - time)/86400)%4);
 	}
-	
-	/**
-	 * 拍卖成功发给买家的邮件附件
-	 * @param auction
-	 * @return
-	 */
-	public static final String successAuctionToStr(Auction auction)
-	{
-		StringBuilder sb = new StringBuilder();
-		sb.append(auction.getType()).append(",").append(auction.getItemId())
-			.append(",").append(auction.getNum()).append(";");
-		return sb.toString();
-	}
-	/**
-	 * 拍卖成功发给卖家的邮件附件
-	 * @param auction
-	 * @return
-	 */
-	public static final String successAuction2(Auction auction)
-	{
-		StringBuilder sb = new StringBuilder();
-		sb.append(MailConstant.TYPE_3).append(",").append(0).append(",")
-			.append(auction.getCost() - auction.getCost()/10).append(";");
-		return sb.toString();
-	}
-	
+
 	
 	/**
 	 * 随机生成指定长度的字符串
@@ -476,30 +417,7 @@ public class Utils {
         }  
         return encryptText;  
     }  
-    
-    /***
-     * 将配置表的字符串转换成奖励Set
-     * @param value
-     * @return
-     * @author xjd
-     */
-    public static Set<ChapterReward> changStrToAward(String value)
-    {
-    	Set<ChapterReward> set = new HashSet<ChapterReward>();
-    	if(value != null && !value.equals("0;")){
-			String[] strs = value.split(";");
-			for(String str : strs){
-				String[] vStr = str.split(",");
-				ChapterReward chapterReward = new ChapterReward();
-				chapterReward.setType(Byte.valueOf(vStr[0]));
-				chapterReward.setItemId(Integer.parseInt(vStr[1]));
-				chapterReward.setNum(Integer.parseInt(vStr[2]));
-				set.add(chapterReward);
-			}
-		}
-    	return set;
-    }
-    
+ 
     /** 根据当前时间获取距离第二天中午12点的时间 差值	*/
     public static long getNextDayTwelveTime()
     {
@@ -529,18 +447,7 @@ public class Utils {
         }  
         return sb.toString();  
     }  
-   /**
-    *  初始化ArmsResearch字符串
-    * @return
-    */
-    public static String getArmsResearch(){
-    	Map<Integer, ArmsResearchConfig> armsResearchConfig=ArmsResearchConfigCache.getArmsResearchConfigMap();
-    	StringBuffer sb=new StringBuffer();
-    	for (Map.Entry<Integer, ArmsResearchConfig> enerty:armsResearchConfig.entrySet()) {
-    		sb.append(enerty.getKey()).append(",").append("0").append(";");
-			}    
-    	return sb.toString();
-    }
+ 
     /**
      * 获取一个以Integer类型为Key的map中
      * @return key的最大值
@@ -589,23 +496,7 @@ public class Utils {
     	return UUID.randomUUID().toString();
     }
     
-    /**
-     * 城市间路径号
-     * @param currentCity
-     * @param targetCity
-     * @return
-     * @author wcy
-     */
-	public static int getCityPathNum(City currentCity, City targetCity) {
-		if (currentCity == null || targetCity == null) {
-			return 0;
-		}
-		int currentCityId = currentCity.getCityId();
-		int targetCityId = targetCity.getCityId();
-
-		int pathNum = getCityPathNum(currentCityId, targetCityId);
-		return pathNum;
-	}
+   
 	
 	public static int getCityPathNum(int currentCityId,int targetCityId){
 		int min = 0;
@@ -639,25 +530,7 @@ public class Utils {
 		return 0;
 	}
 	
-	/**
-	 * 获得国家名字 
-	 * @param type 1蜀2魏3吴
-	 * @return
-	 * @author wcy 2016年2月18日
-	 */
-	public static String getNationName(byte type){
-		String name = "";
-		if(type == NationConstant.SHU_TYPE){
-			name = NationConstant.SHU_TYPE_STR;
-		}else if (type == NationConstant.WEI_TYPE){
-			name = NationConstant.WEI_TYPE_STR;
-		}else if(type == NationConstant.WU_TYPE){
-			name = NationConstant.WU_TYPE_STR;
-		}else {
-			name = NationConstant.QUN_TYPE_STR;
-		}
-		return name;
-	}
+	
 
 	/**
 	 * 胜利失败的字
