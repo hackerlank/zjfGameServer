@@ -1,6 +1,7 @@
 package byCodeGame.game.module.login.service;
 
-import java.sql.Connection;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -9,14 +10,34 @@ import org.apache.mina.core.session.IoSession;
 import byCodeGame.game.cache.local.RoleCache;
 import byCodeGame.game.cache.local.SessionCache;
 import byCodeGame.game.common.ErrorCode;
+import byCodeGame.game.db.dao.HeroDao;
+import byCodeGame.game.db.dao.RoleDao;
+import byCodeGame.game.entity.bo.Hero;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.module.login.LoginConstant;
 import byCodeGame.game.remote.Message;
 import byCodeGame.game.tools.CacheLockUtil;
 import byCodeGame.game.util.SysManager;
-import byCodeGame.game.util.Utils;
 
-public class LoginServiceImpl implements LoginService{
+/**
+ * 登录服务
+ * 
+ * @author AIM
+ *
+ */
+public class LoginServiceImpl implements LoginService {
+
+	private RoleDao roleDao;
+
+	public void setRoleDao(RoleDao roleDao) {
+		this.roleDao = roleDao;
+	}
+
+	private HeroDao heroDao;
+
+	public void setHeroDao(HeroDao heroDao) {
+		this.heroDao = heroDao;
+	}
 
 	@Override
 	public Message login(String account, IoSession session) {
@@ -42,83 +63,26 @@ public class LoginServiceImpl implements LoginService{
 		}
 		return message;
 	}
-	
-	public Message register(String account){
-		Message message = new Message();
-		message.setType(LoginConstant.REGISTER);
-				
-		ReentrantLock reentrantLock = CacheLockUtil.getLock(String.class, account);
-		reentrantLock.lock();
-		try {
-			int nowTime = Utils.getNowTime();
-			Set<String> accountSet = RoleCache.getAccountSet();
-			if (accountSet.contains(account)) { // 判定账号是否存在
-				return null;
-			}
 
-			Connection conn = null;
-			try { // mysql事务
-//				conn = dataSource.getConnection();
-				conn.setAutoCommit(false);
-
-				// 用户数据
-				Role role = new Role();
-				
-				conn.commit(); // 提交JDBC事务
-				conn.setAutoCommit(true); // 恢复JDBC事务的默认提交方式
-				// 加入role缓存
-				RoleCache.putRole(role);
-				RoleCache.getAccountSet().add(account);
-				RoleCache.getNameSet().add(role.getName());
-				message.putShort(ErrorCode.SUCCESS);
-				return message;
-
-			} catch (Exception e1) {
-				e1.printStackTrace();
-				try {
-					conn.rollback();// 回滚JDBC事务
-				} catch (Exception e2) {
-					e2.printStackTrace();
-				}
-				e1.printStackTrace();
-				return null;
-			} finally {
-				if (conn != null) {
-					try {
-						conn.close();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		} finally {
-			reentrantLock.unlock();
-		}
-	}
+	@Override
 	public Message getRoleData(String account, IoSession ioSession) {
-		ReentrantLock reentrantLock = CacheLockUtil.getLock(String.class, account);
-		reentrantLock.lock();
+		// ReentrantLock reentrantLock = CacheLockUtil.getLock(String.class,
+		// account);
+		// reentrantLock.lock();
 
 		try {
 			Message message = new Message();
 			message.setType(LoginConstant.GET_ROLE_DATA);
 
 			// 获取缓存中的role
-			Role role = null;
-//			Role role = RoleCache.getRoleByAccount(account);
+			Role role = RoleCache.getRoleByAccount(account);
 
 			if (role == null) { // 缓存中没有role数据
-//				role = roleDao.getRoleByAccount(account);
-//				this.loginRoleModuleDataInit(role);
+				role = roleDao.getRoleByAccount(account);
+				this.roleLoginDataInit(role);
 			}
-			
-		
-			// 检查时候需要更新市场
-			
-			//检测配属英雄
+
+			// 检测配属英雄
 			IoSession oldSession = SessionCache.getSessionByRoleId(role.getId());
 			if (oldSession != null) { // 该账号已登录
 				oldSession.setAttribute("roleId", null);
@@ -131,14 +95,28 @@ public class LoginServiceImpl implements LoginService{
 			SessionCache.addSession(role.getId(), ioSession);
 			// System.out.println(ioSession + "放入缓存");
 
-			
 			return message;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
-		} finally {
-			reentrantLock.unlock();
 		}
+		// finally {
+		// reentrantLock.unlock();
+		// }
 
 	}
+
+	/**
+	 * 玩家数据登陆初始化
+	 * 
+	 * @param role
+	 */
+	private void roleLoginDataInit(Role role) {
+		List<Hero> list = heroDao.getHerosByRoleId(role.getId());
+		Map<Integer, Hero> heroMap = role.getHeroMap();
+		for (Hero hero : list) {
+			heroMap.put(hero.getId(), hero);
+		}
+	}
+
 }
