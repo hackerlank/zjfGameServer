@@ -25,4 +25,11 @@ public interface HeroDao {
 	 * @param hero
 	 */
 	void insertHero(Hero hero);
+	
+	/**
+	 * 
+	 * @param hero
+	 * @author wcy 2016年4月25日
+	 */
+	void updateHero(Hero hero);
 }
