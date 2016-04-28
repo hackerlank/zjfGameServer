@@ -8,9 +8,12 @@ import javax.sql.DataSource;
 
 import byCodeGame.game.cache.local.RoleCache;
 import byCodeGame.game.common.ErrorCode;
+import byCodeGame.game.db.dao.RoleDao;
+import byCodeGame.game.entity.bo.Bedroom;
+import byCodeGame.game.entity.bo.Build;
+import byCodeGame.game.entity.bo.Kitchen;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.module.hero.service.HeroService;
-import byCodeGame.game.module.login.LoginConstant;
 import byCodeGame.game.module.register.RegisterConstant;
 import byCodeGame.game.remote.Message;
 import byCodeGame.game.tools.CacheLockUtil;
@@ -34,6 +37,12 @@ public class RegisterServiceImpl implements RegisterService {
 		this.heroService = heroService;
 	}
 
+	private RoleDao roleDao;
+
+	public void setRoleDao(RoleDao roleDao) {
+		this.roleDao = roleDao;
+	}
+
 	@Override
 	public Message register(String account) {
 		Message message = new Message();
@@ -48,7 +57,8 @@ public class RegisterServiceImpl implements RegisterService {
 			}
 
 			Connection conn = null;
-			try { // mysql事务
+			try { 
+				// mysql事务
 				conn = dataSource.getConnection();
 				conn.setAutoCommit(false);
 
@@ -96,8 +106,22 @@ public class RegisterServiceImpl implements RegisterService {
 	 * 
 	 * @param role
 	 */
-	private void roleRegisterDataInit(Role role, Connection conn) {		
-		//初始化玩家的英雄
-		heroService.createHeros(RegisterConstant.INIT_HERO_NUM, conn);
+	private void roleRegisterDataInit(Role role, Connection conn) {
+		// 初始化玩家的英雄
+		role = roleDao.insertRoleNotCloseConnection(role, conn);
+		
+		Build build = new Build();
+		build.setRoleId(role.getId());
+		
+		//厨房
+		Kitchen kitchen = new Kitchen();
+		kitchen.setRoleId(role.getId());
+		build.setKitchen(kitchen);
+		
+		//卧室
+		Bedroom bedroom = new Bedroom();
+		bedroom.setRoleId(role.getId());
+		build.setBedroom(bedroom);
+		
 	}
 }

@@ -3,15 +3,15 @@ package byCodeGame.game.entity.bo;
 import java.util.HashMap;
 import java.util.Map;
 
-import byCodeGame.game.entity.bo.base.GameEntity;
-
 /**
  * 玩家
  * 
  * @author wcy 2016年4月22日
  *
  */
-public class Role extends GameEntity {
+public class Role {
+	// 玩家id
+	private int id;
 	// 玩家名
 	private String name;
 	// 玩家帐号
@@ -20,6 +20,14 @@ public class Role extends GameEntity {
 	private Map<Integer, Hero> heroMap = new HashMap<>();
 	// 喜欢的英雄id
 	private int loveHeroId;
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
 
 	public void setName(String name) {
 		this.name = name;

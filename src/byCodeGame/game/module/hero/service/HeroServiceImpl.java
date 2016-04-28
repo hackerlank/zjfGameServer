@@ -1,14 +1,15 @@
 package byCodeGame.game.module.hero.service;
 
-import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
-
 import byCodeGame.game.db.dao.HeroDao;
 import byCodeGame.game.entity.bo.Hero;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.remote.Message;
 
+/**
+ * 
+ * @author wcy 2016年4月28日
+ *
+ */
 public class HeroServiceImpl implements HeroService {
 
 	private HeroDao heroDao;
@@ -18,27 +19,14 @@ public class HeroServiceImpl implements HeroService {
 	}
 
 	@Override
-	public List<Hero> createHeros(int count, Connection conn) {
-		List<Hero> list = new ArrayList<>();
-		for(int i = 0;i<count;i++){
-			Hero hero = new Hero();
-			this.heroCreateDataInit(hero);
-			heroDao.insertHeroNotCloseConn(hero, conn);
-			list.add(hero);
-		}
-		return list;
-	}
-
-	@Override
-	public Hero createHero() {
+	public Hero createHero(Role role,int heroId) {
 		Hero hero = new Hero();
-		this.heroCreateDataInit(hero);
+
+		hero.setRoleId(role.getId());
+		hero.setHeroId(heroId);
+		
 		heroDao.insertHero(hero);
 		return hero;
-	}
-	
-	private void heroCreateDataInit(Hero hero){
-		
 	}
 
 	@Override

@@ -7,28 +7,18 @@
  */
 package byCodeGame.game.module.hero.service;
 
-import java.sql.Connection;
-import java.util.List;
-
 import byCodeGame.game.entity.bo.Hero;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.module.Service;
 import byCodeGame.game.remote.Message;
 
 public interface HeroService extends Service {
-	/**
-	 * 批量创建英雄创建英雄
-	 * @param count
-	 * @param conn
-	 * @return
-	 */
-	List<Hero> createHeros(int count, Connection conn);
 
 	/**
 	 * 创建单个英雄
 	 * @return
 	 */
-	Hero createHero();
+	Hero createHero(Role role,int heroId);
 
 	/**
 	 * 改变技能

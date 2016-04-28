@@ -1,30 +1,52 @@
 package byCodeGame.game.entity.bo;
 
-import byCodeGame.game.entity.bo.base.GameEntity;
 
-public class Hero extends GameEntity{
-	//心情
+/**
+ * 
+ * @author wcy 2016年4月28日
+ *
+ */
+public class Hero {
+	// 玩家id
+	private int roleId;
+	// 英雄id
+	private int heroId;
+	// 心情
 	private int emotion;
-	//饥饿值
+	// 饥饿值
 	private int hungry;
-	//疲劳度
+	// 疲劳度
 	private int tired;
-	//熟练度
+	// 熟练度
 	private int effective;
-	//技能id
+	// 技能id
 	private int skillId;
-	//天赋id
+	// 天赋id
 	private int giftId;
-	//年龄阶段id
+	// 年龄阶段id
 	private int ageId;
-	//年龄阶段值
+	// 年龄阶段值
 	private int ageCount;
-	//转生值
+	// 转生值
 	private int rebirth;
-	//工作刷新时间
-	private int workRefreshTime;
-	//热度
+	// 热度
 	private int hotspot;
+
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+
+	public int getRoleId() {
+		return roleId;
+	}
+
+	public void setHeroId(int heroId) {
+		this.heroId = heroId;
+	}
+
+	public int getHeroId() {
+		return heroId;
+	}
 
 	public int getEmotion() {
 		return emotion;
@@ -88,14 +110,6 @@ public class Hero extends GameEntity{
 
 	public void setRebirth(int rebirth) {
 		this.rebirth = rebirth;
-	}
-
-	public int getWorkRefreshTime() {
-		return workRefreshTime;
-	}
-
-	public void setWorkRefreshTime(int workRefreshTime) {
-		this.workRefreshTime = workRefreshTime;
 	}
 
 	public int getHotspot() {

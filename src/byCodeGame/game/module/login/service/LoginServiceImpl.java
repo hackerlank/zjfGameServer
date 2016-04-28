@@ -115,7 +115,7 @@ public class LoginServiceImpl implements LoginService {
 		List<Hero> list = heroDao.getHerosByRoleId(role.getId());
 		Map<Integer, Hero> heroMap = role.getHeroMap();
 		for (Hero hero : list) {
-			heroMap.put(hero.getId(), hero);
+			heroMap.put(hero.getHeroId(), hero);
 		}
 	}
 
