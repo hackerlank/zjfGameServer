@@ -10,7 +10,12 @@
     http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd 
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-	<bean id="navigation" class="byCodeGame.game.navigation.Navigation" />
+	<bean id="navigation" class="byCodeGame.game.navigation.Navigation"
+		p:registerAction-ref="registerAction" />
+
+	<bean id="registerAction" class="byCodeGame.game.module.register.action.RegisterAction">
+		<p:registerService-ref = registerService " />
+	</bean>
 
 
 </beans>

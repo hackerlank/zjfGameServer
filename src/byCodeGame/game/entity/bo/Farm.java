@@ -3,11 +3,11 @@ package byCodeGame.game.entity.bo;
 import byCodeGame.game.entity.bo.base.RoleComponent;
 
 /**
- * 厨房
+ * 农场
  * 
- * @author wcy 2016年4月28日
+ * @author wcy 2016年4月29日
  *
  */
-public class Kitchen extends RoleComponent {
-
+public class Farm extends RoleComponent{
+	
 }

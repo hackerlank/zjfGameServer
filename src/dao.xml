@@ -4,20 +4,26 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-
 	<bean id="integerConverter" class="byCodeGame.game.db.convert.base.IntegerConverter"></bean>
 	<bean id="roleConverter" class="byCodeGame.game.db.convert.RoleConverter"></bean>
 	<bean id="heroConverter" class="byCodeGame.game.db.convert.HeroConverter"></bean>
+	<bean id="bedroomConverter" class="byCodeGame.game.db.convert.BedroomConverter"></bean>
 
 	<bean id="roleDao" class="byCodeGame.game.db.impl.RoleDaoImpl">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="integerConverter" ref="integerConverter"></property>
 		<property name="roleConverter" ref="roleConverter"></property>
 	</bean>
-	
+
 	<bean id="heroDao" class="byCodeGame.game.db.impl.HeroDaoImpl">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="integerConverter" ref="integerConverter"></property>
 		<property name="heroConverter" ref="heroConverter"></property>
+	</bean>
+
+	<bean id="bedroomDao" class="byCodeGame.game.db.impl.BedroomDaoImpl">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="integerConverter" ref="integerConverter"></property>
+		<property name="bedroomConverter" ref="bedroomConverter"></property>
 	</bean>
 </beans>

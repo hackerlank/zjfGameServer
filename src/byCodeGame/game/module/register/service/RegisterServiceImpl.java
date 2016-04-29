@@ -8,10 +8,12 @@ import javax.sql.DataSource;
 
 import byCodeGame.game.cache.local.RoleCache;
 import byCodeGame.game.common.ErrorCode;
+import byCodeGame.game.db.dao.BedroomDao;
 import byCodeGame.game.db.dao.RoleDao;
 import byCodeGame.game.entity.bo.Bedroom;
 import byCodeGame.game.entity.bo.Build;
 import byCodeGame.game.entity.bo.Kitchen;
+import byCodeGame.game.entity.bo.Pub;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.module.hero.service.HeroService;
 import byCodeGame.game.module.register.RegisterConstant;
@@ -31,20 +33,20 @@ public class RegisterServiceImpl implements RegisterService {
 		this.dataSource = dataSource;
 	}
 
-	private HeroService heroService;
-
-	public void HeroService(HeroService heroService) {
-		this.heroService = heroService;
-	}
-
 	private RoleDao roleDao;
 
 	public void setRoleDao(RoleDao roleDao) {
 		this.roleDao = roleDao;
 	}
 
+	private BedroomDao bedroomDao;
+
+	public void setBedroomDao(BedroomDao bedroomDao) {
+		this.bedroomDao = bedroomDao;
+	}
+
 	@Override
-	public Message register(String account) {
+	public Message register(String account, String name) {
 		Message message = new Message();
 		message.setType(RegisterConstant.REGISTER);
 
@@ -57,21 +59,26 @@ public class RegisterServiceImpl implements RegisterService {
 			}
 
 			Connection conn = null;
-			try { 
+			try {
 				// mysql事务
 				conn = dataSource.getConnection();
 				conn.setAutoCommit(false);
 
 				// 用户数据
 				Role role = new Role();
+				role.setAccount(account);
+				role.setName(name);
 				this.roleRegisterDataInit(role, conn);
 
 				conn.commit(); // 提交JDBC事务
-				conn.setAutoCommit(true); // 恢复JDBC事务的默认提交方式
-				// 加入role缓存
+
+				// 加入role缓存,确保加入缓存池后在进行提交
 				RoleCache.putRole(role);
-				RoleCache.getAccountSet().add(account);
+				RoleCache.getAccountSet().add(role.getAccount());
 				RoleCache.getNameSet().add(role.getName());
+
+				conn.setAutoCommit(true); // 恢复JDBC事务的默认提交方式
+
 				message.putShort(ErrorCode.SUCCESS);
 				return message;
 
@@ -83,10 +90,12 @@ public class RegisterServiceImpl implements RegisterService {
 					e2.printStackTrace();
 				}
 				e1.printStackTrace();
-				return null;
+				message.putShort(ErrorCode.REGISTER_LACK_INFO);
+				return message;
 			} finally {
 				if (conn != null) {
 					try {
+						conn.setAutoCommit(true);
 						conn.close();
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -109,19 +118,26 @@ public class RegisterServiceImpl implements RegisterService {
 	private void roleRegisterDataInit(Role role, Connection conn) {
 		// 初始化玩家的英雄
 		role = roleDao.insertRoleNotCloseConnection(role, conn);
-		
+		int roleId = role.getId();
+
 		Build build = new Build();
-		build.setRoleId(role.getId());
+		build.setRoleId(roleId);
+		role.setBuild(build);
 		
-		//厨房
-		Kitchen kitchen = new Kitchen();
-		kitchen.setRoleId(role.getId());
-		build.setKitchen(kitchen);
-		
-		//卧室
+		// 卧室
 		Bedroom bedroom = new Bedroom();
-		bedroom.setRoleId(role.getId());
+		bedroom.setRoleId(roleId);
 		build.setBedroom(bedroom);
-		
+		bedroomDao.insertBedroomNotCloseConnection(bedroom, conn);
+
+		// 厨房
+		Kitchen kitchen = new Kitchen();
+		kitchen.setRoleId(roleId);
+		build.setKitchen(kitchen);
+
+		// 酒馆
+		Pub pub = new Pub();
+		pub.setRoleId(roleId);
+		build.setPub(pub);
 	}
 }

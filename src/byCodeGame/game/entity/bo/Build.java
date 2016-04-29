@@ -1,26 +1,22 @@
 package byCodeGame.game.entity.bo;
 
+import byCodeGame.game.entity.bo.base.RoleComponent;
+
 /**
  * 建筑信息
  * 
  * @author wcy 2016年4月28日
  *
  */
-public class Build {
-
-	private int roleId;
+public class Build extends RoleComponent{
 
 	private Bedroom bedroom;
 
 	private Kitchen kitchen;
 
-	public void setRoleId(int roleId) {
-		this.roleId = roleId;
-	}
+	private Farm farm;
 
-	public int getRoleId() {
-		return roleId;
-	}
+	private Pub pub;
 
 	public void setBedroom(Bedroom bedroom) {
 		this.bedroom = bedroom;
@@ -36,6 +32,22 @@ public class Build {
 
 	public Kitchen getKitchen() {
 		return kitchen;
+	}
+
+	public void setFarm(Farm farm) {
+		this.farm = farm;
+	}
+
+	public Farm getFarm() {
+		return farm;
+	}
+
+	public void setPub(Pub pub) {
+		this.pub = pub;
+	}
+
+	public Pub getPub() {
+		return pub;
 	}
 
 }

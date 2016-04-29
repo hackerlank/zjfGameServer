@@ -5,6 +5,6 @@ import byCodeGame.game.remote.Message;
 
 public interface RegisterService extends Service {
 
-	Message register(String account);
+	Message register(String account,String name);
 
 }

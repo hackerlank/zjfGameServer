@@ -20,6 +20,8 @@ public class Role {
 	private Map<Integer, Hero> heroMap = new HashMap<>();
 	// 喜欢的英雄id
 	private int loveHeroId;
+	// 建筑信息
+	private Build build;
 
 	public void setId(int id) {
 		this.id = id;
@@ -55,6 +57,14 @@ public class Role {
 
 	public int getLoveHeroId() {
 		return loveHeroId;
+	}
+
+	public void setBuild(Build build) {
+		this.build = build;
+	}
+
+	public Build getBuild() {
+		return build;
 	}
 
 }

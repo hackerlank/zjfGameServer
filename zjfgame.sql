@@ -16,6 +16,15 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`zjfgame` /*!40100 DEFAULT CHARACTER SET
 
 USE `zjfgame`;
 
+/*Table structure for table `bedroom` */
+
+DROP TABLE IF EXISTS `bedroom`;
+
+CREATE TABLE `bedroom` (
+  `roleId` int(11) NOT NULL,
+  `bedSpaceStr` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*Table structure for table `hero` */
 
 DROP TABLE IF EXISTS `hero`;

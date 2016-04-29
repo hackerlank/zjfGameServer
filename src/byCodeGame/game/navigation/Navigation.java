@@ -2,19 +2,8 @@ package byCodeGame.game.navigation;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-//import byCodeGame.game.moudle.raid.action.ChangeHeroAction;
-//import byCodeGame.game.moudle.raid.action.CreateNewRoomAction;
-//import byCodeGame.game.moudle.raid.action.GetLobbyInfoAction;
-//import byCodeGame.game.moudle.raid.action.GetRoomInfoAction;
-//import byCodeGame.game.moudle.raid.action.JoinRoomAction;
-//import byCodeGame.game.moudle.raid.action.KickRoleAction;
-//import byCodeGame.game.moudle.raid.action.QuitRoomAction;
-//import byCodeGame.game.moudle.raid.action.ReadyBattleAction;
-//import byCodeGame.game.moudle.raid.action.SaveRoomRoleFormationAction;
-//import byCodeGame.game.moudle.raid.action.SetLoadingProgressAction;
-//import byCodeGame.game.moudle.raid.action.SetRoleStatusAction;
-//import byCodeGame.game.moudle.raid.action.StartBattleAction;
-//import byCodeGame.game.moudle.raid.action.UpdateLoadingAction;
+
+import byCodeGame.game.module.register.action.RegisterAction;
 
 /**
  * 通信指令导航
@@ -22,13 +11,15 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Navigation {
 
-	
+	private static RegisterAction registerAction;
+
 	// 导航集合
 	public static Map<Short, ActionSupport> navigate = new ConcurrentHashMap<Short, ActionSupport>();
 
 	// 初始化导航
 	public static void init() {
-
+		// 注册与登陆
+		navigate.put(NavigationModule.REGISTER_ACTION, registerAction);
 		
 	}
 
@@ -37,6 +28,8 @@ public class Navigation {
 		return navigate.get(type);
 	}
 
-	
+	public static void setRegisterAction(RegisterAction registerAction) {
+		Navigation.registerAction = registerAction;
+	}
 
 }

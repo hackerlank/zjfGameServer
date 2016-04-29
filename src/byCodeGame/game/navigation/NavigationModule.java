@@ -5,4 +5,7 @@ package byCodeGame.game.navigation;
  * 
  */
 public class NavigationModule {
+	//注册
+	public static final short REGISTER_ACTION = 102;
+	
 }
