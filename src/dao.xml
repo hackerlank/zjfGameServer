@@ -26,4 +26,10 @@
 		<property name="integerConverter" ref="integerConverter"></property>
 		<property name="bedroomConverter" ref="bedroomConverter"></property>
 	</bean>
+	
+	<bean id="kitchenDao" class="byCodeGame.game.db.impl.KitchenDaoImpl">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="integerConverter" ref="integerConverter"></property>
+	</bean>
+	
 </beans>
