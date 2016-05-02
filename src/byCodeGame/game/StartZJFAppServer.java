@@ -2,11 +2,11 @@ package byCodeGame.game;
 
 import java.net.InetSocketAddress;
 
+import byCodeGame.game.module.register.service.RegisterService;
 import byCodeGame.game.navigation.Navigation;
 import byCodeGame.game.quartz.QuartzManager;
-import byCodeGame.game.remote.ClientHandler;
+import byCodeGame.game.remote.ServerHandler;
 import byCodeGame.game.remote.WanServer;
-import byCodeGame.game.safebox.SafeBoxServer;
 import byCodeGame.game.scheduler.RoleUpdateScheduled;
 import byCodeGame.game.util.ServerConfig;
 import byCodeGame.game.util.SpringContext;
@@ -49,14 +49,16 @@ public class StartZJFAppServer {
 		System.out.println("GM_COMMAND:" + GM_COMMAND);
 		// 启动服务器socket
 		InetSocketAddress inetSocketAddress = new InetSocketAddress(ServerConfig.getWanServerPort());
-		WanServer.startIOServer(new ClientHandler(), inetSocketAddress);
+		WanServer.startIOServer(new ServerHandler(), inetSocketAddress);
 	}
 
 	/**
 	 * java服务启动初始化数据
 	 */
 	private void ServiceStartInit() {
+		RegisterService registerService = (RegisterService)SpringContext.getBean("registerService");
 		
+		registerService.init();
 	}
 
 	/**

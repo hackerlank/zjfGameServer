@@ -14,4 +14,9 @@ public class ErrorCode {
 	// 注册信息不完整
 	public static final short REGISTER_LACK_INFO = 30002;
 
+	public static final short REGISTER_ACCOUNT_REPEAT = 30003;
+	public static final short REGISTER_NAME_REPEAT = 30004;
+
+	public static final short REGISTER_FAILED = 30005;
+
 }

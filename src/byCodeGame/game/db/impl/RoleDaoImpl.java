@@ -2,12 +2,16 @@ package byCodeGame.game.db.impl;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 import javax.sql.DataSource;
 
 import byCodeGame.game.db.access.DataAccess;
 import byCodeGame.game.db.convert.RoleConverter;
 import byCodeGame.game.db.convert.base.IntegerConverter;
+import byCodeGame.game.db.convert.base.StringConverter;
 import byCodeGame.game.db.dao.RoleDao;
 import byCodeGame.game.entity.bo.Role;
 
@@ -21,6 +25,8 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 	private final String insertSql = "insert into role values(?,?,?,?)";
 	private final String selectAccountSql = "select * from role where account=? limit 1";
 	private final String updateSql = "update role set name=?, account=?, loveHeroId=? where id=? limit 1";
+	private final String selectAllAccountSql = "select account from role";
+	private final String selectAllNameSql = "select name from role";
 
 	private DataSource dataSource;
 
@@ -38,6 +44,12 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 
 	public void setIntegerConverter(IntegerConverter integerConverter) {
 		this.integerConverter = integerConverter;
+	}
+
+	private StringConverter stringConverter;
+
+	public void setStringConverter(StringConverter stringConverter) {
+		this.stringConverter = stringConverter;
 	}
 
 	@Override
@@ -72,9 +84,35 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 	public void updateRole(Role role) {
 		try {
 			Connection conn = dataSource.getConnection();
-			this.update(updateSql, conn, role.getName(), role.getAccount(),role.getLoveHeroId(), role.getId());
+			this.update(updateSql, conn, role.getName(), role.getAccount(), role.getLoveHeroId(), role.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public List<String> getAllAccount() {
+		// TODO 查一下怎么写
+		List<String> list = new ArrayList<>();
+		try {
+			Connection conn = dataSource.getConnection();
+//			list = this.queryForList(selectAllAccountSql, stringConverter, conn, "");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<String> getAllName() {
+		// TODO 查一下怎么写
+		List<String> list = new ArrayList<>();
+		try {
+			Connection conn = dataSource.getConnection();
+//			list = this.queryForList(selectAllNameSql, stringConverter, conn, "");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 }

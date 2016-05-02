@@ -2,6 +2,7 @@ package byCodeGame.game.remote;
 
 import org.apache.mina.core.session.IoSession;
 
+import byCodeGame.game.cache.local.RoleCache;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.error.NumberFakeException;
 import byCodeGame.game.navigation.ActionSupport;
@@ -11,7 +12,7 @@ import byCodeGame.game.navigation.Navigation;
  * 消息处理器
  * 
  */
-public class ClientHandler extends IoHandlerProxy {
+public class ServerHandler extends IoHandlerProxy {
 
 	// 当一个客户端连结进入时
 	@Override
@@ -32,7 +33,7 @@ public class ClientHandler extends IoHandlerProxy {
 			Integer roleInteger = (Integer) session.getAttribute("roleId");
 			Role role = new Role();
 			if (roleInteger != 0) {
-//				role = RoleCache.getRoleById(roleInteger);
+				role = RoleCache.getRoleById(roleInteger);
 			}
 			if (role != null) {
 				System.out.println("玩家正常断开数据处理，用户ID：" + role.getId());
@@ -48,7 +49,7 @@ public class ClientHandler extends IoHandlerProxy {
 
 		if (e.getMessage().equals("远程主机强迫关闭了一个现有的连接。")) {
 			System.out.println(e.getMessage());
-			// this.sessionClosed(session);
+			 this.sessionClosed(session);
 		} else {
 			System.err.println("程序业务逻辑出现异常,已处理该账户信息,并强制下线！" + (Integer) session.getAttribute("roleId"));
 			e.printStackTrace();

@@ -2,10 +2,9 @@ package byCodeGame.game.module.login.service;
 
 import org.apache.mina.core.session.IoSession;
 
-import byCodeGame.game.module.Service;
 import byCodeGame.game.remote.Message;
 
-public interface LoginService extends Service {
+public interface LoginService{
 	/**
 	 * 登录
 	 * @param account

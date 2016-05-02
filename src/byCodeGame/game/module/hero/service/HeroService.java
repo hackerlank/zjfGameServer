@@ -9,10 +9,9 @@ package byCodeGame.game.module.hero.service;
 
 import byCodeGame.game.entity.bo.Hero;
 import byCodeGame.game.entity.bo.Role;
-import byCodeGame.game.module.Service;
 import byCodeGame.game.remote.Message;
 
-public interface HeroService extends Service {
+public interface HeroService{
 
 	/**
 	 * 创建单个英雄

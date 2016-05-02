@@ -1,6 +1,7 @@
 package byCodeGame.game.module.register.service;
 
 import java.sql.Connection;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -15,7 +16,6 @@ import byCodeGame.game.entity.bo.Build;
 import byCodeGame.game.entity.bo.Kitchen;
 import byCodeGame.game.entity.bo.Pub;
 import byCodeGame.game.entity.bo.Role;
-import byCodeGame.game.module.hero.service.HeroService;
 import byCodeGame.game.module.register.RegisterConstant;
 import byCodeGame.game.remote.Message;
 import byCodeGame.game.tools.CacheLockUtil;
@@ -54,8 +54,15 @@ public class RegisterServiceImpl implements RegisterService {
 		reentrantLock.lock();
 		try {
 			Set<String> accountSet = RoleCache.getAccountSet();
+			Set<String> nameSet = RoleCache.getNameSet();
 			if (accountSet.contains(account)) { // 判定账号是否存在
-				return null;
+				message.putShort(ErrorCode.REGISTER_ACCOUNT_REPEAT);
+				return message;
+			}
+
+			if (nameSet.contains(name)) {
+				message.putShort(ErrorCode.REGISTER_NAME_REPEAT);
+				return message;
 			}
 
 			Connection conn = null;
@@ -104,7 +111,8 @@ public class RegisterServiceImpl implements RegisterService {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			message.putShort(ErrorCode.REGISTER_FAILED);
+			return message;
 		} finally {
 			reentrantLock.unlock();
 		}
@@ -123,7 +131,7 @@ public class RegisterServiceImpl implements RegisterService {
 		Build build = new Build();
 		build.setRoleId(roleId);
 		role.setBuild(build);
-		
+
 		// 卧室
 		Bedroom bedroom = new Bedroom();
 		bedroom.setRoleId(roleId);
@@ -139,5 +147,20 @@ public class RegisterServiceImpl implements RegisterService {
 		Pub pub = new Pub();
 		pub.setRoleId(roleId);
 		build.setPub(pub);
+	}
+
+	@Override
+	public void init() {
+		List<String> accountList = roleDao.getAllAccount();
+		List<String> nameList = roleDao.getAllName();
+		Set<String> accountSet = RoleCache.getAccountSet();
+		Set<String> nameSet = RoleCache.getNameSet();
+
+		for (String account : accountList) {
+			accountSet.add(account);
+		}
+		for (String name : nameList) {
+			nameSet.add(name);
+		}
 	}
 }

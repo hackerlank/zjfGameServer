@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.apache.mina.core.session.IoSession;
 import org.apache.mina.util.ConcurrentHashSet;
 
 import byCodeGame.game.entity.bo.Role;
@@ -41,5 +42,14 @@ public class RoleCache {
 
 	public static Role getRoleByAccount(String account) {
 		return accountMap.get(account);
+	}
+
+	public static Role getRoleById(int roleId) {
+		return roleCache.get(roleId);
+	}
+	
+	public static Role getRoleBySession(IoSession session){
+		Integer roleId = (Integer) session.getAttribute("roleId");
+		return RoleCache.getRoleById(roleId);
 	}
 }

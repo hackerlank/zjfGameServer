@@ -19,12 +19,12 @@ public class HeroServiceImpl implements HeroService {
 	}
 
 	@Override
-	public Hero createHero(Role role,int heroId) {
+	public Hero createHero(Role role, int heroId) {
 		Hero hero = new Hero();
 
 		hero.setRoleId(role.getId());
 		hero.setHeroId(heroId);
-		
+
 		heroDao.insertHero(hero);
 		return hero;
 	}
@@ -47,7 +47,7 @@ public class HeroServiceImpl implements HeroService {
 		return null;
 	}
 
-	public Message realize(Role role,int heroId){
+	public Message realize(Role role, int heroId) {
 		return null;
 	}
 
@@ -62,7 +62,7 @@ public class HeroServiceImpl implements HeroService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	@Override
 	public Message showHero(Role role) {
 		// TODO Auto-generated method stub

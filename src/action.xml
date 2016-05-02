@@ -14,7 +14,7 @@
 		p:registerAction-ref="registerAction" />
 
 	<bean id="registerAction" class="byCodeGame.game.module.register.action.RegisterAction">
-		<p:registerService-ref = registerService " />
+		<property name="registerService" ref="registerService"></property>
 	</bean>
 
 

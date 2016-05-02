@@ -10,8 +10,11 @@ import org.apache.mina.core.session.IoSession;
 import byCodeGame.game.cache.local.RoleCache;
 import byCodeGame.game.cache.local.SessionCache;
 import byCodeGame.game.common.ErrorCode;
+import byCodeGame.game.db.dao.BedroomDao;
 import byCodeGame.game.db.dao.HeroDao;
 import byCodeGame.game.db.dao.RoleDao;
+import byCodeGame.game.entity.bo.Bedroom;
+import byCodeGame.game.entity.bo.Build;
 import byCodeGame.game.entity.bo.Hero;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.module.login.LoginConstant;
@@ -37,6 +40,12 @@ public class LoginServiceImpl implements LoginService {
 
 	public void setHeroDao(HeroDao heroDao) {
 		this.heroDao = heroDao;
+	}
+
+	private BedroomDao bedroomDao;
+
+	public void setBedroomDao(BedroomDao bedroomDao) {
+		this.bedroomDao = bedroomDao;
 	}
 
 	@Override
@@ -112,11 +121,23 @@ public class LoginServiceImpl implements LoginService {
 	 * @param role
 	 */
 	private void roleLoginDataInit(Role role) {
+		//英雄初始化
+		int roleId = role.getId();
 		List<Hero> list = heroDao.getHerosByRoleId(role.getId());
 		Map<Integer, Hero> heroMap = role.getHeroMap();
 		for (Hero hero : list) {
 			heroMap.put(hero.getHeroId(), hero);
 		}
+
+		//建筑初始化
+		Build build = new Build();
+		build.setRoleId(roleId);
+		role.setBuild(build);
+
+		//卧室初始化
+		Bedroom bedroom = bedroomDao.getBedroomByRoleId(roleId);
+		build.setBedroom(bedroom);
+
 	}
 
 }
