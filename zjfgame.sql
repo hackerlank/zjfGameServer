@@ -25,6 +25,24 @@ CREATE TABLE `bedroom` (
   `bedSpaceStr` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/*Table structure for table `bin` */
+
+DROP TABLE IF EXISTS `bin`;
+
+CREATE TABLE `bin` (
+  `roleId` int(11) DEFAULT NULL,
+  `binSpaceStr` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `farm` */
+
+DROP TABLE IF EXISTS `farm`;
+
+CREATE TABLE `farm` (
+  `roleId` int(11) DEFAULT NULL,
+  `farmSpaceStr` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*Table structure for table `hero` */
 
 DROP TABLE IF EXISTS `hero`;
@@ -42,6 +60,24 @@ CREATE TABLE `hero` (
   `ageCount` int(11) DEFAULT NULL COMMENT '每个阶段的年龄值',
   `rebirth` int(11) DEFAULT NULL COMMENT '转生数',
   `hotspot` int(11) DEFAULT NULL COMMENT '热度'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `kitchen` */
+
+DROP TABLE IF EXISTS `kitchen`;
+
+CREATE TABLE `kitchen` (
+  `roleId` int(11) DEFAULT NULL,
+  `kitchenSpaceStr` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `pub` */
+
+DROP TABLE IF EXISTS `pub`;
+
+CREATE TABLE `pub` (
+  `roleId` int(11) DEFAULT NULL,
+  `pubSpaceStr` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `role` */

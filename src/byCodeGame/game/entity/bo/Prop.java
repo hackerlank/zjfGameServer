@@ -1,4 +1,4 @@
-package byCodeGame.game.entity.po;
+package byCodeGame.game.entity.bo;
 
 import byCodeGame.game.entity.bo.base.RoleComponent;
 

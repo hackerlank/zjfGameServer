@@ -92,11 +92,10 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 
 	@Override
 	public List<String> getAllAccount() {
-		// TODO 查一下怎么写
-		List<String> list = new ArrayList<>();
+		List<String> list = null;
 		try {
 			Connection conn = dataSource.getConnection();
-//			list = this.queryForList(selectAllAccountSql, stringConverter, conn, "");
+			list = this.queryForList(selectAllAccountSql, stringConverter, conn);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -105,11 +104,10 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 
 	@Override
 	public List<String> getAllName() {
-		// TODO 查一下怎么写
-		List<String> list = new ArrayList<>();
+		List<String> list = null;
 		try {
 			Connection conn = dataSource.getConnection();
-//			list = this.queryForList(selectAllNameSql, stringConverter, conn, "");
+			list = this.queryForList(selectAllNameSql, stringConverter, conn);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

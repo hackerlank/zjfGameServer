@@ -10,8 +10,12 @@ import javax.sql.DataSource;
 import byCodeGame.game.cache.local.RoleCache;
 import byCodeGame.game.common.ErrorCode;
 import byCodeGame.game.db.dao.BedroomDao;
+import byCodeGame.game.db.dao.BinDao;
+import byCodeGame.game.db.dao.KitchenDao;
+import byCodeGame.game.db.dao.PubDao;
 import byCodeGame.game.db.dao.RoleDao;
 import byCodeGame.game.entity.bo.Bedroom;
+import byCodeGame.game.entity.bo.Bin;
 import byCodeGame.game.entity.bo.Build;
 import byCodeGame.game.entity.bo.Kitchen;
 import byCodeGame.game.entity.bo.Pub;
@@ -43,6 +47,24 @@ public class RegisterServiceImpl implements RegisterService {
 
 	public void setBedroomDao(BedroomDao bedroomDao) {
 		this.bedroomDao = bedroomDao;
+	}
+
+	private KitchenDao kitchenDao;
+
+	public void setKitchenDao(KitchenDao kitchenDao) {
+		this.kitchenDao = kitchenDao;
+	}
+
+	private PubDao pubDao;
+
+	public void setPubDao(PubDao pubDao) {
+		this.pubDao = pubDao;
+	}
+
+	private BinDao binDao;
+
+	public void setBinDao(BinDao binDao) {
+		this.binDao = binDao;
 	}
 
 	@Override
@@ -142,11 +164,19 @@ public class RegisterServiceImpl implements RegisterService {
 		Kitchen kitchen = new Kitchen();
 		kitchen.setRoleId(roleId);
 		build.setKitchen(kitchen);
+		kitchenDao.insertKitchenNotCloseConnection(kitchen, conn);
 
 		// 酒馆
 		Pub pub = new Pub();
 		pub.setRoleId(roleId);
 		build.setPub(pub);
+		pubDao.insertPubNotCloseConnection(pub, conn);
+
+		// 回收站
+		Bin bin = new Bin();
+		bin.setRoleId(roleId);
+		build.setBin(bin);
+		binDao.insertBinNotCloseConnection(bin, conn);
 	}
 
 	@Override

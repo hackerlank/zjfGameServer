@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
 
+import javax.sql.DataSource;
+
 import org.apache.mina.core.session.IoSession;
 
 import byCodeGame.game.cache.local.RoleCache;
@@ -121,7 +123,7 @@ public class LoginServiceImpl implements LoginService {
 	 * @param role
 	 */
 	private void roleLoginDataInit(Role role) {
-		//英雄初始化
+		// 英雄初始化
 		int roleId = role.getId();
 		List<Hero> list = heroDao.getHerosByRoleId(role.getId());
 		Map<Integer, Hero> heroMap = role.getHeroMap();
@@ -129,15 +131,18 @@ public class LoginServiceImpl implements LoginService {
 			heroMap.put(hero.getHeroId(), hero);
 		}
 
-		//建筑初始化
+		// 建筑初始化
 		Build build = new Build();
 		build.setRoleId(roleId);
 		role.setBuild(build);
 
-		//卧室初始化
+		// 卧室初始化
 		Bedroom bedroom = bedroomDao.getBedroomByRoleId(roleId);
 		build.setBedroom(bedroom);
 
+		//道具初始化
+		
+		
 	}
 
 }

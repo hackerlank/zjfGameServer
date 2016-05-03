@@ -20,6 +20,10 @@ public class Role {
 	private Map<Integer, Hero> heroMap = new HashMap<>();
 	// 喜欢的英雄id
 	private int loveHeroId;
+	// serverId为key的道具表
+	private Map<Integer, Prop> serverIdPropMap = new HashMap<>();
+	// configId为key的道具表
+	private Map<Integer, Prop> configIdPropMap = new HashMap<>();
 	// 建筑信息
 	private Build build;
 
@@ -65,6 +69,14 @@ public class Role {
 
 	public Build getBuild() {
 		return build;
+	}
+
+	public Map<Integer, Prop> getConfigIdPropMap() {
+		return configIdPropMap;
+	}
+
+	public Map<Integer, Prop> getServerIdPropMap() {
+		return serverIdPropMap;
 	}
 
 }

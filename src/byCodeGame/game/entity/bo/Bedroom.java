@@ -31,45 +31,37 @@ public class Bedroom extends RoleComponent {
 		bedSpaceMap.clear();
 
 		String[] originData = bedSpaceStr.split(",");
-		// 获取床的数量
-		int index = 0;
-		int size = Integer.parseInt(originData[index]);
-		index++;
-
-		for (int i = 0; i < size; i++) {
-			byte bedIndex = Byte.parseByte(originData[index++]);
-			int bed = Integer.parseInt(originData[index++]);
-			int beddingBag = Integer.parseInt(originData[index++]);
-			int bedSheet = Integer.parseInt(originData[index++]);
-			int pillow1 = Integer.parseInt(originData[index++]);
-			int pillow2 = Integer.parseInt(originData[index++]);
+		
+		int i = 0;
+		while(i<originData.length){
+			byte position = Byte.parseByte(originData[i++]);
+			int bed = Integer.parseInt(originData[i++]);
+			int beddingBag = Integer.parseInt(originData[i++]);
+			int bedSheet = Integer.parseInt(originData[i++]);
+			int pillow1 = Integer.parseInt(originData[i++]);
+			int pillow2 = Integer.parseInt(originData[i++]);
 
 			BedSpace bedSpace = new BedSpace();
-			bedSpace.setBed(bed);
-			bedSpace.setBeddingBag(beddingBag);
-			bedSpace.setBedSheet(bedSheet);
-			bedSpace.setPillow1(pillow1);
-			bedSpace.setPillow2(pillow2);
-			
-			this.bedSpaceMap.put(bedIndex, bedSpace);
+			bedSpace.setPosition(position);
+			bedSpace.setBedId(bed);
+			bedSpace.setBeddingBagId(beddingBag);
+			bedSpace.setBedSheetId(bedSheet);
+			bedSpace.setPillow1Id(pillow1);
+			bedSpace.setPillow2Id(pillow2);
+
+			this.bedSpaceMap.put(position, bedSpace);
 		}
 	}
 
 	public String getBedSpaceStr() {
 		StringBuilder sb = new StringBuilder();
-		int size = bedSpaceMap.size();
-		sb.append(size).append(",");
-
-		for (Entry<Byte, BedSpace> entrySet : bedSpaceMap.entrySet()) {
-			byte index = entrySet.getKey();
-			BedSpace bed = entrySet.getValue();
-
-			sb.append(index).append(",");
-			sb.append(bed.getBed()).append(",");
-			sb.append(bed.getBeddingBag()).append(",");
-			sb.append(bed.getBedSheet()).append(",");
-			sb.append(bed.getPillow1()).append(",");
-			sb.append(bed.getPillow2()).append(",");
+		for (BedSpace bed : bedSpaceMap.values()) {
+			sb.append(bed.getPosition()).append(",");
+			sb.append(bed.getBedId()).append(",");
+			sb.append(bed.getBeddingBagId()).append(",");
+			sb.append(bed.getBedSheetId()).append(",");
+			sb.append(bed.getPillow1Id()).append(",");
+			sb.append(bed.getPillow2Id()).append(",");
 		}
 		this.bedSpaceStr = sb.toString();
 		return bedSpaceStr;

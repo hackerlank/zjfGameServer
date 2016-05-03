@@ -8,15 +8,17 @@ import byCodeGame.game.entity.bo.base.RoleComponent;
  * @author wcy 2016年4月28日
  *
  */
-public class Build extends RoleComponent{
-
+public class Build extends RoleComponent {
+	/** 卧室 */
 	private Bedroom bedroom;
-
+	/** 厨房 */
 	private Kitchen kitchen;
-
+	/** 农场 */
 	private Farm farm;
-
+	/** 酒馆 */
 	private Pub pub;
+	/** 回收站 */
+	private Bin bin;
 
 	public void setBedroom(Bedroom bedroom) {
 		this.bedroom = bedroom;
@@ -48,6 +50,14 @@ public class Build extends RoleComponent{
 
 	public Pub getPub() {
 		return pub;
+	}
+
+	public void setBin(Bin bin) {
+		this.bin = bin;
+	}
+
+	public Bin getBin() {
+		return bin;
 	}
 
 }
