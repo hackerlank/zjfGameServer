@@ -15,11 +15,19 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="roleDao" ref="roleDao"></property>
 		<property name="bedroomDao" ref="bedroomDao"></property>
+		<property name="kitchenDao" ref="kitchenDao"></property>
+		<property name="farmDao" ref="farmDao"></property>
+		<property name="pubDao" ref="pubDao"></property>
+		<property name="binDao" ref="binDao"></property>
 	</bean>
 	<bean id="loginService" class="byCodeGame.game.module.login.service.LoginServiceImpl">
 		<property name="roleDao" ref="roleDao"></property>
-		<property name="bedroomDao" ref="bedroomDao"></property>
 		<property name="heroDao" ref="heroDao"></property>
+		<property name="bedroomDao" ref="bedroomDao"></property>
+		<property name="kitchenDao" ref="kitchenDao"></property>
+		<property name="farmDao" ref="farmDao"></property>
+		<property name="pubDao" ref="pubDao"></property>
+		<property name="binDao" ref="binDao"></property>
 	</bean>
 
 
