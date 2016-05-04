@@ -38,16 +38,14 @@ public class Bedroom extends RoleComponent {
 			int bed = Integer.parseInt(originData[i++]);
 			int beddingBag = Integer.parseInt(originData[i++]);
 			int bedSheet = Integer.parseInt(originData[i++]);
-			int pillow1 = Integer.parseInt(originData[i++]);
-			int pillow2 = Integer.parseInt(originData[i++]);
+			int pillow = Integer.parseInt(originData[i++]);
 
 			BedSpace bedSpace = new BedSpace();
 			bedSpace.setPosition(position);
 			bedSpace.setBedId(bed);
 			bedSpace.setBeddingBagId(beddingBag);
 			bedSpace.setBedSheetId(bedSheet);
-			bedSpace.setPillow1Id(pillow1);
-			bedSpace.setPillow2Id(pillow2);
+			bedSpace.setPillowId(pillow);
 
 			this.bedSpaceMap.put(position, bedSpace);
 		}
@@ -60,8 +58,7 @@ public class Bedroom extends RoleComponent {
 			sb.append(bed.getBedId()).append(",");
 			sb.append(bed.getBeddingBagId()).append(",");
 			sb.append(bed.getBedSheetId()).append(",");
-			sb.append(bed.getPillow1Id()).append(",");
-			sb.append(bed.getPillow2Id()).append(",");
+			sb.append(bed.getPillowId()).append(",");
 		}
 		this.bedSpaceStr = sb.toString();
 		return bedSpaceStr;

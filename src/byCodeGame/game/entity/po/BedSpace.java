@@ -13,10 +13,8 @@ public class BedSpace {
 	private int bedId;
 	/** 床单 */
 	private int bedSheetId;
-	/** 枕头1 */
-	private int pillow1Id;
-	/** 枕头2 */
-	private int pillow2Id;
+	/** 枕头 */
+	private int pillowId;
 	/** 被套 */
 	private int beddingBagId;
 
@@ -44,20 +42,12 @@ public class BedSpace {
 		this.bedSheetId = bedSheetId;
 	}
 
-	public int getPillow1Id() {
-		return pillow1Id;
+	public int getPillowId() {
+		return pillowId;
 	}
 
-	public void setPillow1Id(int pillow1Id) {
-		this.pillow1Id = pillow1Id;
-	}
-
-	public int getPillow2Id() {
-		return pillow2Id;
-	}
-
-	public void setPillow2Id(int pillow2Id) {
-		this.pillow2Id = pillow2Id;
+	public void setPillowId(int pillowId) {
+		this.pillowId = pillowId;
 	}
 
 	public int getBeddingBagId() {
