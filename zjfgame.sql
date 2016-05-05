@@ -22,7 +22,8 @@ DROP TABLE IF EXISTS `bedroom`;
 
 CREATE TABLE `bedroom` (
   `roleId` int(11) NOT NULL,
-  `bedSpaceStr` text
+  `bedSpaceStr` text,
+  PRIMARY KEY (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `bin` */
@@ -30,8 +31,9 @@ CREATE TABLE `bedroom` (
 DROP TABLE IF EXISTS `bin`;
 
 CREATE TABLE `bin` (
-  `roleId` int(11) DEFAULT NULL,
-  `binSpaceStr` text
+  `roleId` int(11) NOT NULL,
+  `binSpaceStr` text,
+  PRIMARY KEY (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `farm` */
@@ -39,8 +41,20 @@ CREATE TABLE `bin` (
 DROP TABLE IF EXISTS `farm`;
 
 CREATE TABLE `farm` (
-  `roleId` int(11) DEFAULT NULL,
-  `farmSpaceStr` text
+  `roleId` int(11) NOT NULL,
+  `farmSpaceStr` text,
+  PRIMARY KEY (`roleId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `hall` */
+
+DROP TABLE IF EXISTS `hall`;
+
+CREATE TABLE `hall` (
+  `roleId` int(11) NOT NULL,
+  `hallSpaceStr` text,
+  `hallPhotoSpaceStr` text,
+  PRIMARY KEY (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `hero` */
@@ -48,7 +62,7 @@ CREATE TABLE `farm` (
 DROP TABLE IF EXISTS `hero`;
 
 CREATE TABLE `hero` (
-  `roleId` int(11) DEFAULT NULL COMMENT '玩家id',
+  `roleId` int(11) NOT NULL COMMENT '玩家id',
   `heroId` int(11) DEFAULT NULL COMMENT '英雄配置表id',
   `emotion` int(11) DEFAULT NULL COMMENT '好感度',
   `hungry` int(11) DEFAULT NULL COMMENT '饥饿度',
@@ -59,7 +73,8 @@ CREATE TABLE `hero` (
   `ageId` int(11) DEFAULT NULL COMMENT '年龄阶段id',
   `ageCount` int(11) DEFAULT NULL COMMENT '每个阶段的年龄值',
   `rebirth` int(11) DEFAULT NULL COMMENT '转生数',
-  `hotspot` int(11) DEFAULT NULL COMMENT '热度'
+  `hotspot` int(11) DEFAULT NULL COMMENT '热度',
+  PRIMARY KEY (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `kitchen` */
@@ -67,8 +82,9 @@ CREATE TABLE `hero` (
 DROP TABLE IF EXISTS `kitchen`;
 
 CREATE TABLE `kitchen` (
-  `roleId` int(11) DEFAULT NULL,
-  `kitchenSpaceStr` text
+  `roleId` int(11) NOT NULL,
+  `kitchenSpaceStr` text,
+  PRIMARY KEY (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `pub` */
@@ -76,8 +92,9 @@ CREATE TABLE `kitchen` (
 DROP TABLE IF EXISTS `pub`;
 
 CREATE TABLE `pub` (
-  `roleId` int(11) DEFAULT NULL,
-  `pubSpaceStr` text
+  `roleId` int(11) NOT NULL,
+  `pubSpaceStr` text,
+  PRIMARY KEY (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `role` */
