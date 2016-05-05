@@ -14,7 +14,7 @@ import byCodeGame.game.entity.bo.Farm;
 
 public class FarmDaoImpl extends DataAccess implements FarmDao {
 
-	private final String insertSql = "insert into farm values(?,?)";
+	private final String insertSql = "insert into farm values(?,?,?)";
 	private final String selectSql = "select * from farm where roleId=? limit 1";
 	private final String updateSql = "update farm set farmSpaceStr=? where roleId=? limit 1";
 
@@ -39,7 +39,7 @@ public class FarmDaoImpl extends DataAccess implements FarmDao {
 	@Override
 	public void insertFarmNotCloseConnection(Farm farm, Connection conn) {
 		try {
-			this.insertNotCloseConn(insertSql, integerConverter, conn, farm.getRoleId());
+			this.insertNotCloseConn(insertSql, integerConverter, conn, farm.getRoleId(),farm.getFarmSpaceStr());
 		} catch (DataAccessException | SQLException e) {
 			e.printStackTrace();
 		}

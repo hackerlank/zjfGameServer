@@ -24,8 +24,8 @@ public class Role {
 	private Map<Integer, Prop> serverIdPropMap = new HashMap<>();
 	// configId为key的道具表
 	private Map<Integer, Prop> configIdPropMap = new HashMap<>();
-	// 建筑信息
-	private Build build;
+	// 家信息
+	private Home home;
 
 	public void setId(int id) {
 		this.id = id;
@@ -63,12 +63,12 @@ public class Role {
 		return loveHeroId;
 	}
 
-	public void setBuild(Build build) {
-		this.build = build;
+	public void setHome(Home home) {
+		this.home = home;
 	}
 
-	public Build getBuild() {
-		return build;
+	public Home getHome() {
+		return home;
 	}
 
 	public Map<Integer, Prop> getConfigIdPropMap() {

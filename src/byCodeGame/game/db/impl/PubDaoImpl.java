@@ -14,7 +14,7 @@ import byCodeGame.game.entity.bo.Pub;
 
 public class PubDaoImpl extends DataAccess implements PubDao {
 
-	private final String insertSql = "insert into pub values(?,?)";
+	private final String insertSql = "insert into pub values(?,?,?)";
 	private final String selectSql = "select * from pub where roleId=? limit 1";
 	private final String updateSql = "update pub set pubSpaceStr=? where roleId=? limit 1";
 
@@ -30,16 +30,16 @@ public class PubDaoImpl extends DataAccess implements PubDao {
 		this.dataSource = dataSource;
 	}
 
-	private PubConverter PubConverter;
+	private PubConverter pubConverter;
 
-	public void setPubConverter(PubConverter PubConverter) {
-		this.PubConverter = PubConverter;
+	public void setPubConverter(PubConverter pubConverter) {
+		this.pubConverter = pubConverter;
 	}
 
 	@Override
-	public void insertPubNotCloseConnection(Pub Pub, Connection conn) {
+	public void insertPubNotCloseConnection(Pub pub, Connection conn) {
 		try {
-			this.insertNotCloseConn(insertSql, integerConverter, conn, Pub.getRoleId());
+			this.insertNotCloseConn(insertSql, integerConverter, conn, pub.getRoleId(),pub.getPubSpaceStr());
 		} catch (DataAccessException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -49,7 +49,7 @@ public class PubDaoImpl extends DataAccess implements PubDao {
 	public Pub getPubByRoleId(int roleId) {
 		try {
 			Connection conn = dataSource.getConnection();
-			Pub Pub = this.queryForObject(selectSql, PubConverter, conn, roleId);
+			Pub Pub = this.queryForObject(selectSql, pubConverter, conn, roleId);
 			return Pub;
 		} catch (SQLException e) {
 			e.printStackTrace();

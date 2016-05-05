@@ -3,12 +3,12 @@ package byCodeGame.game.entity.bo;
 import byCodeGame.game.entity.bo.base.RoleComponent;
 
 /**
- * 建筑信息
+ * 家
  * 
  * @author wcy 2016年4月28日
  *
  */
-public class Build extends RoleComponent {
+public class Home extends RoleComponent {
 	/** 卧室 */
 	private Bedroom bedroom;
 	/** 厨房 */
@@ -19,6 +19,8 @@ public class Build extends RoleComponent {
 	private Pub pub;
 	/** 回收站 */
 	private Bin bin;
+	/** 大厅 */
+	private Hall hall;
 
 	public void setBedroom(Bedroom bedroom) {
 		this.bedroom = bedroom;
@@ -60,4 +62,11 @@ public class Build extends RoleComponent {
 		return bin;
 	}
 
+	public void setHall(Hall hall) {
+		this.hall = hall;
+	}
+
+	public Hall getHall() {
+		return hall;
+	}
 }

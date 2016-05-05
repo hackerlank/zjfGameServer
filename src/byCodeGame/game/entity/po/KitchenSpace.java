@@ -1,14 +1,14 @@
 package byCodeGame.game.entity.po;
 
+import byCodeGame.game.entity.po.base.Space;
+
 /**
  * 厨房位
  * 
  * @author wcy 2016年5月3日
  *
  */
-public class KitchenSpace {
-	/** 位置 */
-	private byte position;
+public class KitchenSpace extends Space {
 	/** 电磁炉 */
 	private int electricForgeId;
 	/** 锅 */
@@ -40,14 +40,6 @@ public class KitchenSpace {
 	 */
 	public void setPanId(int panId) {
 		this.panId = panId;
-	}
-
-	public byte getPosition() {
-		return position;
-	}
-
-	public void setPosition(byte position) {
-		this.position = position;
 	}
 
 }

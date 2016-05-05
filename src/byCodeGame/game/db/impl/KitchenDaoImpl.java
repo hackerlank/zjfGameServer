@@ -16,7 +16,7 @@ import byCodeGame.game.entity.bo.Role;
 
 public class KitchenDaoImpl extends DataAccess implements KitchenDao {
 
-	private final String insertSql = "insert into kitchen values(?,?)";
+	private final String insertSql = "insert into kitchen values(?,?,?)";
 	private final String selectSql = "select * from kitchen where roleId=? limit 1";
 	private final String updateSql = "update kitchen set kitchenSpaceStr=? where roleId=? limit 1";
 
@@ -41,7 +41,7 @@ public class KitchenDaoImpl extends DataAccess implements KitchenDao {
 	@Override
 	public void insertKitchenNotCloseConnection(Kitchen kitchen, Connection conn) {
 		try {
-			this.insertNotCloseConn(insertSql, integerConverter, conn, kitchen.getRoleId());
+			this.insertNotCloseConn(insertSql, integerConverter, conn, kitchen.getRoleId(),kitchen.getKitchenSpaceStr());
 		} catch (DataAccessException | SQLException e) {
 			e.printStackTrace();
 		}

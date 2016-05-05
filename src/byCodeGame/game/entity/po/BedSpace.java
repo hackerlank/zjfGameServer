@@ -1,14 +1,14 @@
 package byCodeGame.game.entity.po;
 
+import byCodeGame.game.entity.po.base.Space;
+
 /**
  * 床
  * 
  * @author wcy 2016年4月29日
  *
  */
-public class BedSpace {
-	/** 位置 */
-	private byte position;
+public class BedSpace extends Space{
 	/** 床 */
 	private int bedId;
 	/** 床单 */
@@ -17,14 +17,6 @@ public class BedSpace {
 	private int pillowId;
 	/** 被套 */
 	private int beddingBagId;
-
-	public byte getPosition() {
-		return position;
-	}
-
-	public void setPosition(byte position) {
-		this.position = position;
-	}
 
 	public int getBedId() {
 		return bedId;

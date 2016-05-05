@@ -14,7 +14,7 @@ import byCodeGame.game.entity.bo.Bin;
 
 public class BinDaoImpl extends DataAccess implements BinDao {
 
-	private final String insertSql = "insert into bin values(?,?)";
+	private final String insertSql = "insert into bin values(?,?,?)";
 	private final String selectSql = "select * from bin where roleId=? limit 1";
 	private final String updateSql = "update Bin set binSpaceStr=? where roleId=? limit 1";
 
@@ -39,7 +39,7 @@ public class BinDaoImpl extends DataAccess implements BinDao {
 	@Override
 	public void insertBinNotCloseConnection(Bin bin, Connection conn) {
 		try {
-			this.insertNotCloseConn(insertSql, integerConverter, conn, bin.getRoleId());
+			this.insertNotCloseConn(insertSql, integerConverter, conn, bin.getRoleId(),bin.getBinSpaceStr());
 		} catch (DataAccessException | SQLException e) {
 			e.printStackTrace();
 		}

@@ -1,14 +1,14 @@
 package byCodeGame.game.entity.po;
 
+import byCodeGame.game.entity.po.base.Space;
+
 /**
  * 酒台
  * 
  * @author wcy 2016年5月3日
  *
  */
-public class PubSpace {
-	/**位置*/
-	private byte position;
+public class PubSpace extends Space{
 	/** 酒炉 */
 	private int pubForgeId;
 	/** 酒桶 */
@@ -28,14 +28,6 @@ public class PubSpace {
 
 	public void setPubBucketId(int pubBucketId) {
 		this.pubBucketId = pubBucketId;
-	}
-
-	public void setPosition(byte position) {
-		this.position = position;
-	}
-
-	public byte getPosition() {
-		return position;
 	}
 
 }

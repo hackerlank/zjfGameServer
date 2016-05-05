@@ -13,6 +13,7 @@
 	<bean id="pubConverter" class="byCodeGame.game.db.convert.PubConverter"></bean>
 	<bean id="farmConverter" class="byCodeGame.game.db.convert.FarmConverter"></bean>
 	<bean id="binConverter" class="byCodeGame.game.db.convert.BinConverter"></bean>
+	<bean id="hallConverter" class="byCodeGame.game.db.convert.HallConverter"></bean>
 
 	<bean id="roleDao" class="byCodeGame.game.db.impl.RoleDaoImpl">
 		<property name="dataSource" ref="dataSource"></property>
@@ -55,6 +56,12 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="integerConverter" ref="integerConverter"></property>
 		<property name="binConverter" ref="binConverter"></property>
+	</bean>
+	
+	<bean id="hallDao" class="byCodeGame.game.db.impl.HallDaoImpl">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="integerConverter" ref="integerConverter"></property>
+		<property name="hallConverter" ref="hallConverter"></property>
 	</bean>
 
 </beans>

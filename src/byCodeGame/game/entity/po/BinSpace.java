@@ -1,23 +1,17 @@
 package byCodeGame.game.entity.po;
 
+import byCodeGame.game.entity.po.base.Space;
+
 /**
  * 
  * @author wcy 2016年5月3日
  *
  */
-public class BinSpace {
-	/** 位置 */
-	private byte position;
+public class BinSpace extends Space{
 	/** 转化机id */
 	private int convertMachineId;
 
-	public byte getPosition() {
-		return position;
-	}
 
-	public void setPosition(byte position) {
-		this.position = position;
-	}
 
 	public int getConvertMachineId() {
 		return convertMachineId;

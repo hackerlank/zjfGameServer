@@ -19,7 +19,7 @@ import byCodeGame.game.entity.bo.Bedroom;
  */
 public class BedroomDaoImpl extends DataAccess implements BedroomDao {
 
-	private final String insertSql = "insert into bedroom values(?,?)";
+	private final String insertSql = "insert into bedroom values(?,?,?)";
 	private final String selectByRoldIdSql = "select * from bedroom where roleId=? limit 1";
 	private final String updateSql = "update bedroom set bedSpaceStr=? where roleId=? limit 1";
 
