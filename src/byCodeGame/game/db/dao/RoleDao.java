@@ -15,4 +15,6 @@ public interface RoleDao {
 	public List<String> getAllAccount();
 
 	public List<String> getAllName();
+	
+	Role getRoleById(int roleId);
 }

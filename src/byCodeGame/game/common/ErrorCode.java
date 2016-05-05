@@ -18,5 +18,6 @@ public class ErrorCode {
 	public static final short REGISTER_NAME_REPEAT = 30004;
 
 	public static final short REGISTER_FAILED = 30005;
+	public static final short NO_ROLE = 30006;
 
 }

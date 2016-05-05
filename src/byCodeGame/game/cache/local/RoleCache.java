@@ -17,19 +17,24 @@ import byCodeGame.game.entity.bo.Role;
  */
 public class RoleCache {
 	private static Map<Integer, Role> roleCache = new ConcurrentHashMap<>();
+	private static Map<String, Role> accountMap = new ConcurrentHashMap<>();
 	private static Set<String> accountCache = new ConcurrentHashSet<>();
 	private static Set<String> nameCache = new ConcurrentHashSet<>();
-	private static Map<String, Role> accountMap = new ConcurrentHashMap<>();
 
 	public static Map<Integer, Role> getAllRole() {
 		return roleCache;
 	}
 
 	public static void putRole(Role role) {
+		if (role == null) {
+			return;
+		}
 		String name = role.getName();
 		String account = role.getAccount();
 		roleCache.put(role.getId(), role);
 		accountMap.put(account, role);
+		accountCache.add(account);
+		nameCache.add(name);
 	}
 
 	public static Set<String> getAccountSet() {
@@ -47,8 +52,8 @@ public class RoleCache {
 	public static Role getRoleById(int roleId) {
 		return roleCache.get(roleId);
 	}
-	
-	public static Role getRoleBySession(IoSession session){
+
+	public static Role getRoleBySession(IoSession session) {
 		Integer roleId = (Integer) session.getAttribute("roleId");
 		return RoleCache.getRoleById(roleId);
 	}

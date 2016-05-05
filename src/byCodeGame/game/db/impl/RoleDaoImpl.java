@@ -27,6 +27,7 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 	private final String updateSql = "update role set name=?, account=?, loveHeroId=? where id=? limit 1";
 	private final String selectAllAccountSql = "select account from role";
 	private final String selectAllNameSql = "select name from role";
+	private final String selectIdSql = "select * from role where id=? limit 1";
 
 	private DataSource dataSource;
 
@@ -56,7 +57,8 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 	public Role getRoleByAccount(String account) {
 		try {
 			Connection conn = dataSource.getConnection();
-			this.queryForObject(selectAccountSql, roleConverter, conn, account);
+			Role role = this.queryForObject(selectAccountSql, roleConverter, conn, account);
+			return role;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -112,5 +114,18 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	@Override
+	public Role getRoleById(int roleId) {
+		try {
+			Connection conn = dataSource.getConnection();
+			Role role = this.queryForObject(selectIdSql, roleConverter, conn, roleId);
+			return role;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 }

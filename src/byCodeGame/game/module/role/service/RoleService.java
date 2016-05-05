@@ -4,13 +4,20 @@ import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.remote.Message;
 
 public interface RoleService {
+
 	/**
-	 * 喜欢英雄
+	 * 用roleId获得玩家
 	 * 
-	 * @param role
-	 * @param heroId
+	 * @param roleId
 	 * @return
 	 */
-	Message loveHero(Role role, int heroId);
+	Role getRoleById(int roleId);
+	
+	/**
+	 * 
+	 * @param account
+	 * @return
+	 */
+	Role getRoleByAccount(String account);
 
 }

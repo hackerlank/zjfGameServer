@@ -21,13 +21,16 @@
 		<property name="binDao" ref="binDao"></property>
 	</bean>
 	<bean id="loginService" class="byCodeGame.game.module.login.service.LoginServiceImpl">
+		<property name="roleService" ref="roleService"></property>
+	</bean>
+	<bean id="roleService" class="byCodeGame.game.module.role.service.RoleServiceImpl">
 		<property name="roleDao" ref="roleDao"></property>
-		<property name="heroDao" ref="heroDao"></property>
 		<property name="bedroomDao" ref="bedroomDao"></property>
 		<property name="kitchenDao" ref="kitchenDao"></property>
 		<property name="farmDao" ref="farmDao"></property>
 		<property name="pubDao" ref="pubDao"></property>
 		<property name="binDao" ref="binDao"></property>
+		<property name="hallDao" ref="hallDao"></property>
 	</bean>
 
 
