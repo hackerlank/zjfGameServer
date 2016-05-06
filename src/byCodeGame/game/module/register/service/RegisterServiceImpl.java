@@ -72,16 +72,17 @@ public class RegisterServiceImpl implements RegisterService {
 	}
 
 	private FarmDao farmDao;
+
 	public void setFarmDao(FarmDao farmDao) {
 		this.farmDao = farmDao;
 	}
-	
+
 	private HallDao hallDao;
+
 	public void setHallDao(HallDao hallDao) {
 		this.hallDao = hallDao;
 	}
-	
-	
+
 	@Override
 	public Message register(String account, String name) {
 		Message message = new Message();
@@ -92,11 +93,12 @@ public class RegisterServiceImpl implements RegisterService {
 		try {
 			Set<String> accountSet = RoleCache.getAccountSet();
 			Set<String> nameSet = RoleCache.getNameSet();
-			if (accountSet.contains(account)) { // 判定账号是否存在
+			// 判定账号是否存在
+			if (accountSet.contains(account)) {
 				message.putShort(ErrorCode.REGISTER_ACCOUNT_REPEAT);
 				return message;
 			}
-
+			// 判定昵称是否存在
 			if (nameSet.contains(name)) {
 				message.putShort(ErrorCode.REGISTER_NAME_REPEAT);
 				return message;
@@ -192,15 +194,15 @@ public class RegisterServiceImpl implements RegisterService {
 		bin.setRoleId(roleId);
 		home.setBin(bin);
 		binDao.insertBinNotCloseConnection(bin, conn);
-		
-		//农场
+
+		// 农场
 		Farm farm = new Farm();
 		farm.setRoleId(roleId);
 		home.setFarm(farm);
 		farmDao.insertFarmNotCloseConnection(farm, conn);
-		
-		//大厅
-		Hall hall =new Hall();
+
+		// 大厅
+		Hall hall = new Hall();
 		hall.setRoleId(roleId);
 		home.setHall(hall);
 		hallDao.insertHallNotCloseConnection(hall, conn);

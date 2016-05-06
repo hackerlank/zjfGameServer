@@ -2,8 +2,10 @@ package byCodeGame.game.module.role.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import byCodeGame.game.cache.local.RoleCache;
+import byCodeGame.game.common.ErrorCode;
 import byCodeGame.game.db.dao.BedroomDao;
 import byCodeGame.game.db.dao.BinDao;
 import byCodeGame.game.db.dao.FarmDao;
@@ -21,6 +23,7 @@ import byCodeGame.game.entity.bo.Home;
 import byCodeGame.game.entity.bo.Kitchen;
 import byCodeGame.game.entity.bo.Pub;
 import byCodeGame.game.entity.bo.Role;
+import byCodeGame.game.remote.Message;
 
 public class RoleServiceImpl implements RoleService {
 
@@ -77,8 +80,15 @@ public class RoleServiceImpl implements RoleService {
 		Role role = RoleCache.getRoleById(roleId);
 		if (role == null) {
 			role = roleDao.getRoleById(roleId);
-			this.roleDataInit(role);
-			RoleCache.putRole(role);
+			if (role != null) {
+				this.roleDataInit(role);
+				RoleCache.putRole(role);
+				String name = role.getName();
+				String account = role.getAccount();
+
+				RoleCache.getNameSet().add(name);
+				RoleCache.getAccountSet().add(account);
+			}
 		}
 
 		return role;
@@ -89,12 +99,44 @@ public class RoleServiceImpl implements RoleService {
 		Role role = RoleCache.getRoleByAccount(account);
 		if (role == null) {
 			role = roleDao.getRoleByAccount(account);
-			this.roleDataInit(role);
-			RoleCache.putRole(role);
+			if (role != null) {
+				this.roleDataInit(role);
+				RoleCache.putRole(role);
+				String name = role.getName();
+
+				RoleCache.getNameSet().add(name);
+				RoleCache.getAccountSet().add(account);
+			}
+
 		}
 		return role;
 	}
 
+	@Override
+	public Message setNickname(Role role, String nickname) {
+		Message message = new Message();
+		Set<String> nameSet = RoleCache.getNameSet();
+
+		if (nameSet.contains(nickname)) {
+			message.putShort(ErrorCode.ROLE_NAME_REPEAT);
+			return message;
+		}
+
+		String name = role.getName();
+		nameSet.remove(name);
+		nameSet.add(nickname);
+		role.setName(nickname);
+
+		message.putShort(ErrorCode.SUCCESS);
+		return message;
+	}
+
+	/**
+	 * 玩家数据初始化
+	 * 
+	 * @param role
+	 * @author wcy 2016年5月6日
+	 */
 	private void roleDataInit(Role role) {
 		// 英雄初始化
 		int roleId = role.getId();

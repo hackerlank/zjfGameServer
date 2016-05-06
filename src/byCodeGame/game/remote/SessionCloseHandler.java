@@ -1,5 +1,6 @@
 package byCodeGame.game.remote;
 
+import byCodeGame.game.cache.local.SessionCache;
 import byCodeGame.game.entity.bo.Role;
 
 
@@ -15,7 +16,8 @@ public class SessionCloseHandler {
 	 * @param id
 	 */
 	public static void manipulate(Role role) {
-		
+		updateRoleData(role);
+		SessionCache.removeSessionById(role.getId());
 	}
 
 	// 更新角色数据

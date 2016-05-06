@@ -16,25 +16,22 @@ import byCodeGame.game.entity.bo.Role;
  *
  */
 public class RoleCache {
-	private static Map<Integer, Role> roleCache = new ConcurrentHashMap<>();
+	private static Map<Integer, Role> roleMap = new ConcurrentHashMap<>();
 	private static Map<String, Role> accountMap = new ConcurrentHashMap<>();
 	private static Set<String> accountCache = new ConcurrentHashSet<>();
 	private static Set<String> nameCache = new ConcurrentHashSet<>();
 
 	public static Map<Integer, Role> getAllRole() {
-		return roleCache;
+		return roleMap;
 	}
 
 	public static void putRole(Role role) {
 		if (role == null) {
 			return;
 		}
-		String name = role.getName();
 		String account = role.getAccount();
-		roleCache.put(role.getId(), role);
+		roleMap.put(role.getId(), role);
 		accountMap.put(account, role);
-		accountCache.add(account);
-		nameCache.add(name);
 	}
 
 	public static Set<String> getAccountSet() {
@@ -50,11 +47,16 @@ public class RoleCache {
 	}
 
 	public static Role getRoleById(int roleId) {
-		return roleCache.get(roleId);
+		return roleMap.get(roleId);
 	}
-
-	public static Role getRoleBySession(IoSession session) {
-		Integer roleId = (Integer) session.getAttribute("roleId");
-		return RoleCache.getRoleById(roleId);
+	
+	public static Role getRoleBySession(IoSession session){
+		try{
+			int roleId = (int)session.getAttribute("roleId");
+			Role role = roleMap.get(roleId);
+			return role;
+		}catch(Exception e){
+			return null;
+		}
 	}
 }

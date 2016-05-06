@@ -17,7 +17,7 @@ public interface HeroService{
 	 * 创建单个英雄
 	 * @return
 	 */
-	Hero createHero(Role role,int heroId);
+	Hero createHero(int heroId);
 
 	/**
 	 * 改变技能

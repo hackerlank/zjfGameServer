@@ -19,10 +19,9 @@ public class HeroServiceImpl implements HeroService {
 	}
 
 	@Override
-	public Hero createHero(Role role, int heroId) {
+	public Hero createHero(int heroId) {
 		Hero hero = new Hero();
 
-		hero.setRoleId(role.getId());
 		hero.setHeroId(heroId);
 
 		heroDao.insertHero(hero);

@@ -12,12 +12,22 @@ public interface RoleService {
 	 * @return
 	 */
 	Role getRoleById(int roleId);
-	
+
 	/**
 	 * 
 	 * @param account
 	 * @return
 	 */
 	Role getRoleByAccount(String account);
+
+	/**
+	 * 设置昵称
+	 * 
+	 * @param role
+	 * @param nickname
+	 * @return
+	 * @author wcy 2016年5月6日
+	 */
+	Message setNickname(Role role, String nickname);
 
 }

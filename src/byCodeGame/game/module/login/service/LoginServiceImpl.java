@@ -70,7 +70,6 @@ public class LoginServiceImpl implements LoginService {
 				return message;
 			}
 
-			// 检测配属英雄
 			IoSession oldSession = SessionCache.getSessionByRoleId(role.getId());
 			if (oldSession != null) { // 该账号已登录
 				oldSession.setAttribute("roleId", null);
@@ -81,7 +80,6 @@ public class LoginServiceImpl implements LoginService {
 			ioSession.setAttribute("roleId", role.getId());
 			// session放入缓存
 			SessionCache.addSession(role.getId(), ioSession);
-			// System.out.println(ioSession + "放入缓存");
 
 			return message;
 		} catch (Exception e) {

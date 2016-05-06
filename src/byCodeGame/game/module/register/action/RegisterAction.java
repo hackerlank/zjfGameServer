@@ -21,7 +21,7 @@ public class RegisterAction implements ActionSupport {
 	@Override
 	public void execute(Message message, IoSession session) {
 		String account = message.getString(session);
-		String name= message.getString(session);
+		String name = message.getString(session);
 		
 		message = registerService.register(account,name);
 		if(message != null){
