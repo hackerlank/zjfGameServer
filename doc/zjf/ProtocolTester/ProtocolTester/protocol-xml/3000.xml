@@ -1,0 +1,12 @@
+﻿<File>
+		<protocol id="3000" notes="获取兵种科技信息">
+			<request>
+				
+			</request>
+			<result>
+				
+					<Short notes="兵种ID" />
+				
+			</result>
+		</protocol>
+	</File>

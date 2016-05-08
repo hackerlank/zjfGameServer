@@ -1,0 +1,12 @@
+﻿<File>
+	<protocol id="1127" notes="武将升星">
+		<request>
+			<Int notes="英雄id" />
+		</request>
+		<result>			
+			<Short 	notes="是否成功"/>
+			<Int	notes="消耗将魂数量"/>
+			<Int	notes="目前武将星数"/>
+		</result>
+	</protocol>
+</File>

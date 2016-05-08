@@ -1,0 +1,15 @@
+﻿<File>
+<protocol id="308" notes="获取建筑队列数据">
+	<request>
+	
+		
+	</request>
+	<result>
+		<Array loopWith="Byte">
+			<Byte notes="建筑队列ID" />
+			<Int notes="建筑队列时间" />
+			<Byte notes="该建筑队列是否开启" />
+		</Array>
+	</result>
+</protocol>
+</File>

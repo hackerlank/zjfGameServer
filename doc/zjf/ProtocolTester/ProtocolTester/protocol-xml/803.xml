@@ -1,0 +1,10 @@
+<File>
+	<protocol id="803" notes="提取附件">
+		<request>
+			<Int notes = "邮件ID" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

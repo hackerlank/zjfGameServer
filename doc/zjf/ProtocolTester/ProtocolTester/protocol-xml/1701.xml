@@ -1,0 +1,27 @@
+<File>
+	<protocol id="1701" notes="请求关卡战斗">
+		<request>
+			<Int notes = "关卡ID" />
+			<Byte notes = "是否检测兵力" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+			<String notes = "UUID" />
+			<String notes = "时间" />
+			<Int notes = "胜利阵营" />
+			<Int notes = "进攻ID" />
+			<Int notes = "防守ID" />
+			<String notes = "战报" />
+			<Int notes = "进攻星数" />
+			<Int notes = "进攻战损" />
+			<Int notes = "防守星数" />
+			<Int notes = "防守战损" />
+			<Int notes = "回合数" />
+			<Int notes = "经验" />
+			<Int notes = "战功" />
+			<String notes = "奖励" />
+			<Int notes = "武将解锁" />
+			<Int notes = "武将编号" />
+		</result>
+	</protocol>
+</File>

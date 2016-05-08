@@ -1,0 +1,17 @@
+﻿<File>
+	<protocol id="1201" notes="单次会谈">
+		<request>
+			<Byte notes="花费类型（1银币2金币）"/>
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+			<Byte notes = "本次花费类型" />
+			<Int notes = "本次花费" />
+			<Int notes = "获得积分" />			
+			<Byte notes="类型" />
+			<Int notes="道具或武将的id"/>
+			<Int notes="数量" />	
+			<String notes="道具或者武将名称"/>	
+		</result>
+	</protocol>
+</File>

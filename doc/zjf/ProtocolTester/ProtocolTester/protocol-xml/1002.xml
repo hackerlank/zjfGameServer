@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1002" notes="玩家购买">
+		<request>
+			<Int notes="物品ID配置表" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Int notes="增加的银币" />
+			<Int notes="增加的金币" />
+		</result>
+	</protocol>
+</File>

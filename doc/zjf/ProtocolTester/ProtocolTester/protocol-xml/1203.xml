@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1203" notes="扩充武将列表">
+		<request>
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,10 @@
+﻿<File>
+	<protocol id="1118" notes="修改默认使用阵型">
+		<request>
+			<Int notes="阵型ID" />
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

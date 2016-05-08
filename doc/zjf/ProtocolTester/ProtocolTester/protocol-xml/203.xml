@@ -1,0 +1,12 @@
+<File>
+<protocol id="203" notes="私聊">
+	<request>
+		<String notes="接收方名字" default="zlpsb"></String>
+		<Byte notes="类型" />
+		<String notes="消息内容"></String>
+	</request>
+	<result>
+		<Short notes="成功或失败" isErrorCode = "true"/>
+	</result>
+</protocol>
+</File>

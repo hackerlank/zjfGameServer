@@ -1,0 +1,13 @@
+﻿<File>
+<protocol id="306" notes="开启一个新的建筑队列">
+	<request>
+	
+		
+	</request>
+	<result>
+		<Short notes="1为成功其他为错误信息" />
+		<Byte notes="队列ID" />
+		<Int notes="消耗金币" />
+	</result>
+</protocol>
+</File>

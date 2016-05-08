@@ -1,0 +1,18 @@
+<File>
+	<protocol id="2201" notes="获取大厅信息">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Byte">
+				<String notes="UUID" />
+				<String notes="名字" />
+				<Int notes = "限制等级" />
+				<Byte notes = "房间人数" />
+				<Byte notes="房间状态" />
+				<Int notes = "房主ID" />
+				<Int notes = "战役ID" />
+				<String notes = "创建时间" />
+			</Array>
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1501" notes="心跳">
+		<request>
+		</request>
+		<result>
+			<String notes = "当前时间" />
+		</result>
+	</protocol>
+</File>

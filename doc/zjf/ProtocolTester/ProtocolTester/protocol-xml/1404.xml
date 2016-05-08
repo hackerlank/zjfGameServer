@@ -1,0 +1,9 @@
+﻿<File>
+	<protocol id="1404" notes="清除科技队列的cd">
+		<request>
+		</request>
+		<result>
+			<Short notes="1为成功，其他为错误指令" />		
+		</result>
+	</protocol>
+</File>

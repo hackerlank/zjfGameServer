@@ -15,10 +15,10 @@ import byCodeGame.game.entity.bo.Hero;
 
 public class HeroDaoImpl extends DataAccess implements HeroDao {
 
-	private final String insertSql = "insert into hero values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String insertSql = "insert into hero values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private final String selectIdSql = "select * from hero where roleId=?";
 	private final String updateSql = "update set emotion=?,hungry=?,tired=?,effective=?,skillId=?,"
-			+ "giftId=?,ageId=?,ageCount=?,rebirth=?,workRefreshTime=?,hotspot=? where heroId=? and roleId=?";
+			+ "talentId=?,realize=?,ageId=?,age=?,rebirth=?,workRefreshTime=?,hotspot=? where heroId=? and roleId=?";
 
 	private IntegerConverter integerConverter;
 
@@ -56,8 +56,9 @@ public class HeroDaoImpl extends DataAccess implements HeroDao {
 		try {
 			Connection conn = dataSource.getConnection();
 			this.insert(insertSql, integerConverter, conn, null, hero.getRoleId(), hero.getHeroId(), hero.getEmotion(),
-					hero.getHungry(), hero.getTired(), hero.getEffective(), hero.getSkillId(), hero.getGiftId(),
-					hero.getAgeId(), hero.getAgeCount(), hero.getRebirth(), hero.getHotspot());
+					hero.getHungry(), hero.getTired(), hero.getEffective(), hero.getSkillId(), hero.getTalentId(),
+					hero.getRealize(), hero.getAgeId(), hero.getAge(), hero.getRebirth(), hero.getHotspot());
+			
 			return hero;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -69,12 +70,12 @@ public class HeroDaoImpl extends DataAccess implements HeroDao {
 	@Override
 	public void updateHero(Hero hero) {
 		try {
-			Connection conn = dataSource.getConnection();			
+			Connection conn = dataSource.getConnection();
 			int heroId = hero.getHeroId();
 			int roleId = hero.getRoleId();
 			this.update(updateSql, conn, hero.getRoleId(), hero.getHeroId(), hero.getEmotion(), hero.getHungry(),
-					hero.getTired(), hero.getEffective(), hero.getSkillId(), hero.getGiftId(), hero.getAgeId(),
-					hero.getAgeCount(), hero.getRebirth(), hero.getHotspot(), heroId, roleId);
+					hero.getTired(), hero.getEffective(), hero.getSkillId(), hero.getTalentId(), hero.getRealize(),
+					hero.getAgeId(), hero.getAge(), hero.getRebirth(), hero.getHotspot(), heroId, roleId);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

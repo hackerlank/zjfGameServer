@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1509" notes="获得银币(主动推送)">
+		<request>
+		</request>
+		<result>
+			<Int notes = "增加的银币" />
+		</result>
+	</protocol>
+</File>

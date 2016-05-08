@@ -1,0 +1,13 @@
+﻿<File>
+<protocol id="601" notes="设置国籍">
+	<request>
+		<Byte notes = "国籍1蜀2魏3吴0随机" />
+	</request>
+	<result>
+		<Short notes = "成功或者错误信息" />
+		<Byte notes = "国籍Id" />
+		<Int notes = "城市Id" />
+		<Int notes = "位置" />
+	</result>
+</protocol>
+</File>

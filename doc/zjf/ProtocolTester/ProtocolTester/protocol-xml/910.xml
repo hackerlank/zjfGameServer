@@ -1,0 +1,10 @@
+<File>
+	<protocol id="910" notes="刷新强化队列">
+		<request>
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Int notes = "消耗的金币" />
+		</result>
+	</protocol>
+</File>

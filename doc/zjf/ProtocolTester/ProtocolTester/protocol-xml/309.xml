@@ -1,0 +1,11 @@
+﻿<File>
+<protocol id="309" notes="清除建筑队列数据">
+	<request>
+	
+		<Byte notes="建筑队列ID" />
+	</request>
+	<result>
+		<Short notes="成功或失败信息" />
+	</result>
+</protocol>
+</File>

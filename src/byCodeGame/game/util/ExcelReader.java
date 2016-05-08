@@ -94,15 +94,19 @@ public class ExcelReader {
 			for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
 				Sheet sheet = workbook.getSheetAt(i);
 				List setOrderList = new ArrayList();
-				Row firstRow = sheet.getRow(0);
-				if (firstRow == null) {
+				Row typeRow = sheet.getRow(0);
+				Row contextRow = sheet.getRow(1);
+				Row columnRow = sheet.getRow(2);
+				if (columnRow == null) {
 					return;
 				}
-
-				for (Cell cell : firstRow) {
+				for (Cell cell : columnRow) {
+					//添加列名
 					setOrderList.add(concatSetMethod(cell.getStringCellValue()));
 				}
-				sheet.removeRow(firstRow);
+				sheet.removeRow(typeRow);
+				sheet.removeRow(contextRow);
+				sheet.removeRow(columnRow);
 
 				for (Row row : sheet) {
 					List valueList = new ArrayList();

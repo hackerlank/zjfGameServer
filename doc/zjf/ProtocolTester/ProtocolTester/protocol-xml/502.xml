@@ -1,0 +1,12 @@
+<File>
+	<protocol id="502" notes="领取任务奖励">
+		<request>
+			<Int notes="任务ID" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Int notes="任务ID" />
+			<String notes="任务奖励" />
+		</result>
+	</protocol>
+</File>

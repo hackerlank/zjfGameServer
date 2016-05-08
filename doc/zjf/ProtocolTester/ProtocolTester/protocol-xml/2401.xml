@@ -1,0 +1,15 @@
+﻿<File>
+		<protocol id="2401" notes="获取兵种科技信息">
+			<request>
+				<Int notes="type" />
+			</request>
+			<result>
+				<Array loopWith="Int">
+					<Int notes="兵种ID" />
+					<Int notes="兵种等阶" />
+					<Int notes="当前点数" />
+					<Int notes="需求点数" />
+				</Array>
+			</result>
+		</protocol>
+	</File>

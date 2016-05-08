@@ -1,0 +1,10 @@
+<File>
+<protocol id="506" notes="一键完成每日任务">
+	<request>
+	</request>
+	<result>
+		<Short notes = "成功或者错误信息"  isErrorCode="true" />
+		<Int notes = "增加的完成度" />
+	</result>
+</protocol>
+</File>

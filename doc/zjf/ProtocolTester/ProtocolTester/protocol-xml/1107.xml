@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1107" notes="更新武将训练数据">
+		<request>
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

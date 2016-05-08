@@ -1,0 +1,16 @@
+<File>
+	<protocol id="1608" notes="获取单一章节关卡信息">
+		<request>
+			<Int notes = "章节号" />
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+			<Array loopWith="Int">
+				<Int notes = "关卡ID" />
+				<Byte notes="星数" />
+				<Byte notes="今日攻打次数" />
+				<Byte notes= "限定次数" />
+			</Array>
+		</result>
+	</protocol>
+</File>

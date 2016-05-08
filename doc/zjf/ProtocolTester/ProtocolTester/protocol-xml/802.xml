@@ -1,0 +1,19 @@
+<File>
+	<protocol id="802" notes="获取当前玩家所有邮件">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Byte">
+				<Int notes="邮件ID" />
+				<String notes="发件人" />
+				<String notes="收件人" />
+				<Byte notes="邮件类型" />
+				<String notes="邮件主题" />
+				<String notes="邮件内容" />
+				<String notes="附件" />
+				<Byte notes="是否已读" />
+				<String notes="发送时间" />
+			</Array>
+		</result>
+	</protocol>
+</File>

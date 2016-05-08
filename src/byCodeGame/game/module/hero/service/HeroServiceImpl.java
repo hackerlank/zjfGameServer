@@ -1,8 +1,10 @@
 package byCodeGame.game.module.hero.service;
 
+import byCodeGame.game.cache.file.HeroConfigCache;
 import byCodeGame.game.db.dao.HeroDao;
 import byCodeGame.game.entity.bo.Hero;
 import byCodeGame.game.entity.bo.Role;
+import byCodeGame.game.entity.file.HeroConfig;
 import byCodeGame.game.remote.Message;
 
 /**
@@ -20,6 +22,8 @@ public class HeroServiceImpl implements HeroService {
 
 	@Override
 	public Hero createHero(int heroId) {
+		HeroConfig config = HeroConfigCache.getHeroConfigById(heroId);
+		
 		Hero hero = new Hero();
 
 		hero.setHeroId(heroId);

@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1401" notes="获取玩家科技信息">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Byte">
+				<Int notes="军团科技信息(类型)" />
+				<Int notes="科技等级" />
+			</Array>
+		</result>
+	</protocol>
+</File>

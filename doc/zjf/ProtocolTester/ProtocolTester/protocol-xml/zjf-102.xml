@@ -1,0 +1,10 @@
+<File>
+<protocol id="102" notes="zjf注册新用户">
+	<request>
+		<String notes="用户账号"/>
+	</request>
+	<result>
+		<Short notes="是否建立成功"	/>
+	</result>
+</protocol>
+</File>

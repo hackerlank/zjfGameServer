@@ -1,0 +1,10 @@
+<File>
+	<protocol id="2203" notes="加入房间">
+		<request>
+			<String notes = "UUID" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

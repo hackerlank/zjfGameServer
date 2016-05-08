@@ -1,0 +1,18 @@
+﻿<File>
+	<protocol id="1106" notes="获取训练队列数据">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Int">
+				<Byte notes="训练位ID" />
+				<Int notes="武将ID" />
+				<Byte notes="训练模式" />
+				<Byte notes="训练时间" />
+				<String notes="训练开始时间" />
+				<Int notes="剩余时间" />
+			</Array>
+			<Int notes="所需vip等级" />
+			<Int notes="所需金币" />
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1511" notes="获得粮草(主动推送)">
+		<request>
+		</request>
+		<result>
+			<Int notes = "增加的粮草" />
+		</result>
+	</protocol>
+</File>

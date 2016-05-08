@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1505" notes="获得军令(主动推送)">
+		<request>
+		</request>
+		<result>
+			<Int notes = "军令数量" />
+		</result>
+	</protocol>
+</File>

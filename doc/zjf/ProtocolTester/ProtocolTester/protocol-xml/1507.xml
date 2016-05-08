@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1507" notes="获得经验(主动推送)">
+		<request>
+		</request>
+		<result>
+			<Int notes = "增加的经验" />
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,22 @@
+<File>
+	<protocol id="702" notes="获取军团信息">
+		<request>
+		</request>
+		<result>
+			<Int notes = "军团ID" />
+			<Int notes = "军团头像" />
+			<String notes = "军团名字" />
+			<Byte notes = "军团等级" />
+			<String notes = "军团告示" />
+			<String notes = "军团长名字" />
+			<Byte notes = "职位" />
+			<Byte notes = "当前科技类型" />
+			<Array loopWith="Byte">
+				<String notes="类型,等级,经验;" />
+			</Array>
+			<Byte notes = "当日是否已经研究公会科技" />
+			<Byte notes = "自动接受是否开启" />
+			<Int notes = "最低等级" />
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,11 @@
+<File>
+	<protocol id="1202" notes="拜访">
+		<request>
+			<Int notes = "地图ID" />
+			<Int notes = "房间号" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

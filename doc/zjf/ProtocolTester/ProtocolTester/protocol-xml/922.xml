@@ -1,0 +1,15 @@
+<File>
+	<protocol id="922" notes="未装备的装备">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Int">
+				<Int notes="道具数据库ID" />
+				<Int notes = "道具配置表ID" />
+				<Int notes="道具等级" />
+				<Int notes="道具词缀" />
+				<Int notes="装备位置" />
+			</Array>
+		</result>
+	</protocol>
+</File>

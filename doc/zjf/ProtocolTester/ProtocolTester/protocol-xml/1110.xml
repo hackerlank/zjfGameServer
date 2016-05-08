@@ -1,0 +1,13 @@
+<File>
+	<protocol id="1110" notes="更改武将训练模式">
+		<request>
+			<Byte notes="训练位ID"/>
+			<Byte notes="训练模式"/>
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+			<Byte notes="训练位ID"/>
+			<Byte notes="训练模式"/>
+		</result>
+	</protocol>
+</File>

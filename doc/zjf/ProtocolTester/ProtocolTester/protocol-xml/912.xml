@@ -1,0 +1,11 @@
+<File>
+	<protocol id="912" notes="扩充背包">
+		<request>
+			<Int notes="开启第几个格子" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Int notes="花费的金币" />
+		</result>
+	</protocol>
+</File>

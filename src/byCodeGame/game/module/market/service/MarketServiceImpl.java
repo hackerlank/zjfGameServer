@@ -47,9 +47,13 @@ public class MarketServiceImpl implements MarketService {
 		int size = allMarketGoods.size();
 		message.putInt(size);
 		for (MarketGoods marketGoods : allMarketGoods.values()) {
-			message.putInt(marketGoods.getMarketId());
-			message.putInt(marketGoods.getPropId());
-			message.putInt(marketGoods.getNum());
+			int marketId = marketGoods.getMarketId();
+			int propId = marketGoods.getPropId();
+			int num = marketGoods.getNum();
+			
+			message.putInt(marketId);
+			message.putInt(propId);
+			message.putInt(num);
 		}
 		return message;
 	}

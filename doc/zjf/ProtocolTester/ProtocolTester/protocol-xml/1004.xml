@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1004" notes="获取玩家市场信息">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Byte">
+				<Int notes="物品ID" />
+				<Int notes="是否出售" />
+			</Array>
+		</result>
+	</protocol>
+</File>

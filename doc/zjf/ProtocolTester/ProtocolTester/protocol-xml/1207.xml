@@ -1,0 +1,19 @@
+﻿<File>
+	<protocol id="1207" notes="连续会谈">
+		<request>
+			<Int notes="1银币2金币"/>
+		</request>
+		<result>
+			<Short notes = "" isErrorCode = "true" />
+			<Byte notes = "本次花费类型（1银币 2金币）" />
+			<Int notes = "本次花费" />
+			<Int notes = "获得积分" />
+			<Array loopWith = "Byte" >
+				<Byte notes="奖励" />
+				<Int notes="道具或武将的id"/>
+				<Int notes="数量"/>
+				<String notes="道具或武将名称"/>
+			</Array>
+		</result>
+	</protocol>
+</File>

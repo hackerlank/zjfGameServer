@@ -1,0 +1,16 @@
+<File>
+	<protocol id="1605" notes="领取章节奖励">
+		<request>
+			<Int notes = "章节号" />
+			<Int notes = "阶段" />
+		</request>
+		<result>
+			<Short notes = "" isErrorCode = "true" />
+			<Array loopWith="Byte">
+				<Byte notes="类型" />
+				<Int notes="配置表ID" />
+				<Int notes= "数量" />
+			</Array>
+		</result>
+	</protocol>
+</File>

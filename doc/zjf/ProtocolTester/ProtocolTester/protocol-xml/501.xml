@@ -1,0 +1,14 @@
+<File>
+	<protocol id="501" notes="获取任务信息">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Byte">
+				<Int notes="任务ID" />
+				<Byte notes="任务类型" />
+				<Int notes="任务进度" />
+				<Byte notes="是否完成" />
+			</Array>
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,14 @@
+﻿<File>
+<protocol id="1113" notes="获取阵型数据">
+	<request>
+	
+		<Int notes="阵型ID" />
+	</request>
+	<result>
+		<Array loopWith="Byte">
+			<Byte notes="位置ID" />
+			<Int notes="武将ID" />
+		</Array>
+	</result>
+</protocol>
+</File>

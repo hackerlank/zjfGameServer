@@ -1,0 +1,17 @@
+﻿<File>
+	<protocol id="1210" notes="显示本周兑换英雄">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Int">
+				<Int notes="英雄id"/>
+				<Int notes="兑换积分"/>
+				<Byte notes="是否已经拥有,1拥有，0未获得"/>
+				<Int notes="英雄好感度上限"/>
+				<Int notes="英雄当前好感度"/>
+				<Int notes="英雄进阶数"/>
+				<Int notes="英雄最大转生数"/>
+			</Array>
+		</result>
+	</protocol>
+</File>

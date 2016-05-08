@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1001" notes="市场回收">
+		<request>
+			<Int notes="道具ID数据库" />
+			<Short notes="道具数量" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Int notes="增加的银币" />
+		</result>
+	</protocol>
+</File>

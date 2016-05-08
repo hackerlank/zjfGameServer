@@ -1,0 +1,10 @@
+﻿<File>
+<protocol id="101" notes="游戏登陆">
+	<request>
+		<String notes="用户账号" default="zlpsbaa"></String>
+	</request>
+	<result>
+		<Short notes="是否有该账户" />
+	</result>
+</protocol>
+</File>

@@ -11,11 +11,22 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 	<bean id="navigation" class="byCodeGame.game.navigation.Navigation"
-		p:registerAction-ref="registerAction" />
+		p:registerAction-ref="registerAction" 
+		
+		p:marketShowGoodsAction-ref="marketShowGoodsAction"
+		p:marketBuyGoodsAction-ref="marketBuyGoodsAction"
+		
+		/>
 
-	<bean id="registerAction" class="byCodeGame.game.module.register.action.RegisterAction">
-		<property name="registerService" ref="registerService"></property>
-	</bean>
+	<bean id="registerAction" class="byCodeGame.game.module.register.action.RegisterAction"
+		p:registerService-ref="registerService" />
 
+
+	<bean id="marketShowGoodsAction"
+		class="byCodeGame.game.module.market.action.MarketShowGoodsAction"
+		p:marketService-ref="marketService" />
+	<bean id="marketBuyGoodsAction"
+		class="byCodeGame.game.module.market.action.MarketBuyGoodsAction"
+		p:marketService-ref="marketService" />
 
 </beans>

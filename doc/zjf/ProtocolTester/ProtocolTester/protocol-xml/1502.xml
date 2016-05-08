@@ -1,0 +1,11 @@
+<File>
+	<protocol id="1502" notes="充值">
+		<request>
+			<Int notes = "金额" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+			<Int notes = "金币数" />
+		</result>
+	</protocol>
+</File>

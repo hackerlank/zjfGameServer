@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1601" notes="获取关卡信息">
+		<request>
+			<Int notes = "关卡ID" />
+		</request>
+		<result>
+			<Short notes = "" isErrorCode = "true" />
+			<Int notes = "关卡ID" />
+			<Byte notes = "星数" />
+		</result>
+	</protocol>
+</File>

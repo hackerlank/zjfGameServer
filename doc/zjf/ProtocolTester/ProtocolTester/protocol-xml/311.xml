@@ -1,0 +1,12 @@
+﻿<File>
+<protocol id="311" notes="增加获取[增加建筑队列]数据协议">
+	<request>
+		
+	</request>
+	<result>
+		<Short notes="1为成功，其他为错误ID" />
+		<Int notes="新增建筑队列所需元宝数" />
+		<Byte notes="新增后总共的建筑队列数量" />
+	</result>
+</protocol>
+</File>

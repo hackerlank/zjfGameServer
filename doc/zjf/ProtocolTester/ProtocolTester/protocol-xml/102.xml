@@ -1,0 +1,12 @@
+<File>
+<protocol id="102" notes="注册新用户">
+	<request>
+		<String notes="用户账号" default="zlpsb" /> 
+	    <Byte notes="蜀1魏2吴3"/>
+		<String notes="昵称" default="zlpsb" /> 
+	</request>
+	<result>
+		<Short notes="是否建立成功"	/>
+	</result>
+</protocol>
+</File>

@@ -1,0 +1,15 @@
+<File>
+<protocol id="202" notes="接受消息">
+	<request>
+	</request>
+	<result>
+		<Byte notes="频道" />
+		<Int  notes="发送方ID	"/>
+		<Int  notes="接收方ID	"/>
+		<String notes="发送方名字" />
+		<String notes="接收方名字" />
+		<Byte notes="类型" />
+		<String notes="内容" />
+	</result>
+</protocol>
+</File>

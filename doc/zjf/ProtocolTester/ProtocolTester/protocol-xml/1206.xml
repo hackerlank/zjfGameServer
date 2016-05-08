@@ -1,0 +1,14 @@
+<File>
+	<protocol id="1206" notes="获取酒馆信息">
+		<request>
+		</request>
+		<result>
+			<Int notes = "本日会谈次数" />
+			<Int notes = "玩家当前里程" />
+			<String notes = "地图信息" />
+			<Array loopWith="Byte">
+				<Int notes="武将ID" />
+			</Array>
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,16 @@
+<File>
+	<protocol id="901" notes="获取道具列表">
+		<request>
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Array loopWith="Int">
+				<Int notes="道具数据库ID" />
+				<Int notes = "道具配置表ID" />
+				<Short notes="道具数量" />
+				<Short notes="道具等级" />
+				<Int notes="使用中的武将ID" />
+			</Array>
+		</result>
+	</protocol>
+</File>

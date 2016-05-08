@@ -1,0 +1,11 @@
+﻿<File>
+<protocol id="1117" notes="获取所有阵型数据">
+	<request>
+	</request>
+	<result>
+		<Array loopWith="Byte">
+			<String notes="阵型数据信息" />
+		</Array>
+	</result>
+</protocol>
+</File>

@@ -1,0 +1,10 @@
+<File>
+	<protocol id="906" notes="一键换装">
+		<request>
+			<Int notes = "武将ID" />
+		</request>
+		<result>
+			<String notes = "装备" />
+		</result>
+	</protocol>
+</File>

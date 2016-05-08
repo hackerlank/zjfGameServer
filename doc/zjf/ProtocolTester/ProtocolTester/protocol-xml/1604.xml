@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1604" notes="重置关卡次数">
+		<request>
+			<Int notes = "关卡ID" />
+		</request>
+		<result>
+			<Short notes = "" isErrorCode = "true" />
+			<Int notes = "关卡ID" />
+			<Int notes = "消耗金币" />
+		</result>
+	</protocol>
+</File>

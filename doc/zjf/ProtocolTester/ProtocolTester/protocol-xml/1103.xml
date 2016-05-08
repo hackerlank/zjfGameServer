@@ -1,0 +1,15 @@
+<File>
+	<protocol id="1103" notes="突飞武将">
+		<request>
+			<Byte notes="位置ID" />
+		<Byte notes="突飞类型(1普通突飞  2强化突飞)" />
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+			<Byte notes="位置ID" />
+			<Byte notes="突飞类型(1普通突飞  2强化突飞)" />
+			<Int notes="获得的经验值" />
+			<Int notes="消耗" />
+		</result>
+	</protocol>
+</File>

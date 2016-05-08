@@ -1,0 +1,16 @@
+<File>
+	<protocol id="713" notes="升级军团科技">
+		<request>
+			<Byte notes = "类型" />
+			<Int notes = "金币数量" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Int notes = "本次增加的贡献" />
+			<Int notes = "科技类型" />
+			<Int notes = "当前等级" />
+			<Int notes = "当前总经验" />
+			<Int notes = "玩家ID" />
+		</result>
+	</protocol>
+</File>

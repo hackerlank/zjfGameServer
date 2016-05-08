@@ -1,0 +1,11 @@
+﻿<File>
+	<protocol id="1522" notes="完成新建筑流程">
+		<request>
+			<String notes="标识"/>
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"/>
+			<String notes="功能图标解锁信息(key,key,)"/>
+		</result>
+	</protocol>
+</File>

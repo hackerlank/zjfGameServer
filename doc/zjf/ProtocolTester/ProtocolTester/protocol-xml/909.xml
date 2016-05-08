@@ -1,0 +1,12 @@
+<File>
+	<protocol id="909" notes="强化">
+		<request>
+			<Int notes="装备的数据库ID" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Byte notes = "成功或失败" />
+			<Int notes = "消耗的银币" />
+		</result>
+	</protocol>
+</File>

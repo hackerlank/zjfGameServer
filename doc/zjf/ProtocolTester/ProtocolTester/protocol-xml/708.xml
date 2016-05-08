@@ -1,0 +1,10 @@
+<File>
+	<protocol id="708" notes="更换军团图标">
+		<request>
+			<Int notes = "图标ID" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

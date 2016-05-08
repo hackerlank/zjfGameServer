@@ -1,0 +1,9 @@
+<File>
+	<protocol id="2207" notes="踢出房间">
+		<request>
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

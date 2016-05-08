@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1114" notes="进阶武将">
+		<request>
+			<Int notes="武将ID" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Int notes="武将ID" />
+			<Short notes="进阶等级" />
+		</result>
+	</protocol>
+</File>

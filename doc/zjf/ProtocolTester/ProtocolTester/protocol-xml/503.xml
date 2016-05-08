@@ -1,0 +1,9 @@
+<File>
+	<protocol id="503" notes="新任务到达">
+		<request>
+		</request>
+		<result>
+			<Int notes = "任务ID" />
+		</result>
+	</protocol>
+</File>

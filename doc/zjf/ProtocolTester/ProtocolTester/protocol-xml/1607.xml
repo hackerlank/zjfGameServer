@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1607" notes="获取章节奖励信息">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Int">
+				<Int notes = "章节号" />
+				<Int notes="阶段" />
+			</Array>
+		</result>
+	</protocol>
+</File>

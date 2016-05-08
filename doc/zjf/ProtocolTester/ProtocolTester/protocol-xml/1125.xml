@@ -1,0 +1,13 @@
+﻿<File>
+	<protocol id="1125" notes="重修兵种">
+		<request>
+			<Int notes="英雄id" />
+		</request>
+		<result>			
+			<Short 	notes="是否成功"/>
+			<Int	notes="兵种id1"/>
+			<Int	notes="兵种id2"/>
+			<Int	notes="消耗金币数"/>
+		</result>
+	</protocol>
+</File>

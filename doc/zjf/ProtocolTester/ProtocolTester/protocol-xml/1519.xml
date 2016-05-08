@@ -1,0 +1,12 @@
+﻿<File>
+	<protocol id="1519" notes="玩家升级">
+		<request>
+		</request>
+		<result>
+			<Short notes="是否成功"/>
+			<Int notes="消耗银币"/>
+			<Int notes="建筑队列时间"/>
+			<Short notes="升级后等级"/>
+		</result>
+	</protocol>
+</File>

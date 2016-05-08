@@ -33,6 +33,9 @@
 		<property name="hallDao" ref="hallDao"></property>
 	</bean>
 
+	<bean id="marketService" class="byCodeGame.game.module.market.service.MarketServiceImpl">
+	    
+	</bean>
 
 
 

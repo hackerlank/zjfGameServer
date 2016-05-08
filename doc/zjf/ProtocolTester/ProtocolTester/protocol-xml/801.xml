@@ -1,0 +1,12 @@
+<File>
+	<protocol id="801" notes="玩家发送邮件">
+		<request>
+			<String notes="收件人" />
+			<String notes="邮件主题" />
+			<String notes="邮件征文" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

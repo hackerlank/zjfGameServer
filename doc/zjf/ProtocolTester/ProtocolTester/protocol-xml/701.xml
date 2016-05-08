@@ -1,0 +1,10 @@
+<File>
+	<protocol id="701" notes="创建军团">
+		<request>
+			<String notes = "军团名字" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

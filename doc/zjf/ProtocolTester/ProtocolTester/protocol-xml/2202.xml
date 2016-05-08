@@ -1,0 +1,11 @@
+<File>
+	<protocol id="2202" notes="创建房间">
+		<request>
+			<Int notes = "战役ID" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+			<String notes = "UUID" />
+		</result>
+	</protocol>
+</File>

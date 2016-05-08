@@ -1,0 +1,15 @@
+﻿<File>
+	<protocol id="1126" notes="武将转职">
+		<request>
+			<Int notes="英雄id" />
+		</request>
+		<result>			
+			<Short 	notes="是否成功"/>
+			<Int	notes="兵种id1"/>
+			<Int	notes="兵种id2"/>
+			<Int	notes="消耗印绶数量"/>
+			<Int	notes="目前武将转职数"/>
+			<Int	notes="目前正在使用兵种id"/>
+		</result>
+	</protocol>
+</File>

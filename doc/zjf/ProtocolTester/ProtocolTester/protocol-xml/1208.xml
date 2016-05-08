@@ -1,0 +1,12 @@
+﻿<File>
+	<protocol id="1208" notes="进入酒馆">
+		<request>
+		</request>
+		<result>
+			<Short notes="1为成功，其他为错误指令"/>
+			<Int notes="积分数"/>
+			<Int notes="银币刷新时间"/>
+			<Int notes="金币刷新时间"/>
+		</result>
+	</protocol>
+</File>

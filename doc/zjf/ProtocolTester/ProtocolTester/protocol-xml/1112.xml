@@ -1,0 +1,12 @@
+<File>
+<protocol id="1112" notes="保存阵型">
+	<request>
+		<Int notes="阵型ID" />
+		<Byte notes="阵型位置ID" />
+		<Int notes="武将ID" />
+	</request>
+	<result>
+		<Short notes="1为成功/其它为null" />			
+	</result>
+</protocol>
+</File>

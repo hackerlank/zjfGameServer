@@ -1,6 +1,5 @@
 package byCodeGame.game.entity.bo;
 
-
 /**
  * 
  * @author wcy 2016年4月28日
@@ -22,11 +21,13 @@ public class Hero {
 	// 技能id
 	private int skillId;
 	// 天赋id
-	private int giftId;
+	private int talentId;
+	// 领悟值
+	private int realize;
 	// 年龄阶段id
 	private int ageId;
-	// 年龄阶段值
-	private int ageCount;
+	// 年龄值
+	private int age;
 	// 转生值
 	private int rebirth;
 	// 热度
@@ -88,12 +89,20 @@ public class Hero {
 		this.skillId = skillId;
 	}
 
-	public int getGiftId() {
-		return giftId;
+	public int getTalentId() {
+		return talentId;
 	}
 
-	public void setGiftId(int giftId) {
-		this.giftId = giftId;
+	public void setTalentId(int talentId) {
+		this.talentId = talentId;
+	}
+
+	public void setRealize(int realize) {
+		this.realize = realize;
+	}
+
+	public int getRealize() {
+		return realize;
 	}
 
 	public int getAgeId() {
@@ -120,12 +129,12 @@ public class Hero {
 		this.hotspot = hotspot;
 	}
 
-	public int getAgeCount() {
-		return ageCount;
+	public int getAge() {
+		return age;
 	}
 
-	public void setAgeCount(int ageCount) {
-		this.ageCount = ageCount;
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 }

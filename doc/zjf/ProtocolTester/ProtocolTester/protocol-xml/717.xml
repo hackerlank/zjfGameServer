@@ -1,0 +1,10 @@
+<File>
+	<protocol id="717" notes="拒绝玩家申请">
+		<request>
+			<Int notes = "玩家ID" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

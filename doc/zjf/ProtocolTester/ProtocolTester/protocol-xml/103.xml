@@ -1,0 +1,31 @@
+﻿<File>
+<protocol id="103" notes="获取账号数据">
+	<request>
+		<String notes="用户账号" default="zlpsbaa"></String>
+	</request>
+	<result>
+		<Short notes="成功或失败" isErrorCode="true"/>
+		<String notes="时间" />
+		<Int notes="用户ID" />
+		<String notes="名字" />
+		<Int notes="经验" />
+		<Short notes="等级" />
+		<Int notes="金币" />
+		<Int notes="银币" />
+		<Int notes="粮草" />
+		<Int notes="战功" />
+		<Int notes="军令" />
+		<Int notes="最大军令数" />
+		<Byte notes="Vip等级" />
+		<Int notes="Vip经验" />
+		<Int notes="公会ID" />
+		<Short notes="背包" />
+		<Short notes="武将最大数量" />
+		<Int notes="当前完成的关卡ID" />
+		<String notes="公会名字" />
+		<Int notes="当前人口" />
+		<Int notes="人口上限" />
+		<Int notes="封地id" />
+	</result>
+</protocol>
+</File>

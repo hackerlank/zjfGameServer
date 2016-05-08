@@ -1,0 +1,13 @@
+<File>
+	<protocol id="902" notes="使用道具">
+		<request>
+			<Int notes = "道具数据库ID" />
+			<Short notes = "使用数量" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<Int notes="道具数据库ID" />
+			<Short notes="使用数量" />
+		</result>
+	</protocol>
+</File>

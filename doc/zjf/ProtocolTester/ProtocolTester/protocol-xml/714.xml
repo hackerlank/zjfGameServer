@@ -1,0 +1,10 @@
+<File>
+	<protocol id="714" notes="默认科技">
+		<request>
+			<Byte notes = "类型" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

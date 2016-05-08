@@ -1,0 +1,10 @@
+<File>
+	<protocol id="1205" notes="离队">
+		<request>
+			<Int notes = "武将ID" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

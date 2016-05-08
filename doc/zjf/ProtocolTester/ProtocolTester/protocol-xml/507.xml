@@ -1,0 +1,18 @@
+<File>
+	<protocol id="507" notes="获取每日任务信息">
+		<request>
+		</request>
+		<result>
+			<Int  notes = "当前完成度" />
+			<Array loopWith="Byte">
+				<Int notes="奖励编号" />
+			</Array>
+			<Array loopWith="Byte">
+				<Int notes="任务ID" />
+				<Byte notes="任务类型" />
+				<Int notes="任务进度" />
+				<Byte notes="是否完成" />
+			</Array>
+		</result>
+	</protocol>
+</File>

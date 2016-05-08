@@ -1,0 +1,12 @@
+<File>
+<protocol id="201" notes="发送消息">
+	<request>
+		<Byte notes="频道" />
+		<Byte notes="类型" />
+		<String notes="消息内容"></String>
+	</request>
+	<result>
+		<Short notes="成功或失败" />
+	</result>
+</protocol>
+</File>

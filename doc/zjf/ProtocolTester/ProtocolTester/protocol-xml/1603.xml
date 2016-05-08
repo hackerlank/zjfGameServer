@@ -1,0 +1,21 @@
+<File>
+	<protocol id="1603" notes="扫荡关卡">
+		<request>
+			<Int notes = "关卡ID" />
+		</request>
+		<result>
+			<Short notes = "" isErrorCode = "true" />
+			<Byte notes = "花费的类型" />
+			<Array loopWith="Byte">
+				<Byte notes="类型" />
+				<Int notes="配置表ID" />
+				<Int notes= "数量" />
+			</Array>
+			<Array loopWith="Byte">
+				<Byte notes="类型" />
+				<Int notes="配置表ID" />
+				<Int notes= "数量" />
+			</Array>
+		</result>
+	</protocol>
+</File>

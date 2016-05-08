@@ -1,0 +1,14 @@
+<File>
+	<protocol id="1602" notes="获取全部关卡信息">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Int">
+				<Int notes = "关卡ID" />
+				<Byte notes="星数" />
+				<Byte notes="今日攻打次数" />
+				<Byte notes= "限定次数" />
+			</Array>
+		</result>
+	</protocol>
+</File>

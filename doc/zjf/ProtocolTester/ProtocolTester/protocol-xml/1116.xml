@@ -1,0 +1,10 @@
+<File>
+	<protocol id="1116" notes="增加人口">
+		<request>
+			<Short notes="增加人口数量" />
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,13 @@
+﻿<File>
+<protocol id="307" notes="消耗粮食补满人口">
+	<request>
+	
+		
+	</request>
+	<result>
+			<Short notes="1为成功其他为错误信息(粮食不足)" />
+			<Int notes="增加的人口" />
+			<Int notes="消耗的粮食" />
+	</result>
+</protocol>
+</File>

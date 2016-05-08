@@ -1,0 +1,18 @@
+<File>
+	<protocol id="1105" notes="训练武将">
+		<request>
+			<Int notes="武将ID" />
+			<Byte notes="训练模式(1轻度 2普通 3强化 4地狱 5梦魇)" />
+			<Byte notes="训练时间" />
+			<Byte notes="训练位ID" />
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+			<Int notes="武将ID" />
+			<Byte notes="训练模式(1轻度 2普通 3强化 4地狱 5梦魇)" />
+			<Byte notes="训练时间" />
+			<Byte notes="训练位ID" />
+			<String notes="训练开始时间" />
+		</result>
+	</protocol>
+</File>

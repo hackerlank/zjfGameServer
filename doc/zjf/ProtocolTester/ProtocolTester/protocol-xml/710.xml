@@ -1,0 +1,16 @@
+<File>
+	<protocol id="710" notes="获取成员列表">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Byte">
+				<String notes = "玩家名字" />
+				<Short notes = "玩家等级" />
+				<Int notes="军团贡献" />
+				<Byte notes = "职位" />
+				<String notes = "最后在线时间" />
+				<Int notes = "成员ID" />
+			</Array>
+		</result>
+	</protocol>
+</File>

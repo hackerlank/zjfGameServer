@@ -1,0 +1,18 @@
+<File>
+<protocol id="303" notes="获取征收数据">
+	<request>
+		
+	</request>
+	<result>
+		<Int notes="缓存中的粮食征收数量" />
+		<String notes="上一次粮食征收时间" />
+		<Int notes="缓存中的金币征收数量" />
+		<String notes="上一次金币征收时间" />
+		<Int notes="缓存中的人口征收数量" />
+		<String notes="上一次人口征收时间" />
+		<Int notes="粮食每小时征收量" />
+		<Int notes="银币每小时征收量" />
+		<Int notes="人口每小时征收量" />
+	</result>
+</protocol>
+</File>

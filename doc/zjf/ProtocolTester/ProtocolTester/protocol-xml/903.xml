@@ -1,0 +1,9 @@
+<File>
+	<protocol id="903" notes="获得道具">
+		<request>
+		</request>
+		<result>
+			<String notes = "道具ID，物品ID，数量" />
+		</result>
+	</protocol>
+</File>

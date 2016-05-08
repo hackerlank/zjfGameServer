@@ -1,0 +1,10 @@
+﻿<File>
+	<protocol id="2304" notes="准备&&取消">
+		<request>
+			
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

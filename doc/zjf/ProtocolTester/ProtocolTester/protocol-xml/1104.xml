@@ -1,0 +1,11 @@
+<File>
+	<protocol id="1104" notes="重置突飞队列CD">
+		<request>
+			
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+			<Int notes="消耗金币" />
+		</result>
+	</protocol>
+</File>

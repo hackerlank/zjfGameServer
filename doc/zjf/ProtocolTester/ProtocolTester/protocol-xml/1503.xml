@@ -1,0 +1,10 @@
+<File>
+	<protocol id="1503" notes="设定玩家名字">
+		<request>
+			<String notes = "名字" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

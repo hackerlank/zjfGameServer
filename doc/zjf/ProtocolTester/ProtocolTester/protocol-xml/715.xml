@@ -1,0 +1,11 @@
+<File>
+	<protocol id="715" notes="自动接受">
+		<request>
+			<Byte notes = "是否开启" />
+			<Int notes = "最小接受等级" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

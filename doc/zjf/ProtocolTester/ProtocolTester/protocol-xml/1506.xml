@@ -1,0 +1,10 @@
+<File>
+	<protocol id="1506" notes="设定玩家头像">
+		<request>
+			<Byte notes = "编号" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,11 @@
+<File>
+	<protocol id="806" notes="设置邮件是否已读">
+		<request>
+			<Int notes = "邮件ID" />
+			<Byte notes = "是否已读 " />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

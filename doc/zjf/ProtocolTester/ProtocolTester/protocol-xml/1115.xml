@@ -1,0 +1,14 @@
+<File>
+	<protocol id="1115" notes="武将配置兵力">
+		<request>
+			<Int notes="英雄ID" />
+			<Array loopWith="Byte">
+				<Int notes="兵种ID" />
+				<Int notes="数量" />
+			</Array>
+		</request>
+		<result>
+			<Short notes="1为成功/其他为错误信息"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>

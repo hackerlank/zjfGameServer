@@ -1,0 +1,13 @@
+<File>
+	<protocol id="908" notes="开启强化100%成功">
+		<request>
+			<Int notes="开启天数" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+			<String notes = "开启的时间" />
+			<Int notes = "开启的天数" />
+			<Int notes="花费的金币" />
+		</result>
+	</protocol>
+</File>

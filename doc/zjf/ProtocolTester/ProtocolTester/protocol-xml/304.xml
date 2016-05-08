@@ -1,0 +1,13 @@
+<File>
+<protocol id="304" notes="开启一个新农场&民居">
+	<request>
+		<Byte notes="升级类型（1民居，2农田 ,3兵营）"/>
+		<Byte notes="升级建筑id (1-16)" />
+	</request>
+	<result>
+		<Short notes="1为成功其他为错误信息" />
+		<Byte notes="建筑类型（1民居，2农田 , 3兵营）" />
+		<Byte notes="建筑ID" />
+	</result>
+</protocol>
+</File>

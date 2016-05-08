@@ -1,0 +1,12 @@
+<File>
+	<protocol id="1102" notes="获取突飞队列数据">
+		<request>
+			
+		</request>
+		<result>
+				<Int notes="当前剩余时间（秒）" />
+				<Byte notes="是否可以增加CD (0可以 1不可以 )" />
+				<Int notes="今日强化突飞次数" />
+		</result>
+	</protocol>
+</File>

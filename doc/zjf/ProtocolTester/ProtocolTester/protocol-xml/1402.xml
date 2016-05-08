@@ -1,0 +1,10 @@
+<File>
+	<protocol id="1402" notes=" 升级科技">
+		<request>
+		<Int notes="科技类型" />
+		</request>
+		<result>
+				<Short notes="1为成功，其他为错误指令" />		
+		</result>
+	</protocol>
+</File>

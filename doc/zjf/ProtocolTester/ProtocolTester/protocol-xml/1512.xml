@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1512" notes="获得战功(主动推送)">
+		<request>
+		</request>
+		<result>
+			<Int notes = "增加的战功" />
+		</result>
+	</protocol>
+</File>

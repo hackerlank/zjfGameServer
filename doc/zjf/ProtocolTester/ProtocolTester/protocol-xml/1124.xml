@@ -1,0 +1,16 @@
+﻿<File>
+	<protocol id="1124" notes="获取武将所有兵种信息">
+		<request>
+			<Int notes="英雄id" />
+		</request>
+		<result>
+			<Array loopWith="Int">
+				<Int notes="兵种id"/>
+				<Int notes="总兵力增加"/>
+				<Int notes="总兵击增加"/>
+				<Int notes="百分比"/>
+				<Byte notes="可用1，不可用2，正在使用3"/>				
+			</Array>
+		</result>
+	</protocol>
+</File>

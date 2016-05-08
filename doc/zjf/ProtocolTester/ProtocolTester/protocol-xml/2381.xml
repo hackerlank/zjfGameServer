@@ -1,0 +1,18 @@
+﻿<File>
+	<protocol id="2381" notes="贡献榜信息">
+		<request>
+			<Int notes = "城市id"/>
+		</request>
+		<result>
+			<Array loopWith="Int">
+				<Int notes = "排名" />
+				<Int notes="贡献值" />
+				<String notes="玩家名称" />
+			</Array>
+			<Byte notes="是否有自己的贡献排名"/>
+			<Int notes="自己的排名"/>
+			<Int notes="贡献值"/>
+			<String notes="自己的昵称"/>
+		</result>
+	</protocol>
+</File>

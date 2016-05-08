@@ -1,0 +1,11 @@
+<File>
+<protocol id="504" notes="任务进度改变">
+	<request>
+	</request>
+	<result>
+		<Int notes = "任务ID" />
+		<Int notes = "任务进度" />
+		<Byte notes = "是否完成" />
+	</result>
+</protocol>
+</File>

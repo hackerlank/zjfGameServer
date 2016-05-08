@@ -1,0 +1,15 @@
+<File>
+	<protocol id="904" notes="装备道具">
+		<request>
+			<Int notes = "武将ID" />
+			<Byte notes = "装备位置" />
+			<Int notes = "道具数据库ID" />
+		</request>
+		<result>
+			<Short notes = "成功或失败"  isErrorCode="true"/>
+			<Int notes = "武将ID" />
+			<Byte notes = "装备位置" />
+			<Int notes = "道具数据库ID" />
+		</result>
+	</protocol>
+</File>

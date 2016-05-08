@@ -1,0 +1,15 @@
+﻿<File>
+<protocol id="316" notes="建筑升级">
+	<request>	
+		<Byte notes="建筑类型" />
+	</request>
+	<result>
+		<Short notes="是否成功" />
+		<Short notes="下一级等级" />
+		<Int notes="下一级花费银币" />
+		<Int notes="下一级花费时间" />
+		<Int notes="本次升级花费的银币" />
+		<Int notes="本次升级消耗时间" />
+	</result>
+</protocol>
+</File>

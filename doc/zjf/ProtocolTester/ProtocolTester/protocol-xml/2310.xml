@@ -1,0 +1,12 @@
+﻿<File>
+	<protocol id="2310" notes="疯狂增长">
+		<request>
+			<Int notes = "城市id"/>
+<Int notes = "类型"/>
+<Int notes = "位置"/>
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

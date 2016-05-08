@@ -1,0 +1,17 @@
+﻿<File>
+	<protocol id="1121" notes="获取武将兵种信息">
+		<request>
+			<Int notes="英雄id" />
+		</request>
+		<result>
+			<Array loopWith="Byte">
+				<Int notes="兵种ID"/>
+				<Int notes="兵种LV"/>
+				<Int notes="兵种技能ID"/>
+				<Int notes="兵种技能LV"/>
+				<Int notes="兵种当前经验值"/>
+				<Int notes="技能升级需要的花费"/>				
+			</Array>
+		</result>
+	</protocol>
+</File>

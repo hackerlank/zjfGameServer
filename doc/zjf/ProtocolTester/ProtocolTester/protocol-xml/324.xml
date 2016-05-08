@@ -1,0 +1,16 @@
+﻿<File>
+<protocol id="324" notes="建筑信息改变">
+	<request>	
+	</request>
+	<result>
+		<Byte notes="改变类型（0解锁1等级2产量3配属）" />
+		<Byte notes="状态（0不显示1需要领取2未配3已配）" />
+		<String notes="Key" />
+		<Int notes="等级" />
+		<Int notes="武将id" />
+		<Int notes="每小时收入" />
+		<Int notes="配属开始时间" />
+		<Int notes="配属剩余时间" />
+	</result>
+</protocol>
+</File>

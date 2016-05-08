@@ -1,0 +1,12 @@
+<File>
+	<protocol id="911" notes="获取强化信息">
+		<request>
+		</request>
+		<result>
+			<Int notes = "当前剩余时间" />
+			<Byte notes="是否可以增加CD 0是 1否" />
+			<Int notes = "全服成功率" />
+			<Int notes = "100%强化成功剩余天数" />
+		</result>
+	</protocol>
+</File>

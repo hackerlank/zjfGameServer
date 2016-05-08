@@ -1,0 +1,36 @@
+﻿<File>
+	<protocol id="1101" notes="获取英雄列表">
+		<request>
+			
+		</request>
+		<result>
+			<Array loopWith="Int">
+				<Int notes="英雄ID" />
+				<Short notes="武将等级" />
+				<Int notes="当前经验" />
+				<Int notes="战力"/>
+				<Byte notes="当前晋升数"/>
+				<Byte notes="最大晋升数"/>
+				<Int notes="带兵数量" />
+				<Int notes="当前好感度"/>
+				<Byte notes="好感度等级"/>
+				<Int notes="当前好感度上限"/>
+				<String notes="装备列表 (道具ID,道具强化等级,词缀ID)" />
+				<Int notes="统帅"/>
+				<Int notes="武力"/>
+				<Int notes="智力"/>
+				<Int notes="兵击"/>
+				<Int notes="当前使用的兵种ID"/>
+				<Int notes="当前兵种等级"/>
+				<Int notes="当前兵种技能等级"/>
+				<Int notes="技能"/>
+				<Int notes="技能LV"/>
+				<Int notes="被动技能"/>
+				<Int notes="被动技能LV"/>
+				<Int notes="叫阵技能"/>
+				<Int notes="叫阵技能LV"/>
+				<Int notes="最高可使用兵阶" />
+			</Array>
+		</result>
+	</protocol>
+</File>

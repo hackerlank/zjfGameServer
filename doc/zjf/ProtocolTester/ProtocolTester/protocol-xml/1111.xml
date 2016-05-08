@@ -1,0 +1,9 @@
+<File>
+	<protocol id="1111" notes="获得武将(服务器主动推送)">
+		<request>
+		</request>
+		<result>
+			<String notes="武将ID,等级"/>
+		</result>
+	</protocol>
+</File>

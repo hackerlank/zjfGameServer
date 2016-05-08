@@ -1,0 +1,11 @@
+﻿<File>
+	<protocol id="1403" notes="获取科技队列数据">
+		<request>
+		
+		</request>
+		<result>
+			<Byte notes="该建筑队列是否开启" />
+			<Int notes="建筑队列时间" />		
+		</result>
+	</protocol>
+</File>

@@ -1,0 +1,11 @@
+<File>
+	<protocol id="1802" notes="添加&删除好友">
+		<request>
+			<Byte notes = "类型" />
+			<String notes = "目标用户" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+		</result>
+	</protocol>
+</File>

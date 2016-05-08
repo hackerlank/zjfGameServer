@@ -1,0 +1,12 @@
+﻿<File>
+	<protocol id="2303" notes="准备&&取消">
+		<request>
+			<Int notes = "要加入城市的id" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+			<Int notes = "城市的id" />
+			<Int notes = "位置" />
+		</result>
+	</protocol>
+</File>

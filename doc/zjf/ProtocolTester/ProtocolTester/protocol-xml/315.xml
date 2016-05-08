@@ -1,0 +1,22 @@
+﻿<File>
+<protocol id="315" notes="建筑简要信息">
+	<request>
+	
+		<Byte notes="建筑类型" />
+	</request>
+	<result>
+		<Int notes="建筑升级时间" />
+		<Int notes="银币" />
+		<Int notes="建筑等级" />
+		<Int notes="武将id" />
+		<Int notes="武将转生数" />
+		<Int notes="通知" />
+		<Int notes="建筑升级时间1" />
+		<Int notes="建筑升级时间2" />
+		<Int notes="建筑升级时间3" />
+		<Int notes="建筑升级时间4" />
+		<Int notes="建筑升级时间5" />
+		<Int notes="建筑升级时间6" />
+	</result>
+</protocol>
+</File>

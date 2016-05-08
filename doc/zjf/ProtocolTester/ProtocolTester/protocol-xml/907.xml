@@ -1,0 +1,15 @@
+<File>
+	<protocol id="907" notes="单个位置互换装备">
+		<request>
+			<Int notes = "武将1ID" />
+			<Int notes = "武将2ID" />
+			<Byte notes = "位置" />
+		</request>
+		<result>
+			<Short notes = "成功或失败"  isErrorCode="true"/>
+			<Int notes = "武将1ID" />
+			<Int notes = "武将2ID" />
+			<Byte notes = "位置" />
+		</result>
+	</protocol>
+</File>

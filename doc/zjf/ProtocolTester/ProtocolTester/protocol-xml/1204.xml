@@ -1,0 +1,11 @@
+<File>
+	<protocol id="1204" notes="登用">
+		<request>
+			<Int notes = "武将ID" />
+		</request>
+		<result>
+			<Short notes = "成功或失败" isErrorCode = "true" />
+			<Int notes = "花费的银币" />
+		</result>
+	</protocol>
+</File>

@@ -1,5 +1,5 @@
 /*
-SQLyog v10.2 
+SQLyog Ultimate v11.24 (32 bit)
 MySQL - 5.5.24-log : Database - zjfgame
 *********************************************************************
 */
@@ -69,9 +69,10 @@ CREATE TABLE `hero` (
   `tired` int(11) DEFAULT NULL COMMENT '疲劳度',
   `effective` int(11) DEFAULT NULL COMMENT '效率',
   `skillId` int(11) DEFAULT NULL COMMENT '技能id',
-  `giftId` int(11) DEFAULT NULL COMMENT '天赋id',
+  `talentId` int(11) DEFAULT NULL COMMENT '天赋id',
+  `realize` int(11) DEFAULT NULL COMMENT '领悟值',
   `ageId` int(11) DEFAULT NULL COMMENT '年龄阶段id',
-  `ageCount` int(11) DEFAULT NULL COMMENT '每个阶段的年龄值',
+  `age` int(11) DEFAULT NULL COMMENT '每个阶段的年龄值',
   `rebirth` int(11) DEFAULT NULL COMMENT '转生数',
   `hotspot` int(11) DEFAULT NULL COMMENT '热度',
   PRIMARY KEY (`roleId`)

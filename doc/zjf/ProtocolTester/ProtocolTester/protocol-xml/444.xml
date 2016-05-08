@@ -1,0 +1,10 @@
+﻿<File>
+		<protocol id="444" notes="StopApp">
+			<request>
+				<String notes="UUID秘钥" default="iH29VcAlXg8Y3bK0ikAn"/>
+			</request>
+			<result>
+
+			</result>
+		</protocol>
+	</File>

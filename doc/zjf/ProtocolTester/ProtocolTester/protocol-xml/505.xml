@@ -1,0 +1,14 @@
+<File>
+<protocol id="505" notes="领取每日任务奖励">
+	<request>
+		<Int notes = "奖励编号" />
+	</request>
+	<result>
+		<Short notes = "成功或者错误信息"  isErrorCode="true" />
+		<Int notes = "领取的银币数量" />
+		<Int notes = "领取的粮食数量" />
+		<Int notes = "领取的战功数量" />
+		<Int notes = "领取的军令数量" />
+	</result>
+</protocol>
+</File>

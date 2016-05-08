@@ -1,0 +1,19 @@
+<File>
+	<protocol id="1801" notes="获取好友列表">
+		<request>
+		</request>
+		<result>
+			<Array loopWith="Byte">
+				<String notes="好友名字" />
+				<Byte notes="国籍" />
+				<Int notes = "玩家等级" />
+				<Byte notes = "是否在线" />
+			</Array>
+			<Array loopWith="Byte">
+				<String notes="黑名单" />
+				<Byte notes="国籍" />
+				<Int notes = "玩家等级" />
+			</Array>
+		</result>
+	</protocol>
+</File>

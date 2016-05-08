@@ -1,0 +1,20 @@
+﻿<File>
+		<protocol id="302" notes="升级建筑">
+			<request>
+				<Byte notes="升级类型（1民居，2农田 ,3兵营）" />
+				<Byte notes="升级建筑id (1-16)" />
+			</request>
+			<result>
+				<Short notes="1为成功其他为错误信息" isErrorCode="true"/>
+				<Byte notes="升级类型1民居，2农田 ,3兵营）" />
+				<Byte notes="升级建筑id (1-16)" />
+				<Int notes="消耗银币" />
+				<Byte notes="队列id" />
+				<Int notes="消耗时间（秒）" />
+					<Int notes="每小时收益" />
+					<Int notes="升级后每小时收益" />
+					<Int notes="升级所需费用" />
+					<Int notes="升级所需时间" />
+			</result>
+		</protocol>
+	</File>

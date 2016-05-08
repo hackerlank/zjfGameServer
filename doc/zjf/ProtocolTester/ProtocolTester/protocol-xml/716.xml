@@ -1,0 +1,11 @@
+<File>
+	<protocol id="716" notes="军团兑换">
+		<request>
+			<Byte notes = "兑换类型" />
+			<Int notes = "配置表ID" />
+		</request>
+		<result>
+			<Short notes="成功或失败"  isErrorCode="true" />
+		</result>
+	</protocol>
+</File>
