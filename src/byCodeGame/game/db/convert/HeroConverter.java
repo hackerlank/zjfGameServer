@@ -17,13 +17,15 @@ public class HeroConverter implements ResultConverter<Hero>{
 		hero.setAgeId(rs.getInt("ageId"));
 		hero.setEffective(rs.getInt("effective"));
 		hero.setEmotion(rs.getInt("emotion"));
-		hero.setTalentId(rs.getInt("talentId"));
+		hero.setTalentJobId(rs.getInt("talentJobId"));
+		hero.setTalentLv(rs.getByte("talentLv"));
 		hero.setHungry(rs.getInt("hungry"));
 		hero.setHotspot(rs.getInt("hotspot"));
 		hero.setRebirth(rs.getInt("rebirth"));
 		hero.setSkillId(rs.getInt("skillId"));
 		hero.setTired(rs.getInt("tired"));
 		hero.setRealize(rs.getInt("realize"));
+		hero.setLoveJobId(rs.getInt("loveJobId"));
 		return hero;
 	}
 

@@ -22,9 +22,9 @@ import byCodeGame.game.entity.bo.Role;
  */
 public class RoleDaoImpl extends DataAccess implements RoleDao {
 
-	private final String insertSql = "insert into role values(?,?,?,?)";
+	private final String insertSql = "insert into role values(?,?,?)";
 	private final String selectAccountSql = "select * from role where account=? limit 1";
-	private final String updateSql = "update role set name=?, account=?, loveHeroId=? where id=? limit 1";
+	private final String updateSql = "update role set name=?, account=? where id=? limit 1";
 	private final String selectAllAccountSql = "select account from role";
 	private final String selectAllNameSql = "select name from role";
 	private final String selectIdSql = "select * from role where id=? limit 1";
@@ -70,7 +70,7 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 	public Role insertRoleNotCloseConnection(Role role, Connection conn) {
 		try {
 			Integer id = this.insertNotCloseConn(insertSql, integerConverter, conn, null, role.getName(),
-					role.getAccount(), role.getLoveHeroId());
+					role.getAccount());
 			if (id != null) {
 				role.setId(id);
 				return role;
@@ -86,7 +86,7 @@ public class RoleDaoImpl extends DataAccess implements RoleDao {
 	public void updateRole(Role role) {
 		try {
 			Connection conn = dataSource.getConnection();
-			this.update(updateSql, conn, role.getName(), role.getAccount(), role.getLoveHeroId(), role.getId());
+			this.update(updateSql, conn, role.getName(), role.getAccount(), role.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

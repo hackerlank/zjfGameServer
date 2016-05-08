@@ -69,12 +69,14 @@ CREATE TABLE `hero` (
   `tired` int(11) DEFAULT NULL COMMENT '疲劳度',
   `effective` int(11) DEFAULT NULL COMMENT '效率',
   `skillId` int(11) DEFAULT NULL COMMENT '技能id',
-  `talentId` int(11) DEFAULT NULL COMMENT '天赋id',
+  `talentJobId` int(11) DEFAULT NULL COMMENT '天赋id',
+  `talentLv` tinyint(4) DEFAULT NULL,
   `realize` int(11) DEFAULT NULL COMMENT '领悟值',
   `ageId` int(11) DEFAULT NULL COMMENT '年龄阶段id',
   `age` int(11) DEFAULT NULL COMMENT '每个阶段的年龄值',
   `rebirth` int(11) DEFAULT NULL COMMENT '转生数',
   `hotspot` int(11) DEFAULT NULL COMMENT '热度',
+  `loveJobId` int(11) DEFAULT NULL,
   PRIMARY KEY (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

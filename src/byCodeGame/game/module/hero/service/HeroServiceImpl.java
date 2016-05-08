@@ -23,11 +23,16 @@ public class HeroServiceImpl implements HeroService {
 	@Override
 	public Hero createHero(int heroId) {
 		HeroConfig config = HeroConfigCache.getHeroConfigById(heroId);
+		int ageId = config.getAgeId();
+		int effective = config.getInitEffective();
+		int talentJobId = config.getTalentId();		
 		
 		Hero hero = new Hero();
-
 		hero.setHeroId(heroId);
-
+		hero.setAgeId(ageId);
+		hero.setEffective(effective);
+		hero.setTalentJobId(talentJobId);
+		
 		heroDao.insertHero(hero);
 		return hero;
 	}

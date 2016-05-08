@@ -19,7 +19,6 @@ public class RoleConverter implements ResultConverter<Role>{
 		role.setId(rs.getInt("id"));
 		role.setAccount(rs.getString("account"));
 		role.setName(rs.getString("name"));
-		role.setLoveHeroId(rs.getInt("loveHeroId"));
 		return role;
 	}
 

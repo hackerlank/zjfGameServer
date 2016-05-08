@@ -18,8 +18,6 @@ public class Role {
 	private String account;
 	// 宠物映射表
 	private Map<Integer, Hero> heroMap = new HashMap<>();
-	// 喜欢的英雄id
-	private int loveHeroId;
 	// serverId为key的道具表
 	private Map<Integer, Prop> serverIdPropMap = new HashMap<>();
 	// configId为key的道具表
@@ -53,14 +51,6 @@ public class Role {
 
 	public Map<Integer, Hero> getHeroMap() {
 		return heroMap;
-	}
-
-	public void setLoveHeroId(int loveHeroId) {
-		this.loveHeroId = loveHeroId;
-	}
-
-	public int getLoveHeroId() {
-		return loveHeroId;
 	}
 
 	public void setHome(Home home) {
