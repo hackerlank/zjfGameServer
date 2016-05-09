@@ -1,5 +1,5 @@
 /*
-SQLyog Ultimate v11.24 (32 bit)
+SQLyog v10.2 
 MySQL - 5.5.24-log : Database - zjfgame
 *********************************************************************
 */
@@ -62,7 +62,8 @@ CREATE TABLE `hall` (
 DROP TABLE IF EXISTS `hero`;
 
 CREATE TABLE `hero` (
-  `roleId` int(11) NOT NULL COMMENT '玩家id',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '数据库id',
+  `roleId` int(11) DEFAULT NULL COMMENT '玩家id',
   `heroId` int(11) DEFAULT NULL COMMENT '英雄配置表id',
   `emotion` int(11) DEFAULT NULL COMMENT '好感度',
   `hungry` int(11) DEFAULT NULL COMMENT '饥饿度',
@@ -77,7 +78,7 @@ CREATE TABLE `hero` (
   `rebirth` int(11) DEFAULT NULL COMMENT '转生数',
   `hotspot` int(11) DEFAULT NULL COMMENT '热度',
   `loveJobId` int(11) DEFAULT NULL,
-  PRIMARY KEY (`roleId`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `kitchen` */

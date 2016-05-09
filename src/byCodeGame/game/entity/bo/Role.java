@@ -16,7 +16,7 @@ public class Role {
 	private String name;
 	// 玩家帐号
 	private String account;
-	// 宠物映射表
+	// 宠物映射表<英雄数据库id,英雄>
 	private Map<Integer, Hero> heroMap = new HashMap<>();
 	// serverId为key的道具表
 	private Map<Integer, Prop> serverIdPropMap = new HashMap<>();

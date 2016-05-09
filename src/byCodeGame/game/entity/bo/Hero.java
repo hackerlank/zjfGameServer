@@ -6,6 +6,8 @@ package byCodeGame.game.entity.bo;
  *
  */
 public class Hero {
+	// 英雄数据库id
+	private int id;
 	// 玩家id
 	private int roleId;
 	// 英雄id
@@ -36,6 +38,14 @@ public class Hero {
 	private int hotspot;
 	// 喜爱的职业
 	private int loveJobId;
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
 
 	public int getRoleId() {
 		return roleId;

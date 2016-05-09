@@ -11,6 +11,7 @@ public class HeroConverter implements ResultConverter<Hero>{
 	@Override
 	public Hero convert(ResultSet rs) throws SQLException {
 		Hero hero = new Hero();
+		hero.setId(rs.getInt("id"));
 		hero.setHeroId(rs.getInt("heroId"));
 		hero.setRoleId(rs.getInt("roleId"));
 		hero.setAge(rs.getInt("age"));

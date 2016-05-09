@@ -112,25 +112,6 @@ public class RoleServiceImpl implements RoleService {
 		return role;
 	}
 
-	@Override
-	public Message setNickname(Role role, String nickname) {
-		Message message = new Message();
-		Set<String> nameSet = RoleCache.getNameSet();
-
-		if (nameSet.contains(nickname)) {
-			message.putShort(ErrorCode.ROLE_NAME_REPEAT);
-			return message;
-		}
-
-		String name = role.getName();
-		nameSet.remove(name);
-		nameSet.add(nickname);
-		role.setName(nickname);
-
-		message.putShort(ErrorCode.SUCCESS);
-		return message;
-	}
-
 	/**
 	 * 玩家数据初始化
 	 * 

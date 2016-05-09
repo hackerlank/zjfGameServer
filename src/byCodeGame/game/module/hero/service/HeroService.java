@@ -35,20 +35,12 @@ public interface HeroService{
 	Message showHeroSkill(Role role, int heroId);
 
 	/**
-	 * 工作
-	 * @param role
-	 * @param heroId
-	 * @return
-	 */
-	Message work(Role role, int heroId);
-
-	/**
 	 * 领悟
 	 * @param role
 	 * @param heroId
 	 * @return
 	 */
-	Message realize(Role role,int heroId);
+	Message realize(Role role,int heroServerId);
 	
 	/**
 	 * 转生
