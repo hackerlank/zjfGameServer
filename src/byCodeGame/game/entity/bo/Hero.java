@@ -16,35 +16,27 @@ public class Hero {
 	private int emotion;
 	// 饥饿值
 	private int hungry;
-	// 疲劳度
-	private int tired;
 	// 熟练度
 	private int effective;
 	// 技能id
 	private int skillId;
-	// 天赋id
-	private int talentJobId;
 	// 天赋等级
 	private byte talentLv;
 	// 领悟值
 	private int realize;
-	// 年龄阶段id
-	private int ageId;
 	// 年龄值
 	private int age;
 	// 转生值
 	private int rebirth;
-	// 热度
-	private int hotspot;
-	// 喜爱的职业
-	private int loveJobId;
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	// 喜爱的技能
+	private int loveSkillId;
 
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getRoleId() {
@@ -79,14 +71,6 @@ public class Hero {
 		this.hungry = hungry;
 	}
 
-	public int getTired() {
-		return tired;
-	}
-
-	public void setTired(int tired) {
-		this.tired = tired;
-	}
-
 	public int getEffective() {
 		return effective;
 	}
@@ -101,14 +85,6 @@ public class Hero {
 
 	public void setSkillId(int skillId) {
 		this.skillId = skillId;
-	}
-
-	public int getTalentJobId() {
-		return talentJobId;
-	}
-
-	public void setTalentJobId(int talentJobId) {
-		this.talentJobId = talentJobId;
 	}
 
 	public byte getTalentLv() {
@@ -127,14 +103,6 @@ public class Hero {
 		this.realize = realize;
 	}
 
-	public int getAgeId() {
-		return ageId;
-	}
-
-	public void setAgeId(int ageId) {
-		this.ageId = ageId;
-	}
-
 	public int getAge() {
 		return age;
 	}
@@ -151,20 +119,12 @@ public class Hero {
 		this.rebirth = rebirth;
 	}
 
-	public int getHotspot() {
-		return hotspot;
+	public int getLoveSkillId() {
+		return loveSkillId;
 	}
 
-	public void setHotspot(int hotspot) {
-		this.hotspot = hotspot;
-	}
-
-	public int getLoveJobId() {
-		return loveJobId;
-	}
-
-	public void setLoveJobId(int loveJobId) {
-		this.loveJobId = loveJobId;
+	public void setLoveSkillId(int loveSkillId) {
+		this.loveSkillId = loveSkillId;
 	}
 
 }

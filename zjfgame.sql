@@ -1,5 +1,5 @@
 /*
-SQLyog v10.2 
+SQLyog Ultimate v11.24 (32 bit)
 MySQL - 5.5.24-log : Database - zjfgame
 *********************************************************************
 */
@@ -16,47 +16,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`zjfgame` /*!40100 DEFAULT CHARACTER SET
 
 USE `zjfgame`;
 
-/*Table structure for table `bedroom` */
-
-DROP TABLE IF EXISTS `bedroom`;
-
-CREATE TABLE `bedroom` (
-  `roleId` int(11) NOT NULL,
-  `bedSpaceStr` text,
-  PRIMARY KEY (`roleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Table structure for table `bin` */
-
-DROP TABLE IF EXISTS `bin`;
-
-CREATE TABLE `bin` (
-  `roleId` int(11) NOT NULL,
-  `binSpaceStr` text,
-  PRIMARY KEY (`roleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Table structure for table `farm` */
-
-DROP TABLE IF EXISTS `farm`;
-
-CREATE TABLE `farm` (
-  `roleId` int(11) NOT NULL,
-  `farmSpaceStr` text,
-  PRIMARY KEY (`roleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Table structure for table `hall` */
-
-DROP TABLE IF EXISTS `hall`;
-
-CREATE TABLE `hall` (
-  `roleId` int(11) NOT NULL,
-  `hallSpaceStr` text,
-  `hallPhotoSpaceStr` text,
-  PRIMARY KEY (`roleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 /*Table structure for table `hero` */
 
 DROP TABLE IF EXISTS `hero`;
@@ -65,19 +24,15 @@ CREATE TABLE `hero` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '数据库id',
   `roleId` int(11) DEFAULT NULL COMMENT '玩家id',
   `heroId` int(11) DEFAULT NULL COMMENT '英雄配置表id',
-  `emotion` int(11) DEFAULT NULL COMMENT '好感度',
+  `emotion` int(11) DEFAULT NULL COMMENT '心情',
   `hungry` int(11) DEFAULT NULL COMMENT '饥饿度',
-  `tired` int(11) DEFAULT NULL COMMENT '疲劳度',
   `effective` int(11) DEFAULT NULL COMMENT '效率',
   `skillId` int(11) DEFAULT NULL COMMENT '技能id',
-  `talentJobId` int(11) DEFAULT NULL COMMENT '天赋id',
-  `talentLv` tinyint(4) DEFAULT NULL,
+  `talentLv` tinyint(4) DEFAULT NULL COMMENT '天赋等级',
   `realize` int(11) DEFAULT NULL COMMENT '领悟值',
-  `ageId` int(11) DEFAULT NULL COMMENT '年龄阶段id',
   `age` int(11) DEFAULT NULL COMMENT '每个阶段的年龄值',
   `rebirth` int(11) DEFAULT NULL COMMENT '转生数',
-  `hotspot` int(11) DEFAULT NULL COMMENT '热度',
-  `loveJobId` int(11) DEFAULT NULL,
+  `loveSkillId` int(11) DEFAULT NULL COMMENT '技能喜好',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -91,16 +46,6 @@ CREATE TABLE `kitchen` (
   PRIMARY KEY (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Table structure for table `pub` */
-
-DROP TABLE IF EXISTS `pub`;
-
-CREATE TABLE `pub` (
-  `roleId` int(11) NOT NULL,
-  `pubSpaceStr` text,
-  PRIMARY KEY (`roleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 /*Table structure for table `role` */
 
 DROP TABLE IF EXISTS `role`;
@@ -109,7 +54,6 @@ CREATE TABLE `role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `account` varchar(255) DEFAULT NULL,
-  `loveHeroId` int(11) DEFAULT NULL COMMENT '喜欢的英雄id',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

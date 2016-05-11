@@ -9,20 +9,9 @@ import javax.sql.DataSource;
 
 import byCodeGame.game.cache.local.RoleCache;
 import byCodeGame.game.common.ErrorCode;
-import byCodeGame.game.db.dao.BedroomDao;
-import byCodeGame.game.db.dao.BinDao;
-import byCodeGame.game.db.dao.FarmDao;
-import byCodeGame.game.db.dao.HallDao;
 import byCodeGame.game.db.dao.KitchenDao;
-import byCodeGame.game.db.dao.PubDao;
 import byCodeGame.game.db.dao.RoleDao;
-import byCodeGame.game.entity.bo.Bedroom;
-import byCodeGame.game.entity.bo.Bin;
-import byCodeGame.game.entity.bo.Farm;
-import byCodeGame.game.entity.bo.Hall;
-import byCodeGame.game.entity.bo.Home;
 import byCodeGame.game.entity.bo.Kitchen;
-import byCodeGame.game.entity.bo.Pub;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.module.register.RegisterConstant;
 import byCodeGame.game.remote.Message;
@@ -47,40 +36,10 @@ public class RegisterServiceImpl implements RegisterService {
 		this.roleDao = roleDao;
 	}
 
-	private BedroomDao bedroomDao;
-
-	public void setBedroomDao(BedroomDao bedroomDao) {
-		this.bedroomDao = bedroomDao;
-	}
-
 	private KitchenDao kitchenDao;
 
 	public void setKitchenDao(KitchenDao kitchenDao) {
 		this.kitchenDao = kitchenDao;
-	}
-
-	private PubDao pubDao;
-
-	public void setPubDao(PubDao pubDao) {
-		this.pubDao = pubDao;
-	}
-
-	private BinDao binDao;
-
-	public void setBinDao(BinDao binDao) {
-		this.binDao = binDao;
-	}
-
-	private FarmDao farmDao;
-
-	public void setFarmDao(FarmDao farmDao) {
-		this.farmDao = farmDao;
-	}
-
-	private HallDao hallDao;
-
-	public void setHallDao(HallDao hallDao) {
-		this.hallDao = hallDao;
 	}
 
 	@Override
@@ -167,45 +126,12 @@ public class RegisterServiceImpl implements RegisterService {
 		role = roleDao.insertRoleNotCloseConnection(role, conn);
 		int roleId = role.getId();
 
-		Home home = new Home();
-		home.setRoleId(roleId);
-		role.setHome(home);
-
-		// 卧室
-		Bedroom bedroom = new Bedroom();
-		bedroom.setRoleId(roleId);
-		home.setBedroom(bedroom);
-		bedroomDao.insertBedroomNotCloseConnection(bedroom, conn);
-
 		// 厨房
 		Kitchen kitchen = new Kitchen();
 		kitchen.setRoleId(roleId);
-		home.setKitchen(kitchen);
+		role.setKitchen(kitchen);
 		kitchenDao.insertKitchenNotCloseConnection(kitchen, conn);
 
-		// 酒馆
-		Pub pub = new Pub();
-		pub.setRoleId(roleId);
-		home.setPub(pub);
-		pubDao.insertPubNotCloseConnection(pub, conn);
-
-		// 回收站
-		Bin bin = new Bin();
-		bin.setRoleId(roleId);
-		home.setBin(bin);
-		binDao.insertBinNotCloseConnection(bin, conn);
-
-		// 农场
-		Farm farm = new Farm();
-		farm.setRoleId(roleId);
-		home.setFarm(farm);
-		farmDao.insertFarmNotCloseConnection(farm, conn);
-
-		// 大厅
-		Hall hall = new Hall();
-		hall.setRoleId(roleId);
-		home.setHall(hall);
-		hallDao.insertHallNotCloseConnection(hall, conn);
 	}
 
 	@Override

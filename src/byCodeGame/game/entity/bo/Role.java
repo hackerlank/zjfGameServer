@@ -16,14 +16,6 @@ public class Role {
 	private String name;
 	// 玩家帐号
 	private String account;
-	// 宠物映射表<英雄数据库id,英雄>
-	private Map<Integer, Hero> heroMap = new HashMap<>();
-	// serverId为key的道具表
-	private Map<Integer, Prop> serverIdPropMap = new HashMap<>();
-	// configId为key的道具表
-	private Map<Integer, Prop> configIdPropMap = new HashMap<>();
-	// 家信息
-	private Home home;
 
 	public void setId(int id) {
 		this.id = id;
@@ -49,16 +41,17 @@ public class Role {
 		return account;
 	}
 
+	// 宠物映射表<英雄数据库id,英雄>
+	private Map<Integer, Hero> heroMap = new HashMap<>();
+	// serverId为key的道具表
+	private Map<Integer, Prop> serverIdPropMap = new HashMap<>();
+	// configId为key的道具表
+	private Map<Integer, Prop> configIdPropMap = new HashMap<>();
+	// 厨房信息
+	private Kitchen kitchen;
+
 	public Map<Integer, Hero> getHeroMap() {
 		return heroMap;
-	}
-
-	public void setHome(Home home) {
-		this.home = home;
-	}
-
-	public Home getHome() {
-		return home;
 	}
 
 	public Map<Integer, Prop> getConfigIdPropMap() {
@@ -67,6 +60,14 @@ public class Role {
 
 	public Map<Integer, Prop> getServerIdPropMap() {
 		return serverIdPropMap;
+	}
+
+	public void setKitchen(Kitchen kitchen) {
+		this.kitchen = kitchen;
+	}
+
+	public Kitchen getKitchen() {
+		return kitchen;
 	}
 
 }

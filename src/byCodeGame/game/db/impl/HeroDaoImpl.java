@@ -15,10 +15,10 @@ import byCodeGame.game.entity.bo.Hero;
 
 public class HeroDaoImpl extends DataAccess implements HeroDao {
 
-	private final String insertSql = "insert into hero values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String insertSql = "insert into hero values(?,?,?,?,?,?,?,?,?,?,?,?)";
 	private final String selectIdSql = "select * from hero where id=?";
-	private final String updateSql = "update set roleId=?,emotion=?,hungry=?,tired=?,effective=?,skillId=?,"
-			+ "talentJobId=?,talentLv=?,realize=?,ageId=?,age=?,rebirth=?,hotspot=?,loveJobId=? where id=? limit 1";
+	private final String updateSql = "update set roleId=?,emotion=?,hungry=?,effective=?,skillId=?,"
+			+ "talentLv=?,realize=?,age=?,rebirth=?,loveSkillId=? where id=? limit 1";
 
 	private IntegerConverter integerConverter;
 
@@ -55,10 +55,9 @@ public class HeroDaoImpl extends DataAccess implements HeroDao {
 	public Hero insertHero(Hero hero) {
 		try {
 			Connection conn = dataSource.getConnection();
-			Integer id = this.insert(insertSql, integerConverter, conn, null, hero.getRoleId(), hero.getHeroId(), hero.getEmotion(),
-					hero.getHungry(), hero.getTired(), hero.getEffective(), hero.getSkillId(), hero.getTalentJobId(),
-					hero.getTalentLv(), hero.getRealize(), hero.getAgeId(), hero.getAge(), hero.getRebirth(),
-					hero.getHotspot(), hero.getLoveJobId());
+			Integer id = this.insert(insertSql, integerConverter, conn, null, hero.getRoleId(), hero.getHeroId(),
+					hero.getEmotion(), hero.getHungry(), hero.getEffective(), hero.getSkillId(), hero.getTalentLv(),
+					hero.getRealize(), hero.getAge(), hero.getRebirth(), hero.getLoveSkillId());
 			if (id != null) {
 				hero.setId(id);
 				return hero;
@@ -75,10 +74,9 @@ public class HeroDaoImpl extends DataAccess implements HeroDao {
 	public void updateHero(Hero hero) {
 		try {
 			Connection conn = dataSource.getConnection();
-			this.update(updateSql, conn, hero.getRoleId(), hero.getEmotion(), hero.getHungry(),
-					hero.getTired(), hero.getEffective(), hero.getSkillId(), hero.getTalentJobId(), hero.getTalentLv(),
-					hero.getRealize(), hero.getAgeId(), hero.getAge(), hero.getRebirth(), hero.getHotspot(),
-					hero.getLoveJobId(), hero.getId());
+			this.update(updateSql, conn, hero.getRoleId(), hero.getEmotion(), hero.getHungry(), hero.getEffective(),
+					hero.getSkillId(), hero.getTalentLv(), hero.getRealize(), hero.getAge(), hero.getRebirth(),
+					hero.getLoveSkillId(), hero.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -30,9 +30,7 @@ public class HeroServiceImpl implements HeroService {
 
 		Hero hero = new Hero();
 		hero.setHeroId(heroId);
-		hero.setAgeId(ageId);
 		hero.setEffective(effective);
-		hero.setTalentJobId(talentJobId);
 		hero.setTalentLv((byte) 1);
 
 		heroDao.insertHero(hero);

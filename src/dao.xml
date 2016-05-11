@@ -8,12 +8,7 @@
 	<bean id="stringConverter" class="byCodeGame.game.db.convert.base.StringConverter"></bean>
 	<bean id="roleConverter" class="byCodeGame.game.db.convert.RoleConverter"></bean>
 	<bean id="heroConverter" class="byCodeGame.game.db.convert.HeroConverter"></bean>
-	<bean id="bedroomConverter" class="byCodeGame.game.db.convert.BedroomConverter"></bean>
 	<bean id="kitchenConverter" class="byCodeGame.game.db.convert.KitchenConverter"></bean>
-	<bean id="pubConverter" class="byCodeGame.game.db.convert.PubConverter"></bean>
-	<bean id="farmConverter" class="byCodeGame.game.db.convert.FarmConverter"></bean>
-	<bean id="binConverter" class="byCodeGame.game.db.convert.BinConverter"></bean>
-	<bean id="hallConverter" class="byCodeGame.game.db.convert.HallConverter"></bean>
 
 	<bean id="roleDao" class="byCodeGame.game.db.impl.RoleDaoImpl">
 		<property name="dataSource" ref="dataSource"></property>
@@ -28,40 +23,10 @@
 		<property name="heroConverter" ref="heroConverter"></property>
 	</bean>
 
-	<bean id="bedroomDao" class="byCodeGame.game.db.impl.BedroomDaoImpl">
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="integerConverter" ref="integerConverter"></property>
-		<property name="bedroomConverter" ref="bedroomConverter"></property>
-	</bean>
-
 	<bean id="kitchenDao" class="byCodeGame.game.db.impl.KitchenDaoImpl">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="integerConverter" ref="integerConverter"></property>
 		<property name="kitchenConverter" ref="kitchenConverter"></property>
-	</bean>
-
-	<bean id="pubDao" class="byCodeGame.game.db.impl.PubDaoImpl">
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="integerConverter" ref="integerConverter"></property>
-		<property name="pubConverter" ref="pubConverter"></property>
-	</bean>
-
-	<bean id="farmDao" class="byCodeGame.game.db.impl.FarmDaoImpl">
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="integerConverter" ref="integerConverter"></property>
-		<property name="farmConverter" ref="farmConverter"></property>
-	</bean>
-
-	<bean id="binDao" class="byCodeGame.game.db.impl.BinDaoImpl">
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="integerConverter" ref="integerConverter"></property>
-		<property name="binConverter" ref="binConverter"></property>
-	</bean>
-	
-	<bean id="hallDao" class="byCodeGame.game.db.impl.HallDaoImpl">
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="integerConverter" ref="integerConverter"></property>
-		<property name="hallConverter" ref="hallConverter"></property>
 	</bean>
 
 </beans>
