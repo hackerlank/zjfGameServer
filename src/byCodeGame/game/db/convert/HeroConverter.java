@@ -19,7 +19,6 @@ public class HeroConverter implements ResultConverter<Hero>{
 		hero.setEmotion(rs.getInt("emotion"));
 		hero.setTalentLv(rs.getByte("talentLv"));
 		hero.setHungry(rs.getInt("hungry"));
-		hero.setRebirth(rs.getInt("rebirth"));
 		hero.setSkillId(rs.getInt("skillId"));
 		hero.setRealize(rs.getInt("realize"));
 		hero.setLoveSkillId(rs.getInt("loveSkillId"));

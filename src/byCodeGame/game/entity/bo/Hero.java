@@ -26,8 +26,6 @@ public class Hero {
 	private int realize;
 	// 年龄值
 	private int age;
-	// 转生值
-	private int rebirth;
 	// 喜爱的技能
 	private int loveSkillId;
 
@@ -109,14 +107,6 @@ public class Hero {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-	public int getRebirth() {
-		return rebirth;
-	}
-
-	public void setRebirth(int rebirth) {
-		this.rebirth = rebirth;
 	}
 
 	public int getLoveSkillId() {
