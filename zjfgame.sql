@@ -1,5 +1,5 @@
 /*
-SQLyog Ultimate v11.24 (32 bit)
+SQLyog v10.2 
 MySQL - 5.5.24-log : Database - zjfgame
 *********************************************************************
 */
@@ -31,7 +31,6 @@ CREATE TABLE `hero` (
   `talentLv` tinyint(4) DEFAULT NULL COMMENT '天赋等级',
   `realize` int(11) DEFAULT NULL COMMENT '领悟值',
   `age` int(11) DEFAULT NULL COMMENT '每个阶段的年龄值',
-  `rebirth` int(11) DEFAULT NULL COMMENT '转生数',
   `loveSkillId` int(11) DEFAULT NULL COMMENT '技能喜好',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
