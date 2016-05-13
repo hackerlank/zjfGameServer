@@ -1,5 +1,5 @@
 /*
-SQLyog v10.2 
+SQLyog Ultimate v11.24 (32 bit)
 MySQL - 5.5.24-log : Database - zjfgame
 *********************************************************************
 */
@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `hero`;
 
 CREATE TABLE `hero` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '数据库id',
+  `name` varchar(255) DEFAULT NULL,
   `roleId` int(11) DEFAULT NULL COMMENT '玩家id',
   `heroId` int(11) DEFAULT NULL COMMENT '英雄配置表id',
   `emotion` int(11) DEFAULT NULL COMMENT '心情',

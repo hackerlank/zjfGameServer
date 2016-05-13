@@ -12,6 +12,7 @@ public class HeroConverter implements ResultConverter<Hero>{
 	public Hero convert(ResultSet rs) throws SQLException {
 		Hero hero = new Hero();
 		hero.setId(rs.getInt("id"));
+		hero.setName(rs.getString("name"));
 		hero.setHeroId(rs.getInt("heroId"));
 		hero.setRoleId(rs.getInt("roleId"));
 		hero.setAge(rs.getInt("age"));

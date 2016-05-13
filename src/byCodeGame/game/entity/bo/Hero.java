@@ -12,6 +12,8 @@ public class Hero {
 	private int roleId;
 	// 英雄id
 	private int heroId;
+	// 英雄名称
+	private String name;
 	// 心情
 	private int emotion;
 	// 饥饿值
@@ -51,6 +53,14 @@ public class Hero {
 
 	public void setHeroId(int heroId) {
 		this.heroId = heroId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getEmotion() {
