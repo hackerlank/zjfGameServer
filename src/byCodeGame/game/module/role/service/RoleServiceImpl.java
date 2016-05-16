@@ -80,7 +80,6 @@ public class RoleServiceImpl implements RoleService {
 		List<Hero> list = heroDao.getHerosByRoleId(role.getId());
 		Map<Integer, Hero> heroMap = role.getHeroMap();
 		for (Hero hero : list) {
-			heroMap.put(hero.getHeroId(), hero);
 		}
 		// 道具初始化
 

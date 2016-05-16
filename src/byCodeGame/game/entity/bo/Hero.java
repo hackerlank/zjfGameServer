@@ -6,30 +6,32 @@ package byCodeGame.game.entity.bo;
  *
  */
 public class Hero {
-	// 英雄数据库id
+	/** 英雄数据库id */
 	private int id;
-	// 玩家id
+	/** 玩家id */
 	private int roleId;
-	// 英雄id
-	private int heroId;
-	// 英雄名称
+	/** 英雄名称 */
 	private String name;
-	// 心情
+	/** 心情 */
 	private int emotion;
-	// 饥饿值
+	/** 饥饿值 */
 	private int hungry;
-	// 熟练度
+	/** 熟练度 */
 	private int effective;
-	// 技能id
+	/** 技能id */
 	private int skillId;
-	// 天赋等级
+	/** 技能等级（不存数据库） */
+	private int skillLv;
+	/** 天赋等级 */
 	private byte talentLv;
-	// 领悟值
+	/** 领悟值 */
 	private int realize;
-	// 年龄值
+	/** 年龄值 */
 	private int age;
-	// 喜爱的技能
+	/** 喜爱的技能 */
 	private int loveSkillId;
+	/** 性别 */
+	private byte sex;
 
 	public int getId() {
 		return id;
@@ -45,14 +47,6 @@ public class Hero {
 
 	public void setRoleId(int roleId) {
 		this.roleId = roleId;
-	}
-
-	public int getHeroId() {
-		return heroId;
-	}
-
-	public void setHeroId(int heroId) {
-		this.heroId = heroId;
 	}
 
 	public String getName() {
@@ -95,6 +89,14 @@ public class Hero {
 		this.skillId = skillId;
 	}
 
+	public void setSkillLv(int skillLv) {
+		this.skillLv = skillLv;
+	}
+
+	public int getSkillLv() {
+		return skillLv;
+	}
+
 	public byte getTalentLv() {
 		return talentLv;
 	}
@@ -127,4 +129,11 @@ public class Hero {
 		this.loveSkillId = loveSkillId;
 	}
 
+	public void setSex(byte sex) {
+		this.sex = sex;
+	}
+
+	public byte getSex() {
+		return sex;
+	}
 }

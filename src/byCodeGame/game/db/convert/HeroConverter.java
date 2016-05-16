@@ -13,7 +13,6 @@ public class HeroConverter implements ResultConverter<Hero>{
 		Hero hero = new Hero();
 		hero.setId(rs.getInt("id"));
 		hero.setName(rs.getString("name"));
-		hero.setHeroId(rs.getInt("heroId"));
 		hero.setRoleId(rs.getInt("roleId"));
 		hero.setAge(rs.getInt("age"));
 		hero.setEffective(rs.getInt("effective"));
@@ -23,6 +22,7 @@ public class HeroConverter implements ResultConverter<Hero>{
 		hero.setSkillId(rs.getInt("skillId"));
 		hero.setRealize(rs.getInt("realize"));
 		hero.setLoveSkillId(rs.getInt("loveSkillId"));
+		hero.setSex(rs.getByte("sex"));
 		return hero;
 	}
 

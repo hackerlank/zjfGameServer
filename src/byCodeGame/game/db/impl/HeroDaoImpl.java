@@ -18,7 +18,7 @@ public class HeroDaoImpl extends DataAccess implements HeroDao {
 	private final String insertSql = "insert into hero values(?,?,?,?,?,?,?,?,?,?,?,?)";
 	private final String selectIdSql = "select * from hero where id=?";
 	private final String updateSql = "update set name=?,roleId=?,emotion=?,hungry=?,effective=?,skillId=?,"
-			+ "talentLv=?,realize=?,age=?,loveSkillId=? where id=? limit 1";
+			+ "talentLv=?,realize=?,age=?,loveSkillId=?,sex=? where id=? limit 1";
 
 	private IntegerConverter integerConverter;
 
@@ -56,8 +56,8 @@ public class HeroDaoImpl extends DataAccess implements HeroDao {
 		try {
 			Connection conn = dataSource.getConnection();
 			Integer id = this.insert(insertSql, integerConverter, conn, null, hero.getName(), hero.getRoleId(),
-					hero.getHeroId(), hero.getEmotion(), hero.getHungry(), hero.getEffective(), hero.getSkillId(),
-					hero.getTalentLv(), hero.getRealize(), hero.getAge(), hero.getLoveSkillId());
+					hero.getEmotion(), hero.getHungry(), hero.getEffective(), hero.getSkillId(), hero.getTalentLv(),
+					hero.getRealize(), hero.getAge(), hero.getLoveSkillId(), hero.getSex());
 			if (id != null) {
 				hero.setId(id);
 				return hero;
@@ -76,7 +76,7 @@ public class HeroDaoImpl extends DataAccess implements HeroDao {
 			Connection conn = dataSource.getConnection();
 			this.update(updateSql, conn, hero.getName(), hero.getRoleId(), hero.getEmotion(), hero.getHungry(),
 					hero.getEffective(), hero.getSkillId(), hero.getTalentLv(), hero.getRealize(), hero.getAge(),
-					hero.getLoveSkillId(), hero.getId());
+					hero.getLoveSkillId(), hero.getSex(), hero.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

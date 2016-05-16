@@ -17,7 +17,7 @@ public interface HeroService{
 	 * 创建单个英雄
 	 * @return
 	 */
-	Hero createHero(int heroId);
+	Hero createHero(byte sex);
 
 	/**
 	 * 改变技能
