@@ -43,14 +43,6 @@ public interface HeroService{
 	Message realize(Role role,int heroServerId);
 	
 	/**
-	 * 转生
-	 * @param role
-	 * @param heroId
-	 * @return
-	 */
-	Message rebirth(Role role,int heroId);
-	
-	/**
 	 * 学习技能
 	 * @param role
 	 * @param heroId

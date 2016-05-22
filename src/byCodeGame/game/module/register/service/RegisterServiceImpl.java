@@ -9,8 +9,10 @@ import javax.sql.DataSource;
 
 import byCodeGame.game.cache.local.RoleCache;
 import byCodeGame.game.common.ErrorCode;
+import byCodeGame.game.db.dao.BusinessDao;
 import byCodeGame.game.db.dao.KitchenDao;
 import byCodeGame.game.db.dao.RoleDao;
+import byCodeGame.game.entity.bo.Business;
 import byCodeGame.game.entity.bo.Kitchen;
 import byCodeGame.game.entity.bo.Role;
 import byCodeGame.game.module.register.RegisterConstant;
@@ -40,6 +42,12 @@ public class RegisterServiceImpl implements RegisterService {
 
 	public void setKitchenDao(KitchenDao kitchenDao) {
 		this.kitchenDao = kitchenDao;
+	}
+
+	private BusinessDao businessDao;
+
+	public void setBusinessDao(BusinessDao businessDao) {
+		this.businessDao = businessDao;
 	}
 
 	@Override
@@ -131,6 +139,12 @@ public class RegisterServiceImpl implements RegisterService {
 		kitchen.setRoleId(roleId);
 		role.setKitchen(kitchen);
 		kitchenDao.insertKitchenNotCloseConnection(kitchen, conn);
+
+		// 经营
+		Business business = new Business();
+		business.setRoleId(roleId);
+		role.setBusiness(business);
+		businessDao.insertBusinessNotCloseConnection(business, conn);
 
 	}
 

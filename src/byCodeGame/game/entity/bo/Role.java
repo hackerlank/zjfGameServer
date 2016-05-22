@@ -16,6 +16,20 @@ public class Role {
 	private String name;
 	// 玩家帐号
 	private String account;
+	// 钱
+	private long money;
+	// 钻石
+	private long diamond;
+	// 宠物映射表<英雄数据库id,英雄>
+	private Map<Integer, Hero> heroMap = new HashMap<>();
+	// serverId为key的道具表
+	private Map<Integer, Prop> serverIdPropMap = new HashMap<>();
+	// configId为key的道具表
+	private Map<Integer, Prop> configIdPropMap = new HashMap<>();
+	// 厨房信息
+	private Kitchen kitchen;
+	// 经营信息
+	private Business business;
 
 	public void setId(int id) {
 		this.id = id;
@@ -41,15 +55,6 @@ public class Role {
 		return account;
 	}
 
-	// 宠物映射表<英雄数据库id,英雄>
-	private Map<Integer, Hero> heroMap = new HashMap<>();
-	// serverId为key的道具表
-	private Map<Integer, Prop> serverIdPropMap = new HashMap<>();
-	// configId为key的道具表
-	private Map<Integer, Prop> configIdPropMap = new HashMap<>();
-	// 厨房信息
-	private Kitchen kitchen;
-
 	public Map<Integer, Hero> getHeroMap() {
 		return heroMap;
 	}
@@ -70,4 +75,27 @@ public class Role {
 		return kitchen;
 	}
 
+	public void setBusiness(Business business) {
+		this.business = business;
+	}
+
+	public Business getBusiness() {
+		return business;
+	}
+
+	public void setMoney(long money) {
+		this.money = money;
+	}
+
+	public long getMoney() {
+		return money;
+	}
+
+	public void setDiamond(long diamond) {
+		this.diamond = diamond;
+	}
+
+	public long getDiamond() {
+		return diamond;
+	}
 }

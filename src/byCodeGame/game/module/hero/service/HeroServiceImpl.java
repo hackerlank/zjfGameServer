@@ -50,7 +50,6 @@ public class HeroServiceImpl implements HeroService {
 		hero.setSkillLv(HeroConstant.INIT_SKILL_LV);
 		hero.setSkillId(HeroConstant.INIT_SKILL_ID);
 		
-		hero.setName("");
 		hero.setTalentLv((byte) SkillLvConfigCache.getSkillLvConfigByLv(hero.getSkillLv()).getTalentLv());	
 		
 		heroDao.insertHero(hero);
@@ -110,13 +109,7 @@ public class HeroServiceImpl implements HeroService {
 	private boolean isRealizeSuccess() {
 		return true;
 	}
-
-	@Override
-	public Message rebirth(Role role, int heroId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public Message learnSkill(Role role, int heroId) {
 		// TODO Auto-generated method stub
